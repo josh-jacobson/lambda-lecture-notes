@@ -18,16 +18,17 @@ Hooks streamline things a lot, and most developers prefer writing new components
 
 And in the real world, you'll usually encounter applications with a mix of class and function components, so it'll help a lot in your career to understand both approaches.
 
-## Guided Project - shopping list app
-1. Explore the architecture of our shopping list app:
-  * All class components, except for `Item`
-  
-Class components vs Function components:
+## Class components vs Function components:
   * In class components we use lifecycle methods to manage state and side effects. For function components we use Hooks.
   * Hooks cannot be used in class components! (and lifecycle methods are not used in function components)
   * Class components have just one state variable, an object with multiple keys
   * Function components split up the state into multiple variables, each managed with `useState`
 
+
+## Guided Project - shopping list app
+1. Explore the architecture of our shopping list app:
+  * All class components, except for `Item`
+  
 2. Build state into `App.js`
 Write a constructor for the App component
   * super()
@@ -40,7 +41,10 @@ Write a constructor for the App component
   * remember to start slow and handle architecture first -- you can sipmly pass a dummy function with a `console.log` first to make sure everything is connected right before implementing the actual logic.
   * Binding and synthetic events
 
-4. 
+4. Implement the logic to update state in `toggleItem`
+
+
+## Forms - breakout session
 
 
   
