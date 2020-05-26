@@ -10,10 +10,12 @@ class Lambda extends React.Component {
 }
 ```
 
-## Background
 The base Component class includes built-in functionality for managing state and other React features. We'll learn about the lifecycle methods of class components in the following lecture.
+
 Function components were originally limited in their abilities, but React 16.8 introduced Hooks, allowing function components to "hook into" state without the need for class components.
+
 Hooks streamline things a lot, and most developers prefer writing new components this way. However, you'll learn about the philosophy and principles behind React by learning the "old way" with class components.
+
 And in the real world, you'll usually encounter applications with a mix of class and function components, so it'll help a lot in your career to understand both approaches.
 
 ## Guided Project - shopping list app
