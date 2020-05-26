@@ -4,10 +4,19 @@ React development originally focused on class components, written like this:
 
 ```javascript
 class Lambda extends React.Component {
+  constructor() {
+    super();
+    // initialize state here
+  }
+  
+  // lifecycle methods: componentWillMount, componentDidMount, componentWillReceiveProps, shouldComponentUpdate, componentWillUpdate, componentDidUpdate, and componentWillUnmount
+  
   render() {
     return <h1>Hello, {this.props.name}</h1>;
   }
 }
+
+export default Lambda;
 ```
 
 The base Component class includes built-in functionality for managing state and other React features. We'll learn about the lifecycle methods of class components in the following lecture.
