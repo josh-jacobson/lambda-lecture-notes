@@ -36,7 +36,8 @@ And in the real world, you'll usually encounter applications with a mix of class
 
 ## Guided Project - shopping list app
 1. Explore the architecture of our shopping list app:
-  * All class components, except for `Item`
+  * `App` and `ListForm` are class components
+  * `Item` and `GroceryList` are function components
   
 2. Build state into `App.js`
 Write a constructor for the App component
