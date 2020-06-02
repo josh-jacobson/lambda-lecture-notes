@@ -54,7 +54,7 @@ React development originally focused on class components, written like this:
 ```javascript
 class Lambda extends React.Component {
   constructor() {
-    super(); // calls the constructor from React.Component, which passes props
+    super(); // calls the constructor from React.Component, which intializes this.props
     // initialize state here
   }
   
