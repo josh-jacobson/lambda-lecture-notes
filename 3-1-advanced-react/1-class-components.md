@@ -2,7 +2,7 @@
 
 ## Review: JavaScript function prototypes and ES6 classes
 
-Javascript is a prototype-based language, with a style of object-oriented programming that makes use of cloning rather than classes. JavaScript objects inherit properties and methods from a prototype. It's a popular convention to capitalize constructors
+Javascript has something called prototype-based inheritance, which is actually simpler than traditional class-based inheritance. So in JavaScript we use a style of object-oriented programming that makes use of constructor functions and prototypes rather than true classes. ES6 has changed things for the better, allowing class-based inheritance without having to write a lot of messy, potentially confusing code. Your ES6 does compile down to vanilla Javascript though, so it's the same prototype-based inheritance model at play whether you choose to use the new syntax or not. Let's take a look at how object-oriented programming works in JavaScript with and without ES6 classes, and demystify thigs a bit.
 
 These are effectively the same:
 
