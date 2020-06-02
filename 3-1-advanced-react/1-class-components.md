@@ -2,7 +2,7 @@
 
 ## Review: JavaScript function prototypes and ES6 classes
 
-Javascript is a prototype-based language, with a style of object-oriented programming that makes use of cloning rather than classes. Javascript objects inherit properties and methods from a prototype.
+Javascript is a prototype-based language, with a style of object-oriented programming that makes use of cloning rather than classes. JavaScript objects inherit properties and methods from a prototype. It's a popular convention to capitalize constructors
 
 These are effectively the same:
 
@@ -12,7 +12,14 @@ function Person(name, favoriteGenre) {
   this.name = name;
   this.genre = favoriteGenre;
 }
+
+// Define methods on the prototype:
+Person.prototype.listen = function() {
+  console.log(this.genre);
+}
+
 josh = new Person("josh", "jazz");
+josh.listen();
 ```
 
 ```javascript
@@ -22,8 +29,14 @@ class Person {
     this.name = name;
     this.genre = favoriteGenre;
   }
+  
+  // ES6 abstracts away the prototype complexity so we can just define a class method right here:
+  listen = () => {
+    console.log(this.genre);
+  }
 }
 josh = new Person("josh", "jazz");
+josh.listen();
 ```
 
 ES6 provides a syntax for object-oriented programming that is more familiar to coders from more traditional object-oriented languages (e.g., C++, Python, Ruby), but this syntax doesn't actually change the protoype-based inheritance model of JavaScript. 
@@ -71,6 +84,8 @@ And in the real world, you'll usually encounter applications with a mix of class
 
 
 ## Helpful Resources
+[How ES6 classes really work](https://medium.com/@robertgrosse/how-es6-classes-really-work-and-how-to-build-your-own-fd6085eb326a)
+
 [Using arrow functions to avoid binding `this` in React](https://medium.com/@joespinelli_6190/using-arrow-functions-to-avoid-binding-this-in-react-5d7402eec64)
 
 [React.Component documentation](https://reactjs.org/docs/react-component.html)
