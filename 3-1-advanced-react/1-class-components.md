@@ -68,7 +68,7 @@ class Lambda extends React.Component {
 export default Lambda;
 ```
 
-The base Component class includes built-in functionality for handling state and props, with specific lifecycle methods that run at different points throughout the component's "lifecyele" (from mounting in your app, to updating state, and eventually unmounting -- we'll study these in the next lecture).
+The base Component class includes built-in functionality for handling state and props, with specific methods that run at various points throughout the component's "lifecycle" (from mounting in your app, to updating, and eventually unmounting -- we'll study these in the next lecture).
 
 The default `React.Component` constructor initializes `this.props` and other useful things -- feel free to look at the [React.Component constructor source code](https://github.com/facebook/react/blob/1d25aa5787d4e19704c049c3cfa985d3b5190e0d/packages/react/src/ReactBaseClasses.js#L22) if you're curious about what that `super()` call actually does.
 
@@ -76,7 +76,7 @@ The default `React.Component` constructor initializes `this.props` and other use
 
 Function components were originally limited in their abilities, but React 16.8 introduced Hooks, allowing function components to "hook into" state and side effects without the need for class components.
 
-Hooks streamline things a lot, and most developers prefer writing new components this way. However, you'll learn about the philosophy and principles behind React by learning the "old way" with class components.
+Hooks streamline things a lot, and most developers prefer writing new components this way. But you'll also learn something new about the philosophy and principles behind React by learning the "old way" with class components.
 
 And in the real world, you'll usually encounter applications with a mix of class and function components, so it'll help a lot in your career to fully understand both styles.
 
