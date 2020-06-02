@@ -84,7 +84,9 @@ Write a constructor for the App component
 4. Implement the logic to update state in `toggleItem`
 
 
-## Forms - breakout session
+## Helpful Resources
+[Using arrow functions to avoid binding `this` in React](https://medium.com/@joespinelli_6190/using-arrow-functions-to-avoid-binding-this-in-react-5d7402eec64)
+
 
 
   
