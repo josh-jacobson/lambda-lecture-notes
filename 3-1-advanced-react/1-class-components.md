@@ -1,6 +1,6 @@
 # Class Components
 
-## Javascript function prototypes and ES6 classes
+## Review: JavaScript function prototypes and ES6 classes
 
 Javascript is a prototype-based language, with a style of object-oriented programming that makes use of cloning rather than classes. Javascript objects inherit properties and methods from a prototype.
 
