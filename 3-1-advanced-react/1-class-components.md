@@ -4,7 +4,7 @@
 
 Javascript has something called prototype-based inheritance, which is actually simpler than traditional class-based inheritance. So in JavaScript we use a style of object-oriented programming that makes use of constructor functions and prototypes rather than true classes. 
 
-ES6 has changed things for the better, allowing class-based inheritance without having to write a lot of messy, potentially confusing code. Your ES6 does compile down to vanilla Javascript though, so it's the same prototype-based inheritance model at play whether you choose to use the new syntax or not. Let's take a look at how object-oriented programming works in JavaScript with and without ES6 classes, and demystify thigs a bit.
+ES6 has changed things for the better, allowing inheritance without having to write a lot of messy, potentially confusing code. You'll almost always end up just writing ES6 classes because they're nicer and easier to understand, but just remember that your ES6 code compiles down to vanilla Javascript and it's the same prototype-based inheritance model at play. Let's take a look at how object-oriented programming works in JavaScript with and without ES6 classes, and try to demystify thigs a bit.
 
 These are effectively the same:
 
@@ -45,7 +45,7 @@ ES6 provides a syntax for object-oriented programming that is more familiar to c
 
 In other languages, a class constructor creates an instance of the class, but a constructor in JavaScript is simply a function that returns an object. You've seen constructors like `String`, `Array` and `Object` that are built into JavaScript and we've also defined our own. The differences between true class-based OOP and what we do in JavaScript won't make much difference for our puroses in React, but just know that Babel compiles down to a function prototype definition when you define an ES6 `class`. 
 
-In react, when we define a class component that `extends React.Component` we're basically just cloning that base component class and extending it with our own custom behavior.
+In React, when we define a class component that `extends React.Component` we're basically just cloning that base component class and extending it with our own custom behavior.
 
 ## Class Components
 
