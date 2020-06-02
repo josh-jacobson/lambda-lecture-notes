@@ -1,5 +1,33 @@
 # Class Components
 
+## Javascript function prototypes and ES6 classes review
+
+Javascript is a prototype-based language, with a style of object-oriented programming that makes use of cloning rather than classes. Javascript objects inherit properties and methods from a prototype.
+
+These are effectively the same:
+
+```javascript
+function Person(name, favoriteGenre) {
+  this.name = name;
+  this.genre = favoriteGenre;
+}
+josh = new Person("josh", "jazz");
+```
+
+```javascript
+class Person {
+  constructor(name, genre) {
+    this.name = name;
+    this.genre=genre;
+  }
+}
+josh = new Person("josh", "jazz");
+```
+
+ES6 provides a syntax for object-oriented programming that is more familiar to coders from more traditional object-oriented languages (e.g., C++, Python, Ruby) but do not actually change the protoype-based inheritance model of Javascript. In other languages, a class constructor creates an instance of the class. A constructor in JavaScript is simply a function that returns an object. 
+
+## Class Components
+
 React development originally focused on class components, written like this:
 
 ```javascript
