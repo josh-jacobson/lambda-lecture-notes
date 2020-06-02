@@ -70,7 +70,7 @@ export default Lambda;
 
 The base Component class includes built-in functionality for handling state and props, with specific lifecycle methods that run at different points throughout the component's "lifecyele" (from mounting in your app, to updating state, and eventually unmounting -- we'll study these in the next lecture).
 
-The default `React.Component` constructor initializes `this.props` and other useful things -- feel free to look at the [React.Component constructor source code] (https://github.com/facebook/react/blob/1d25aa5787d4e19704c049c3cfa985d3b5190e0d/packages/react/src/ReactBaseClasses.js#L22) if you're curious about what that `super()` call actually does.
+The default `React.Component` constructor initializes `this.props` and other useful things -- feel free to look at the [React.Component constructor source code](https://github.com/facebook/react/blob/1d25aa5787d4e19704c049c3cfa985d3b5190e0d/packages/react/src/ReactBaseClasses.js#L22) if you're curious about what that `super()` call actually does.
 
 ## Are class components still relevant?
 
