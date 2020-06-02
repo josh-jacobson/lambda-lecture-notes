@@ -26,7 +26,11 @@ class Person {
 josh = new Person("josh", "jazz");
 ```
 
-ES6 provides a syntax for object-oriented programming that is more familiar to coders from more traditional object-oriented languages (e.g., C++, Python, Ruby) but do not actually change the protoype-based inheritance model of Javascript. In other languages, a class constructor creates an instance of the class. A constructor in JavaScript is simply a function that returns an object. You've seen constructors like `String`, `Array` and `Object` that are built into JavaScript and we've also defined our own. The differences between true class-based OOP and what we do in JavaScript won't make much difference for our puroses in React, but just know that this is what happens behind the scenes. By defining a class component that `extends React.Component` we're basically just cloning that built-in component definition and extending it with our own custom behavior.
+ES6 provides a syntax for object-oriented programming that is more familiar to coders from more traditional object-oriented languages (e.g., C++, Python, Ruby), but this syntax doesn't actually change the protoype-based inheritance model of JavaScript. 
+
+In other languages, a class constructor creates an instance of the class, but a constructor in JavaScript is simply a function that returns an object. You've seen constructors like `String`, `Array` and `Object` that are built into JavaScript and we've also defined our own. The differences between true class-based OOP and what we do in JavaScript won't make much difference for our puroses in React, but just know that Babel compiles down to a function prototype definition when you define an ES6 `class`. 
+
+In react, when we define a class component that `extends React.Component` we're basically just cloning that base component class and extending it with our own custom behavior.
 
 ## Class Components
 
