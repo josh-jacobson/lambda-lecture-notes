@@ -7,6 +7,7 @@ Javascript is a prototype-based language, with a style of object-oriented progra
 These are effectively the same:
 
 ```javascript
+// plain old Javascript
 function Person(name, favoriteGenre) {
   this.name = name;
   this.genre = favoriteGenre;
@@ -15,6 +16,7 @@ josh = new Person("josh", "jazz");
 ```
 
 ```javascript
+// ES6
 class Person {
   constructor(name, genre) {
     this.name = name;
