@@ -64,29 +64,11 @@ And in the real world, you'll usually encounter applications with a mix of class
   * Function components split up the state into multiple variables, each managed with `useState`
 
 
-## Guided Project - shopping list app
-1. Explore the architecture of our shopping list app:
-  * `App` and `ListForm` are class components
-  * `Item` and `GroceryList` are function components
-  
-2. Build state into `App.js`
-Write a constructor for the App component
-  * super()
-  * intialize the component state with grocery data
-
-3. Class properties
-  * implement `toggleItem`
-  * pass down to `GroceryList` and `Item`
-  * add a click handler in `Item` to call your `toggleItem` function
-  * remember to start slow and handle architecture first -- you can sipmly pass a dummy function with a `console.log` first to make sure everything is connected right before implementing the actual logic.
-  * Binding and synthetic events
-
-4. Implement the logic to update state in `toggleItem`
-
-
 ## Helpful Resources
 [Using arrow functions to avoid binding `this` in React](https://medium.com/@joespinelli_6190/using-arrow-functions-to-avoid-binding-this-in-react-5d7402eec64)
 
+[React.Component documentation](https://reactjs.org/docs/react-component.html)
 
+[State and Lifecycle](https://reactjs.org/docs/state-and-lifecycle.html)
 
   
