@@ -11,7 +11,7 @@ class Lambda extends React.Component {
     // initialize state here
   }
   
-  // lifecycle methods: componentWillMount, componentDidMount, componentWillReceiveProps, shouldComponentUpdate, componentWillUpdate, componentDidUpdate, and componentWillUnmount
+  // lifecycle methods: componentDidMount, componentDidUpdate, componentWillUnmount, etc.
   
   render() {
     return <h1>Hello, {this.props.name}</h1>;
@@ -54,12 +54,14 @@ Together, these three lifecycle methods are roughly equivalent to the `useEffect
 
 Use these to setup listeners, fetching data from an API and ultimately removing listeners before component is removed ("unmounted") from the DOM.
 
-## Less common lifecycle methods:
-componentWillUpdate
+These are the lifecycle methods you'll use often
+
+## Rarely used lifecycle methods:
 getDerivedStateFromProps
-componentWillReceiveProps
 shouldComponentUpdate
-componentWillUpdate
+getSnapshotBeforeUpdate
+
+And some others that are deprecated now. Focus on just getting really comfortable with the 3 above, as you'll mainly just see those in most cases.
 
 ## Helpful Resources
 [React.Component lifecycle methods - API reference](https://reactjs.org/docs/react-component.html) 
