@@ -50,8 +50,13 @@ If you don’t initialize state and you don’t bind methods, you don’t need t
 For initialization, in the constructor we assign `this.state` directly. This is the only place we ever do this! In all other methods, use `this.setState()`. 
 
 ## Common lifecycle methods
-**  `componentDidMount`, `componentDidUpdate` and `componentWillUnmount`**
+**`componentDidMount`, `componentDidUpdate` and `componentWillUnmount`**
+
 Together, these three lifecycle methods are roughly equivalent to the `useEffect()` hook.
+
+* `componentDidMount`: invoked after React inserts the component into the DOM. Used to set a component’s state post-render
+* `componentDidUpdate`: called immediately after React updates the DOM. Takes arguments prevProps and prevState
+* `componentWillUnmount`: perform any cleanup, e.g, removing event listeners, invalidating timers or cleaning up any DOM elements that were created in `componentDidMount` and `componentDidUpdate`
 
 Use these to setup listeners, fetching data from an API and ultimately removing listeners before component is removed ("unmounted") from the DOM.
 
@@ -63,6 +68,9 @@ These are the lifecycle methods you'll use often
 * getSnapshotBeforeUpdate
 
 And some others that are deprecated now. Focus on just getting really comfortable with the 3 above, as you'll mainly just see those in most cases. If you're curious about learning all of these though, just take a few minutes for a full read of the API reference below.
+
+## Understanding function components vs class components:
+One simplified way to understand these different styles is that the `return` of a function component is the same as what we return from the `render()` method within a class component. In class components we manage state and side effects with these specifically named lifecycle methods, while in a function component we use hooks like useState() and useEffect() to do the same thing.
 
 ## Helpful Resources
 [React.Component lifecycle methods - API reference](https://reactjs.org/docs/react-component.html) 
