@@ -57,11 +57,11 @@ Use these to setup listeners, fetching data from an API and ultimately removing 
 These are the lifecycle methods you'll use often
 
 ## Rarely used lifecycle methods:
-getDerivedStateFromProps
-shouldComponentUpdate
-getSnapshotBeforeUpdate
+* getDerivedStateFromProps
+* shouldComponentUpdate
+* getSnapshotBeforeUpdate
 
-And some others that are deprecated now. Focus on just getting really comfortable with the 3 above, as you'll mainly just see those in most cases.
+And some others that are deprecated now. Focus on just getting really comfortable with the 3 above, as you'll mainly just see those in most cases. If you're curious about learning all of these though, just take a few minutes for a full read of the API reference below.
 
 ## Helpful Resources
 [React.Component lifecycle methods - API reference](https://reactjs.org/docs/react-component.html) 
