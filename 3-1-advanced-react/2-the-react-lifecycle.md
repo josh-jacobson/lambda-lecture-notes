@@ -55,7 +55,7 @@ For initialization, in the constructor we assign `this.state` directly. This is 
 Together, these three lifecycle methods are roughly equivalent to the `useEffect()` hook.
 
 * `componentDidMount`: invoked after React inserts the component into the DOM. Used to set a component’s state post-render
-* `componentDidUpdate`: called immediately after React updates the DOM. Takes arguments prevProps and prevState
+* `componentDidUpdate`: called immediately after render is finished in each of re-render cycle. Use for side effects like ajax reqeusts.
 * `componentWillUnmount`: perform any cleanup, e.g, removing event listeners, invalidating timers or cleaning up any DOM elements that were created in `componentDidMount` and `componentDidUpdate`
 
 Use these to setup listeners, fetching data from an API and ultimately removing listeners before component is removed ("unmounted") from the DOM.
