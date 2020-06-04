@@ -32,13 +32,13 @@ Just like a 🌿 or 🦔, a React component has three phases to its "lifecycle",
 
 Sometimes they even render child components 🐣 too! But I may be overextending a questionable metaphor. Moving on...
 
-## `render()`
+## render()
+If you were to implement the same component as a function and as a class, the JSX returned from `render()` is the same as what you return from the function component itself. 
+
 Should be a pure function, meaning that it:
 * does not modify component state 
 * returns the same result each time it’s invoked
 * does not directly interact with the browser.
-
-If you were to implement the same component as a function and as a class, the JSX returned from `render()` is the same as what you return from the function component itself. 
 
 ## constructor()
 For React class components, constructors are only used for two purposes:
