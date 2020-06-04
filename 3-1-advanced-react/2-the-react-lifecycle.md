@@ -49,7 +49,8 @@ If you don’t initialize state and you don’t bind methods, you don’t need t
 
 For initialization, in the constructor we assign `this.state` directly. This is the only place we ever do this! In all other methods, use `this.setState()`. 
 
-## Common lifecycle methods: `componentDidMount`, `componentDidUpdate` and `componentWillUnmount`
+## Common lifecycle methods
+**  `componentDidMount`, `componentDidUpdate` and `componentWillUnmount`**
 Together, these three lifecycle methods are roughly equivalent to the `useEffect()` hook.
 
 Use these to setup listeners, fetching data from an API and ultimately removing listeners before component is removed ("unmounted") from the DOM.
