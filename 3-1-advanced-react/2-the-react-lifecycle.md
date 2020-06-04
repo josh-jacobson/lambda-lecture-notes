@@ -56,8 +56,12 @@ Together, these three lifecycle methods are roughly equivalent to the `useEffect
 
 ### `componentDidMount`
 invoked after React inserts the component into the DOM. Used to set a component’s state post-render
+
 ### `componentDidUpdate`
-called immediately after render is finished in each of re-render cycle. Use for side effects like ajax reqeusts. Takes arguments prevProps and prevState, and you should always add an if statement to make sure the relevant state/props have actually changed before doing anything here. (Otherwise you'll end up with infinite loops!)
+Takes arguments prevProps and prevState, and is called immediately after render is finished in each of re-render cycle. Use this for side effects like ajax reqeusts.
+
+You should always add an if statement to make sure the relevant state/props have actually changed before doing anything here. (Otherwise you'll end up with infinite loops!)
+
 ### `componentWillUnmount`
 perform any cleanup, e.g, removing event listeners, invalidating timers or cleaning up any DOM elements that were created in `componentDidMount` and `componentDidUpdate`
 
