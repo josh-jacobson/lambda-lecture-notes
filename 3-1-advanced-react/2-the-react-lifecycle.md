@@ -60,8 +60,6 @@ Together, these three lifecycle methods are roughly equivalent to the `useEffect
 
 Use these to setup listeners, fetching data from an API and ultimately removing listeners before component is removed ("unmounted") from the DOM.
 
-These are the lifecycle methods you'll use often
-
 ## Rarely used lifecycle methods:
 * getDerivedStateFromProps
 * shouldComponentUpdate
