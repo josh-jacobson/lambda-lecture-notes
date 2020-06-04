@@ -78,10 +78,17 @@ And some others that are deprecated now. Focus on just getting really comfortabl
 One simplified way to understand these different styles is that the `return` of a function component is the same as what we return from the `render()` method within a class component. In class components we manage state and side effects with these specifically named lifecycle methods, while in a function component we use hooks like useState() and useEffect() to do the same thing.
 
 ## Helpful Resources
+
 [React.Component lifecycle methods - API reference](https://reactjs.org/docs/react-component.html) 
 
 [Lifecycle method diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
 
 [React component’s lifecycle - Medium article](https://medium.com/react-ecosystem/react-components-lifecycle-ce09239010df)
+
+[Frontend CRUD with function and class components - by Megan Miller](https://www.notion.so/Basic-Frontend-CRUD-7e661baaac17451eb45776359b5f3d6e)
+
+[Lifecycle Methods & Side Effects - by Megan Miller](https://www.notion.so/React-b4e93c23ea164f08a54622c3f6b40912?p=f37ae29e99564a89be8b0918c02ef974)
+
+[this - by Megan Miller](https://www.notion.so/this-a82f4b18e0ba427b8e38e6b86daf645c)
 
 
