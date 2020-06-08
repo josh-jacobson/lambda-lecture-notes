@@ -21,7 +21,7 @@ Functions are just a type of object in JavaScript, inheriting from the same Obje
 
 All of this allows for some pretty powerful programming paradigms, many of which we've already seen in React! So if functional programming sounds complex just realize that you've already done a lot of it and you'll only continue to get more and more comfortable with it as we explore advanced programming techniques with React.
 
-(Side note: the [λ calculus](https://personal.utdallas.edu/~gupta/courses/apl/lambda.pdf) is a mathematical system underpinning functional programming. Perhaps this is how Lambda School got its name!)
+(Side note: the [λ calculus](https://personal.utdallas.edu/~gupta/courses/apl/lambda.pdf) is a mathematical system underpinning functional programming. Perhaps this is how Lambda School got its name.)
 
 
 ## Helpful Resources:
