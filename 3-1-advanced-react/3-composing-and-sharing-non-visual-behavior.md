@@ -1,6 +1,6 @@
 # Composing and Sharing Non-Visual Behavior
 
-## Review: Stateful Logic and non-visual behavior
+## Review: stateful logic and non-visual behavior
 When we talk about "stateful logic" and "non-visual behavior" in React, we're simply referring to all of the logic in a component other than the basics. These are all part of the "stateful logic" in a component:
 * Updating state
 * Handling form inputs
