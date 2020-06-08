@@ -13,3 +13,5 @@ All of this allows for some pretty powerful programming paradigms, many of which
 
 ## Helpful Resources:
 [Building Your Own Hooks](https://reactjs.org/docs/hooks-custom.html)
+
+[Function composition example in Sonic Pi](https://github.com/josh-jacobson/sonic-pi/blob/master/jj-functional-composition-example.rb)
