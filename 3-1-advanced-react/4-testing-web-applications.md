@@ -25,3 +25,5 @@ AAA flow of testing:
 * [RTL Cheat Sheet](pdf/RTL_cheat_sheet.pdf)
 
 ## Other Helpful Resources
+* [Jest API](https://jestjs.io/docs/en/api)
+* [RTL Docs](https://testing-library.com/docs/react-testing-library/intro)
