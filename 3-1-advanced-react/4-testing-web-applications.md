@@ -27,17 +27,19 @@ AAA flow of testing:
 * Assert
 
 ## Unit Testing with Jest
-Unit tests are for the individual "units" of your application -- functions, event handlers, and components.
+Unit tests are for the individual "units" of your application -- functions, event handlers, and small components.
 
-## Integration Testing with React Testing Library
-Here's a summary of the idea from the React Testing Library docs:
+Jest is a testing framework developed by Facebook. We'll be starting with Jest on its own for unit tests in this lecture, then we'll also see how Jest works together with a DOM testing utility library (RTL is most popular at the moment) for integration testing.
+
+## Integration Testing with React Testing Library and Jest
+Here's a nice overview of the integration testing concept from the React Testing Library docs:
 > You want to write maintainable tests for your React components. As a part of this goal, you want your tests to avoid including implementation details of your components and rather focus on making your tests give you the confidence for which they are intended. As part of this, you want your testbase to be maintainable in the long run so refactors of your components (changes to implementation but not functionality) don't break your tests and slow you and your team down.
 
 So integration testing is a higher-level form of testing, in which we actually interact with the interface in the same way a user does. While unit tests verify your specific implementation, integration tests are more concerned with the overall *behavior* of your application. With this kind of testing, you could potentially change the details of an implementation and significantly refactor individual functions and components without failing integration tests, as long as the overall behavior is the same.
 
 As an example to understand the difference, for a basic form component you'd have unit tests for each method (`handleChanges`, `submitForm`, etc) and an integration test to verify the overall behavior of the form from a user's perspective.
 
-React Testing Library is a lightweight library that provides some additional utilitiy functions to extend the functionality of `react-dom` and `react-dom/test-utils`. It's intended as a replacement for Enzyme (a testing library developed by engineers at Airbnb, released in 2016 and popular until recently). Note that RTL itself is not a test runner or framework -- it's just a library that you can use with any testing framework. At the moment Jest is a popular choice, which is why we'll be learning testing basics with this combination (Jest + RTL). 
+React Testing Library is just a lightweight library that provides some additional utilitiy functions, extending the functionality of `react-dom` and `react-dom/test-utils`. It's intended as a replacement for Enzyme (a testing library developed by engineers at Airbnb, released in 2016 and popular until recently). Note that RTL itself is **not a test runner or framework** -- it's just a library that you can use *with* a testing framework like Jest. Jest + RTL is a popular combination, and we'll be working with this stack to learn some testing basics.
 
 ## PDF's to download
 * ["What Should I Test?" by Kent C Dodds](pdf/Print_Worksheet_US.pdf)
