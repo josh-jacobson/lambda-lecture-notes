@@ -4,9 +4,9 @@
 * Having a comprehensive test suite allows us to trust the code
 * Safety net for future changes & refactoring, very helpful for team collaboration
 * Bugs will immediately be surfaced in the future
-* Encourages modular, easy to understand code and other good practices (convoluted code is also often difficult to test!)
+* Encourages modular, easy-to understand-code (tangled code is also often difficult to test!)
 * Helpful in quality control and deployment, particularly in large team contexts
-* Tests also act as a form of documentation
+* Tests also act as a form of documentation and enforces best practices
 * ...and many other reasons. (*Not testing* is a bad idea, like taking out a high-interest loan of technical debt)
 
 ## Four Kinds of Tests
