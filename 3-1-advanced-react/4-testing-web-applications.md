@@ -34,6 +34,7 @@ React Testing Library is a lightweight library that provides some additional uti
 * [RTL Cheat Sheet](pdf/RTL_cheat_sheet.pdf)
 
 ## Other Helpful Resources
+* [Static vs Unit vs Integration vs E2E Testing](https://kentcdodds.com/blog/unit-vs-integration-vs-e2e-tests)
 * [Jest API](https://jestjs.io/docs/en/api)
 * [RTL Docs](https://testing-library.com/docs/react-testing-library/intro)
 * [Arrange, Act, Assert](https://defragdev.com/blog/?p=783)
