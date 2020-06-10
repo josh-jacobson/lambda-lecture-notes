@@ -27,3 +27,4 @@ AAA flow of testing:
 ## Other Helpful Resources
 * [Jest API](https://jestjs.io/docs/en/api)
 * [RTL Docs](https://testing-library.com/docs/react-testing-library/intro)
+* [Arrange, Act, Assert](https://defragdev.com/blog/?p=783)
