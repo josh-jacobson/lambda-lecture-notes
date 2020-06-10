@@ -4,7 +4,7 @@
 * Having a comprehensive test suite allows us to trust the code
 * Bugs will immediately be surfaced in the future
 * Behavior-driven development (BDD) and similar approaches ensure that your code is modular and easy to understand (since badly convoluted code is also often difficult to test)
-* Tests provide a form of reassurance for future developers in the codebase that they're not unknowingly breaking something with their changes
+* Safety net for future changes & refactoring, so you and other developers don't unknowingly make breaking changes
 * Helpful in quality control and deployment, particularly in large team contexts
 * Tests also act as a form of documentation and help enforce best practices in your code
 
