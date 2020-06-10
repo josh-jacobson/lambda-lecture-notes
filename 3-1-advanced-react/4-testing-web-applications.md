@@ -2,10 +2,10 @@
 
 ## Why Test?
 * Having a comprehensive test suite allows us to trust the code
-* Safety net for future changes & refactoring, very helpful for team collaboration
+* Safety net for future changes & refactoring (especially helpful for team collaboration)
 * Bugs will immediately be surfaced in the future
 * Encourages modular, easy-to understand-code (tangled code is also often difficult to test!)
-* Helpful in quality control and deployment, particularly in large team contexts
+* Helpful in quality control and deployment
 * Tests also act as a form of documentation and enforces best practices
 * ...and many other reasons. (*Not testing* is a bad idea, like taking out a high-interest loan of technical debt)
 
