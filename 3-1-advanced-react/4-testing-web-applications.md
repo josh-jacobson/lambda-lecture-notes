@@ -11,11 +11,12 @@
 ## Four Kinds of Tests
 There's a lot of different terminology floating around, and sometimes the categories overlap but here's a relatively easy way to understand the main categories of automated tests. (Kent C. Dodds explains ths really nicely -- check out his article and pdf's below!)
 
-* End to End testing: simulating an entire user flow from start to finish. If you're writing an e-commerce app, that flow could be placing items in the cart and completing a purchase. Think of hiring a QA person to go through that whole process and try every edge case they can think of to see if anything breaks. But your QA person is actually a robot. You've seen this before with **Enzyme**
-* Integration testing: verifying the functionality of a complete piece of application behavior, agnostic of its implementation details. This is similar to E2E but more discrete. For example, an integration test in your e-commerce app might just verify the behavior of adding an item to your cart rather than simulating an entire user flow from start to finish. 
-* Unit testing: verifying that an individual function or component of your application works as expected
-* Static testing: catch errors and typos in code. (Code linters like ESLint help you with this)
+* **End to End testing:** simulating an entire user flow from start to finish. If you're writing an e-commerce app, that flow could be placing items in the cart and completing a purchase. Think of hiring a QA person to go through that whole process and try every edge case they can think of to see if anything breaks. But your QA person is actually a robot. You've seen this before with **Enzyme**
+* **Integration testing:** verifying the functionality of a complete piece of application behavior, agnostic of its implementation details. This is similar to E2E but more discrete. For example, an integration test in your e-commerce app might just verify the behavior of adding an item to your cart rather than simulating an entire user flow from start to finish. 
+* **Unit testing:** verifying that an individual function or component of your application works as expected
+* **Static testing:** catch errors and typos in code. (Code linters like ESLint help you with this)
 
+As you might expect, higher-level tests (especially E2E) run a lot slower and have more potential failure points since they test many components at once, as well as the interaction between components. However, these tests are closest to the way your software is actually going to be used, so they provide the most confidence. So you'll start to see that architecture and design decisions are just as important in your automated test suite as in your application code! We're basically writing software to test the software, and in large productions applications this is incredibly important. There's no one "right way", so your job is to know the tradeoffs and write tests in a way that works best for your specific project. In practice we end up creating a kind of hierarchy or "testing pyramid", where simple concerns are handled with quick unit tests while broader application behavior is ensured with integration and E2E tests.
 
 ## Basics of automated testing
 AAA flow of testing:
