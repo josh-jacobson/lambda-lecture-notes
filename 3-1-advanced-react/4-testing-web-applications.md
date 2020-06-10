@@ -37,3 +37,4 @@ React Testing Library is a lightweight library that provides some additional uti
 * [Jest API](https://jestjs.io/docs/en/api)
 * [RTL Docs](https://testing-library.com/docs/react-testing-library/intro)
 * [Arrange, Act, Assert](https://defragdev.com/blog/?p=783)
+* [Jest, Enzyme, RTL and Cypress compared](https://medium.com/javascript-in-plain-english/i-tested-a-react-app-with-jest-testing-library-and-cypress-here-are-the-differences-3192eae03850#:~:text=A%20key%20difference%20I%20should,%2DEnd%20(e2e)%20testing.)
