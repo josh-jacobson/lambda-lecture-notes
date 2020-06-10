@@ -12,7 +12,7 @@
 There's a lot of different terminology floating around, and sometimes the categories overlap but here's a relatively easy way to understand the main categories of automated tests. (Kent C. Dodds explains ths really nicely -- check out his article and pdf's below!)
 
 * **End to End testing:** simulating an entire user flow from start to finish. If you're writing an e-commerce app, that flow could be placing items in the cart and completing a purchase. Think of hiring a QA person to go through that whole process and try every edge case they can think of to see if anything breaks. But your QA person is actually a robot. You've seen this before with **Enzyme**
-* **Integration testing:** verifying the functionality of a complete piece of application behavior, agnostic of its implementation details. This is similar to E2E but more discrete. For example, an integration test in your e-commerce app might just verify the behavior of adding an item to your cart rather than simulating an entire user flow from start to finish. 
+* **Integration testing:** verifying the functionality of a complete piece of application behavior, agnostic of its implementation details. This is similar to E2E but generally focused on more discrete behavior rather than the big picture. For example, an integration test in your e-commerce app might just verify the behavior of adding an item to your cart rather than simulating an entire purchase flow from start to finish. 
 * **Unit testing:** verifying that an individual function or component of your application works as expected
 * **Static testing:** catch errors and typos in code. (Code linters like ESLint help you with this)
 
@@ -37,7 +37,7 @@ Here's a nice overview of the integration testing concept from the React Testing
 
 So integration testing is a higher-level form of testing, in which we actually interact with the interface in the same way a user does. While unit tests verify your specific implementation, integration tests are more concerned with the overall *behavior* of your application. With this kind of testing, you could potentially change the details of an implementation and significantly refactor individual functions and components without failing integration tests, as long as the overall behavior is the same.
 
-As an example to understand the difference, for a basic form component you'd have unit tests for each method (`handleChanges`, `submitForm`, etc) and an integration test to verify the overall behavior of the form from a user's perspective.
+As an example to understand the difference, for a basic form component you'd have unit tests for each method (`handleChanges`, `submitForm`, etc) and an integration test to verify the overall behavior of a certain action that involves multiple components.
 
 React Testing Library is just a lightweight library that provides some additional utilitiy functions, extending the functionality of `react-dom` and `react-dom/test-utils`. It's intended as a replacement for Enzyme (a testing library developed by engineers at Airbnb, released in 2016 and popular until recently). Note that RTL itself is **not a test runner or framework** -- it's just a library that you can use *with* a testing framework like Jest. Jest + RTL is a popular combination, and we'll be working with this stack to learn some testing basics.
 
