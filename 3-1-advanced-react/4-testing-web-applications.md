@@ -2,11 +2,11 @@
 
 ## Why Test?
 * Having a comprehensive test suite allows us to trust the code
+* Safety net for future changes & refactoring, very helpful for team collaboration
 * Bugs will immediately be surfaced in the future
-* Behavior-driven development (BDD) and similar approaches ensure that your code is modular and easy to understand (since badly convoluted code is also often difficult to test)
-* Safety net for future changes & refactoring, so you and other developers don't unknowingly make breaking changes
+* Encourages modular, easy to understand code and other good practices (convoluted code is also often difficult to test!)
 * Helpful in quality control and deployment, particularly in large team contexts
-* Tests also act as a form of documentation and help enforce best practices in your code
+* Tests also act as a form of documentation
 
 ## Four Kinds of Tests
 There's a lot of different terminology floating around, and sometimes the categories overlap but here's a relatively easy way to understand the main categories of automated tests. (Kent C. Dodds explains ths really nicely -- check out his article and pdf's below!)
