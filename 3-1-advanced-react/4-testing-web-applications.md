@@ -7,6 +7,7 @@
 * Encourages modular, easy to understand code and other good practices (convoluted code is also often difficult to test!)
 * Helpful in quality control and deployment, particularly in large team contexts
 * Tests also act as a form of documentation
+* ...and many other reasons. (*Not testing* is a bad idea, like taking out a high-interest loan of technical debt)
 
 ## Four Kinds of Tests
 There's a lot of different terminology floating around, and sometimes the categories overlap but here's a relatively easy way to understand the main categories of automated tests. (Kent C. Dodds explains ths really nicely -- check out his article and pdf's below!)
