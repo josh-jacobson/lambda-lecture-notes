@@ -29,3 +29,6 @@ We also have the newer Context API to work with, and you'll hear about these thr
 * Application-level state
 * Context-level state
 * Component-level state
+
+## Helpful Resources
+* [Codevolution React Redux tutorial](https://www.youtube.com/playlist?list=PLC3y8-rFHvwheJHvseC3I0HuYI2f46oAK)
