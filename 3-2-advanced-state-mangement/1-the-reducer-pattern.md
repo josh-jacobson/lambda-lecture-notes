@@ -46,7 +46,7 @@ reducer = (previousState, action) => nextState
 And an "action" is simply an object with this format:
 ```javascript
 const action = {
-  type: 'INCREMENT_COUNTER' // action types are UPPER_CASE string constants by convention
+  type: 'ACTION_TYPE' // action types are UPPER_CASE string constants by convention
   payload: {} // data needed to update state
 }
 ```
