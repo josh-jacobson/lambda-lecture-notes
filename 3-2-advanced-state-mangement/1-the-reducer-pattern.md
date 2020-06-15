@@ -4,7 +4,8 @@
 Think about these main ideas (answered in the explanation below):
 * Why is state immutable in React?
 * Why do we create a new state object with the spread operator, rather than just modifying state directly?
-* 
+* What is a reducer?
+* Describe how dispatch functions, action objects, and reducer functions work together, and how we can use this pattern in React components with the `useReducer` hook.
 
 ## Data types and pointers in JavaScript
 In Javascript, there are six "primitive data types" (`Number, String, BigInt, Symbol, Boolean, undefined`), each of which stores a value of a fixed size in memory. For example, a Number type is always exactly 8 bytes of data, to store a 64-bit floating point value.
@@ -87,6 +88,6 @@ Redux builds on this pattern to provide a "predictable state container", and ove
 ## Helpful Resources:
 * [JavaScript data types - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
 * [Primitive vs Reference Values](https://www.javascripttutorial.net/javascript-primitive-vs-reference-values/)
-* [useReducer vs useState[(https://www.robinwieruch.de/react-usereducer-vs-usestate)
+* [useReducer vs useState](https://www.robinwieruch.de/react-usereducer-vs-usestate)
 * [useReducer Hook](https://reactjs.org/docs/hooks-reference.html#usereducer)
 * [Reducers, from the Redux Docs](https://redux.js.org/basics/reducers)
