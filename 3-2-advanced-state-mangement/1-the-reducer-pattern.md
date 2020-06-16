@@ -62,7 +62,7 @@ So in React, a reducer can effectively do the work of several different state ma
 * **Action**: object that includes a string specifying the type of action to be performed, and any data needed by the reducer to properly update state (e.g., the text inputted by a user in a form)
 * **Dispatch function**: *dispatches* an action to the reducer
 
-And an "action" is simply an object with this format:
+An "action" sounds like it should be a function, but in the reducer pattern an action is simply an object with this format:
 ```javascript
 const action = {
   type: 'TAKE_ORDER' // action types are UPPER_CASE string constants by convention
