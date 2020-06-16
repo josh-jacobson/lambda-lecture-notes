@@ -1,5 +1,7 @@
 # The Reducer Pattern
 
+Today we'll be learning about reducers, a key concept in functional programming that is at the foundation of Redux. First, we'll take a step back to learn about data structures in JavaScript and study the idea of immutable state.
+
 ## Data types and pointers in JavaScript
 In Javascript there are several "primitive data types" (e.g., `Number`, `String`, `Boolean`), each of which stores a value of a fixed size in memory. For example, a Number type is always exactly 8 bytes of data, to store a 64-bit floating point value.
 
@@ -24,18 +26,18 @@ const josh_two = {...josh, color: "red"};
 
 console.log(josh, josh_two); // different colors
 ```
-Because of the way we copied with =, obj and obj_two are pointers to the same object!! Equals assign does not create a new object. Be very careful with this and be aware of what’s going on.
 
+Because of the way we copied with =, obj and obj_two are pointers to the same object!! Equals assign does not create a new object. Be very with this and be aware of what’s going on.
 
 ## Immutability 
-So we've seen that it's possible to create some unexpected side effects when working with these data structures in JavaScript if we aren't careful! In order to keep state changes and their effects throughtout the application **predictable**, we follow the convention of **immutable state** by creating an entirely new object with every state change. Note how the spread operator `...` helps streamline the syntax for this.
+In order to keep state changes and their effects throughtout the application **predictable**, we follow the convention of **immutable state**, creating an entirely new object with every state change. Note how the spread operator `...` helps streamline the syntax for this. Objects in JavaScript are mutable by nature, so we cannot rely on a language feature like `const`. Instead, we enforce immutability as a pattern in the way we write our code. 
 
-We've been following this convention all aong, but it becomes especially important once we start managing application state with Redux and Context API. 
+We've been following this convention all aong, but it becomes especially important in larger applications with more complex and numerous state transitions. Immutable state is one of the core ideas behind state management tools like Redux and Context API. 
 
 ## What is a Reducer?
 Say you're starting a local business, like a coffee shop. Throughout the course of a day there are many different actions to be done -- grinding beans, making espresso, accepting payments, and so on. Within a single transaction with a customer, there are several state changes that take place and we'd like them to take place in a specific order. Once the customer pays we'll "dispatch" an action to update the state of their order and kick off the process of making their coffee. Here's an example, in the language of reducers:
 
-* Initial state. `{order: '', cost: null, status: 'ordering'}`
+* Initial state: `{order: '', cost: null, status: 'ordering'}`
 * Customer orders. Dispatch action `'PLACE_ORDER'` with payload `'oat milk macchiato'`
 * State updated. New state: `{order: 'oat milk macchiato', cost: 3.50, status: 'ordered'}`
 * Dispatch action `'ACCEPT_PAYMENT'`
@@ -64,7 +66,7 @@ reducer = (previousState, action) => nextState
 ```
 
 So in React, a reducer can effectively do the work of several different state management functions, all wrapped into one. Here are the three main aspects of the pattern:
-* **Reducer function**: takes an action and current state, returns the new state
+* **Reducer**: takes an action and current state, returns the new state
 * **Action**: object that includes a string specifying the type of action to be performed, and any data needed by the reducer to properly update state (e.g., the text inputted by a user in a form)
 * **Dispatch function**: *dispatches* an action to the reducer
 
@@ -77,14 +79,15 @@ const action = {
 ```
 
 ## useReducer Hook
-We're not diving into Redux just yet, but we can start getting comfortable with the Reducer pattern and all of its conventions by working with the `useReducer` hook, an alternative to `useState`. Here's how it works:
+We're not diving into Redux just yet, but we can start getting comfortable with the Reducer pattern and all of its conventions by working with the `useReducer` hook, an alternative to `useState`. Here's how it works, with a simplified version of our coffee example:
 
 ```javascript
+// A coffee shop with useReducer:
 function reducer(state, action) {
   switch (action.type) {
     case 'TAKE_ORDER':
       return {...state, order: action.payload, status: 'ordered'}; 
-      // also define order cost here
+      // We'd also lookup the order cost and assign it here
     case 'ACCEPT_PAYMENT':
       return {...state, status: paid};
     // other actions
@@ -93,13 +96,16 @@ function reducer(state, action) {
   }
 }
 
-function Counter() {
+// Component example with dispatch
+function Menu() {
+  const intialState = {order: '', cost: null, status: 'ordering'};
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
     <>
-      Count: {state.count}
-      <button onClick={() => dispatch({type: 'INCREMENT_COUNTER'})}>+</button>
-      <button onClick={() => dispatch({type: 'DECREMENT_COUNTER'})}>-</button>
+      <h1>Central Perk Menu</h1>
+      <button onClick={() => dispatch({type: 'TAKE_ORDER', payload: 'macchiato'})}>Macchiato</button>
+      <button onClick={() => dispatch({type: 'TAKE_ORDER', payload: 'espresso'})}>Espresso</button>
+      {/* more menu items */}
     </>
   );
 }
