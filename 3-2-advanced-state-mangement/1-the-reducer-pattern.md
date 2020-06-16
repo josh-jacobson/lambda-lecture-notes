@@ -37,15 +37,15 @@ Say you're starting a local business, like a coffee shop. Throughout the course 
 
 * Initial state. {order: '', cost: null, status: 'ordering'}
 * Customer orders. Dispatch action 'PLACE_ORDER' with payload 'oat milk macchiato'
-* State updated. New state: {order: 'oat milk macchiato', cost: 3.50, status: 'order placed'}
+* State updated. New state: {order: 'oat milk macchiato', cost: 3.50, status: 'ordered'}
 * Dispatch action 'ACCEPT_PAYMENT'
 * State updated. New state: {order: 'oat milk macchiato', cost: 3.50, status: 'paid'}
 * Dispatch action 'PREPARE_COFFEE' 
 * State updated. New state: {order: 'oat milk macchiato', cost: 3.50, status: 'preparing'}
 * Within this we might have a subcomponent specifically for making the coffee, with its own state representing the various stages of preparing espresso and milk. These would be the lower-level actions to be dispatched:
-  * 'GRIND_BEANS' 
-  * 'FROTH_MILK'
-  * When bean grinding is copmplete, dispatch 'BREW_ESPRESSO'
+  * Dispatch 'GRIND_BEANS' 
+  * Dispatch 'FROTH_MILK'
+  * When bean grinding is complete, dispatch 'BREW_ESPRESSO'
   * when 'BREW_ESPRESSO' and 'FROTH_MILK' are complete, dispatch 'MAKE_MACCHIATO'
 * State updated. New state: {order: 'oat milk macchiato', cost: 3.50, status: 'complete'}
 * Dispatch action 'SERVE_COFFEE'
@@ -57,29 +57,36 @@ Likewise, when managing state in a React application, we're not going to want to
 Note also that some of the actions above are *synchronous* (taking place in sequential order, each action waiting for the previous one to complete before starting) while some, like 'GRIND_BEANS' and 'FROTH_MILK', are *asynchronous*, meaning that they can take place simultaneously, with some multitasking optimization rather than just watching the beans grind. This kind of thing is common with asynchronous actions like API calls in React applications -- start the process, go do something else, then come back to handle the response when it's complete. We'll be learning bout that in depth next week, but just consider this real-world example for now and refer back to this idea for grounding when the code gets confusing.
 
 ## Reducers in React
-In the context of React, a reducer is a pure function that takes the previous state and an action, and returns the next state:
+A reducer is a pure function that takes the previous state and an action, and returns the next state. It "reduces" those two arguments to one output:
+
 ```javascript
 reducer = (previousState, action) => nextState
 ```
 
+So in React, a reducer can effectively do the work of several different state management functions, all wrapped into one. Here are the three main aspects of the pattern:
+* **Reducer function**: takes an action and current state, returns the new state
+* **Action**: object that includes a string specifying the type of action to be performed, and any data needed by the reducer to properly update state (e.g., the text inputted by a user in a form)
+* **Dispatch function**: *dispatches* an action to the reducer
+
 And an "action" is simply an object with this format:
 ```javascript
 const action = {
-  type: 'ACTION_TYPE' // action types are UPPER_CASE string constants by convention
-  payload: {} // data needed to update state
+  type: 'TAKE_ORDER' // action types are UPPER_CASE string constants by convention
+  payload: 'oat milk macchiato' // data needed to update state
 }
 ```
 
 ## useReducer Hook
-We're not diving into Redux just yet, but we can start getting comfortable with the Reducer pattern and all of its conventions by working with the `useReducer` hook, an alternative to `useState`. Here's how it works, based on a basic counter example from the React docs:
+We're not diving into Redux just yet, but we can start getting comfortable with the Reducer pattern and all of its conventions by working with the `useReducer` hook, an alternative to `useState`. Here's how it works:
 
 ```javascript
 function reducer(state, action) {
   switch (action.type) {
-    case 'INCREMENT_COUNTER':
-      return {count: state.count + 1};
-    case 'DECREMENT_COUNTER':
-      return {count: state.count - 1};
+    case 'TAKE_ORDER':
+      return {...state, order: action.payload, status: 'ordered'}; // also define order cost here
+    case 'ACCEPT_PAYMENT':
+      return {...state, status: paid};
+    // other actions
     default:
       throw new Error();
   }
@@ -96,11 +103,6 @@ function Counter() {
   );
 }
 ```
-
-So a reducer effectively does the work of several different state management functions, all wrapped into one function. Here are the three main aspects of the pattern:
-* Reducer function: takes an action and current state, returns the new state
-* Dispatch function: *dispatches* an action to the reducer
-* Action: object that includes a string specifying the type of action to be performed, and any data needed by the reducer to properly update state (e.g., the text inputted by a user in a form)
 
 Redux builds on this pattern to provide a "predictable state container", and over the next two weeks we'll be learning about various ways of managing application-level and context-level state with Redux and Context API. Things can get confusing with the amount of abstraction involved, but as long as you're really solid on these fundamentals you'll be good to go.
 
