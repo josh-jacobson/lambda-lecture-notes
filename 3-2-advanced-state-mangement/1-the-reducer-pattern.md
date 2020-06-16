@@ -3,7 +3,7 @@
 Today we'll be learning about reducers, a key concept in functional programming that is at the foundation of Redux. First, we'll take a step back to learn about data structures in JavaScript and study the idea of immutable state.
 
 ## Data types in JavaScript
-In Javascript there are several "primitive data types" (e.g., `Number`, `String`, `Boolean`), each of which stores a value of a fixed size in memory. For example, a Number type is always exactly 8 bytes of data, to store a 64-bit floating point value.
+In Javascript there are several "primitive types" (e.g., `Number`, `String`, `Boolean`), each of which stores a value of a fixed size in memory. For example, a Number type is always exactly 8 bytes of data, to store a 64-bit floating point value.
 
 How big is an array or object though? These more advanced data structures can be of any size, and require a more complicated system of memory allocation and management. So an Object actually stores a "pointer" to another memory location, where the right amount of storage space can be dynamically allocated.
 
@@ -44,19 +44,13 @@ Say you're starting a local business, like a coffee shop. Throughout the course 
 * State updated. New state: `{order: 'oat milk macchiato', cost: 3.50, status: 'paid'}`
 * Dispatch action `'PREPARE_COFFEE'`
 * State updated. New state: `{order: 'oat milk macchiato', cost: 3.50, status: 'preparing'}`
-* Within this we might have a subcomponent specifically for making the coffee, with its own state representing the various stages of preparing espresso and milk. These would be the lower-level actions to be dispatched:
-  * Dispatch `'GRIND_BEANS'`
-  * Dispatch `'FROTH_MILK'`
-  * When bean grinding is complete, dispatch `'BREW_ESPRESSO'`
-  * when `'BREW_ESPRESSO'` and `'FROTH_MILK'` are complete, dispatch `'MAKE_MACCHIATO'`
+* making coffee, wait and listen to coffee shop music...
 * State updated. New state: `{order: 'oat milk macchiato', cost: 3.50, status: 'complete'}`
 * Dispatch action `'SERVE_COFFEE'`
 
 Even in this simplistic coffee example, you can imagine how things get complicated quickly. For a small menu we could easily have 20+ different actions. Rather than hiring a new employee for each action, we hire a skilled barista who can juggle all of these different tasks and keep things organized in the process.
 
 Likewise, when managing state in a React application, we're not going to want to write a separate state management function for every possible state transition. Instead, a **reducer** can play the role of barista and handle all of these actions in an organized, predictable way. 
-
-Note also that some of the actions above are *synchronous* (taking place in sequential order, each action waiting for the previous one to complete before starting) while some, like `'GRIND_BEANS'` and `'FROTH_MILK'`, are *asynchronous*, meaning that they can take place simultaneously, with some multitasking optimization rather than just watching the beans grind. This kind of thing is common with asynchronous actions like API calls in React applications -- start the process, go do something else, then come back to handle the response when it's complete. We'll be learning bout that in depth next week, but just consider this real-world example for now and refer back to this idea for grounding when the code gets confusing.
 
 ## Reducers in React
 A reducer is a pure function that takes the previous state and an action, and returns the next state. It "reduces" those two arguments to one output:
