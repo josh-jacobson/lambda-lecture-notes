@@ -35,20 +35,20 @@ We've been following this convention all aong, but it becomes especially importa
 ## What is a Reducer?
 Say you're starting a local business, like a coffee shop. Throughout the course of a day there are many different actions to be done -- grinding beans, making espresso, accepting payments, and so on. Within a single transaction with a customer, there are several state changes that take place and we'd like them to take place in a specific order. Once the customer pays we'll "dispatch" an action to update the state of their order and kick off the process of making their coffee. Here's an example, in the language of reducers:
 
-* Initial state. {order: '', cost: null, status: 'ordering'}
-* Customer orders. Dispatch action 'PLACE_ORDER' with payload 'oat milk macchiato'
-* State updated. New state: {order: 'oat milk macchiato', cost: 3.50, status: 'ordered'}
-* Dispatch action 'ACCEPT_PAYMENT'
-* State updated. New state: {order: 'oat milk macchiato', cost: 3.50, status: 'paid'}
-* Dispatch action 'PREPARE_COFFEE' 
-* State updated. New state: {order: 'oat milk macchiato', cost: 3.50, status: 'preparing'}
+* Initial state. `{order: '', cost: null, status: 'ordering'}`
+* Customer orders. Dispatch action `'PLACE_ORDER'` with payload `'oat milk macchiato'`
+* State updated. New state: `{order: 'oat milk macchiato', cost: 3.50, status: 'ordered'}`
+* Dispatch action `'ACCEPT_PAYMENT'`
+* State updated. New state: `{order: 'oat milk macchiato', cost: 3.50, status: 'paid'}`
+* Dispatch action `'PREPARE_COFFEE'`
+* State updated. New state: `{order: 'oat milk macchiato', cost: 3.50, status: 'preparing'}`
 * Within this we might have a subcomponent specifically for making the coffee, with its own state representing the various stages of preparing espresso and milk. These would be the lower-level actions to be dispatched:
-  * Dispatch 'GRIND_BEANS' 
-  * Dispatch 'FROTH_MILK'
-  * When bean grinding is complete, dispatch 'BREW_ESPRESSO'
-  * when 'BREW_ESPRESSO' and 'FROTH_MILK' are complete, dispatch 'MAKE_MACCHIATO'
-* State updated. New state: {order: 'oat milk macchiato', cost: 3.50, status: 'complete'}
-* Dispatch action 'SERVE_COFFEE'
+  * Dispatch `'GRIND_BEANS'`
+  * Dispatch `'FROTH_MILK'`
+  * When bean grinding is complete, dispatch `'BREW_ESPRESSO'`
+  * when `'BREW_ESPRESSO'` and `'FROTH_MILK'` are complete, dispatch `'MAKE_MACCHIATO'`
+* State updated. New state: `{order: 'oat milk macchiato', cost: 3.50, status: 'complete'}`
+* Dispatch action `'SERVE_COFFEE'`
 
 Even in this simplistic coffee example, you can imagine how things get complicated quickly. For a small menu we could easily have 20+ different actions. Rather than hiring a new employee for each action, we hire a skilled barista who can juggle all of these different tasks and keep things organized in the process.
 
