@@ -5,14 +5,14 @@ Today we'll be learning about reducers, a key concept in functional programming 
 ## Data types in JavaScript
 In Javascript there are several "primitive types" (e.g., `Number`, `String`, `Boolean`), each of which stores a value of a fixed size in memory. For example, a Number type is always exactly 8 bytes of data, to store a 64-bit floating point value.
 
-How big is an array or object though? These more advanced data structures can be of any size, and require a more complicated system of memory allocation and management. So an Object actually stores a "pointer" to another memory location, where the right amount of storage space can be dynamically allocated.
+Objects, arrays and functions, however, are more advanced data structures and they require a more sophisticated system of memory allocation and management. So an Object actually stores a "pointer" to another memory location, where the right amount of storage space can be dynamically allocated.
 
-So `Object` in Javascript is known as a "reference type" rather than a "primitive type". For reference types we store a pointer to another memory location rather than storing a fixed amount of data directly. Since all non-primitive data structures (including Array and the mutable String object) inherit from this same Object prototype in JavaScript, these are all reference types as well.
+`Object` in Javascript is known as a "reference type" because it stores a reference (also often called a "pointer") to another memory location rather than storing data in a fixed memory block. Since all non-primitive data structures (including Array and Function) inherit from this same Object prototype in JavaScript, just about every data structure we ever work with in React is stored by reference in memory.
 
 That may feel a bit abstract at first, so here's an example:
 
 ```javascript
-// Using = to copy objects just duplicates the pointer, not the object itself
+// Using "=" to copy objects just duplicates the pointer, not the object itself
 const josh = {name: "josh", color: "blue"};
 const josh_two = a;
 josh_two.color = "red";
