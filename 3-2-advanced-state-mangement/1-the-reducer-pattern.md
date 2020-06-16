@@ -1,6 +1,6 @@
 # The Reducer Pattern
 
-Today we'll be learning about reducers, a key concept in functional programming that is at the foundation of Redux. First, we'll take a step back to learn about data structures in JavaScript and study the idea of immutable state.
+Today we'll be learning about reducers, a key concept in functional programming that is at the core of Redux. First, we'll take a step back to learn about data structures in JavaScript and study the idea of immutable state.
 
 ## Data types in JavaScript
 In Javascript there are several "primitive types" (e.g., `Number`, `String`, `Boolean`), each of which stores a value of a fixed size in memory. For example, a Number type is always exactly 8 bytes of data, to store a 64-bit floating point value.
@@ -20,14 +20,12 @@ josh_two.color = "red";
 console.log(josh, josh_two); // both have color: red
 // This invisible mutation leads to unintended side effects! 
 
-// That's why we create a new object every time, like this:
+// So instead we create a new object every time, like this:
 const josh = {name: "josh", color: "blue"};
 const josh_two = {...josh, color: "red"};
 
 console.log(josh, josh_two); // different colors
 ```
-
-Because of the way we copied with =, obj and obj_two are pointers to the same object!! Equals assign does not create a new object. Be very with this and be aware of what’s going on.
 
 ## Immutability 
 In order to keep state changes and their effects throughtout the application **predictable**, we follow the convention of **immutable state**, creating an entirely new object with every state change. Note how the spread operator `...` helps streamline the syntax for this. Objects in JavaScript are mutable by nature, so we cannot rely on a language feature like `const`. Instead, we enforce immutability as a pattern in the way we write our code. 
