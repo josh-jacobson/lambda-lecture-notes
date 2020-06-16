@@ -43,10 +43,10 @@ Say you're starting a local business, like a coffee shop. Throughout the course 
 * Dispatch action 'PREPARE_COFFEE' 
 * State updated. New state: {order: 'oat milk macchiato', cost: 3.50, status: 'preparing'}
 * Within this we might have a subcomponent specifically for making the coffee, with its own state representing the various stages of preparing espresso and milk. These would be the lower-level actions to be dispatched:
-** 'GRIND_BEANS' 
-** 'FROTH_MILK'
-** When bean grinding is copmplete, dispatch 'BREW_ESPRESSO'
-** when 'BREW_ESPRESSO' and 'FROTH_MILK' are complete, dispatch 'MAKE_MACCHIATO'
+  * 'GRIND_BEANS' 
+  * 'FROTH_MILK'
+  * When bean grinding is copmplete, dispatch 'BREW_ESPRESSO'
+  * when 'BREW_ESPRESSO' and 'FROTH_MILK' are complete, dispatch 'MAKE_MACCHIATO'
 * State updated. New state: {order: 'oat milk macchiato', cost: 3.50, status: 'complete'}
 * Dispatch action 'SERVE_COFFEE'
 
