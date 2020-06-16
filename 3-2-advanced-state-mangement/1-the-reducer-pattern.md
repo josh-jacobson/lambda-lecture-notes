@@ -2,23 +2,23 @@
 
 Today we'll be learning about reducers, a key concept in functional programming that is at the foundation of Redux. First, we'll take a step back to learn about data structures in JavaScript and study the idea of immutable state.
 
-## Data types and pointers in JavaScript
+## Data types in JavaScript
 In Javascript there are several "primitive data types" (e.g., `Number`, `String`, `Boolean`), each of which stores a value of a fixed size in memory. For example, a Number type is always exactly 8 bytes of data, to store a 64-bit floating point value.
 
 How big is an array or object though? These more advanced data structures can be of any size, and require a more complicated system of memory allocation and management. So an Object actually stores a "pointer" to another memory location, where the right amount of storage space can be dynamically allocated.
 
-So `Object` in Javascript is known as a "reference type" rather than a "primitive type". For reference types we store a pointer to another memory location rather than storing a fixed amount of data directly. Since all non-primitive data structures (including Array and the mutable String object) inherit from this same Object prototype in JavaScript, we're actually always working with pointers. 
+So `Object` in Javascript is known as a "reference type" rather than a "primitive type". For reference types we store a pointer to another memory location rather than storing a fixed amount of data directly. Since all non-primitive data structures (including Array and the mutable String object) inherit from this same Object prototype in JavaScript, these are all reference types as well.
 
-That may all be a bit abstract at first, so here's how it applies in practice:
+That may feel a bit abstract at first, so here's an example:
 
 ```javascript
 // Using = to copy objects just duplicates the pointer, not the object itself
-const obj = {name: "josh", color: "blue"};
-const obj_two = obj;
-obj_two.color = "red";
+const josh = {name: "josh", color: "blue"};
+const josh_two = a;
+josh_two.color = "red";
 
-console.log(obj, obj_two); // both have color: red
-// This leads to unintended side effects! 
+console.log(josh, josh_two); // both have color: red
+// This invisible mutation leads to unintended side effects! 
 
 // That's why we create a new object every time, like this:
 const josh = {name: "josh", color: "blue"};
