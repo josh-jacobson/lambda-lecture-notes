@@ -83,7 +83,8 @@ We're not diving into Redux just yet, but we can start getting comfortable with 
 function reducer(state, action) {
   switch (action.type) {
     case 'TAKE_ORDER':
-      return {...state, order: action.payload, status: 'ordered'}; // also define order cost here
+      return {...state, order: action.payload, status: 'ordered'}; 
+      // also define order cost here
     case 'ACCEPT_PAYMENT':
       return {...state, status: paid};
     // other actions
