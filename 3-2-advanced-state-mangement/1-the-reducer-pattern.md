@@ -117,3 +117,4 @@ Redux builds on this pattern to provide a "predictable state container", and ove
 * [useReducer vs useState](https://www.robinwieruch.de/react-usereducer-vs-usestate)
 * [useReducer Hook](https://reactjs.org/docs/hooks-reference.html#usereducer)
 * [Reducers, from the Redux Docs](https://redux.js.org/basics/reducers)
+* [Lambda School - The Reducer Pattern](https://www.notion.so/The-Reducer-Pattern-a779a5bb46e14882b5ae7d130185931b)
