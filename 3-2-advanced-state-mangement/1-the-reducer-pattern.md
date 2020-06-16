@@ -1,7 +1,7 @@
 # The Reducer Pattern
 
 ## Data types and pointers in JavaScript
-In Javascript we have six "primitive data types" (`Number, String, BigInt, Symbol, Boolean, undefined`), each of which stores a value of a fixed size in memory. For example, a Number type is always exactly 8 bytes of data, to store a 64-bit floating point value.
+In Javascript there are several "primitive data types" (e.g., `Number`, `String`, `Boolean`), each of which stores a value of a fixed size in memory. For example, a Number type is always exactly 8 bytes of data, to store a 64-bit floating point value.
 
 How big is an array or object though? These more advanced data structures can be of any size, and require a more complicated system of memory allocation and management. So an Object actually stores a "pointer" to another memory location, where the right amount of storage space can be dynamically allocated.
 
