@@ -9,11 +9,11 @@ Enter `redux-thunk`, which allows our actions to dispatch actions of their own a
 
 Rather than simply passing an action type and payload to the reducer, we can start multiple processes at once and set up some intelligent multitasking. Start the bean grinder, then steam some milk while the beans grind. Once the beans are ground, then we can start the espresso machine. Once the espresso is brewed and milk frothed, then we can put it all together and serve the drink. All of that work can be divided up in an efficient way, even split among multiple employees and several espresso machines to handle more than one order at once. 
 
-Note that there's a specific order of operations, with some actions requiring others to be done before others can begin.  *Synchronous* actions take place in sequential order, each action waiting for the previous one to complete before starting. Meanwhile, our *asynchronous* actions like grinding beans and frothing milk can be occurring simultanouesly, in the background.  The key to the fast, responsive feel of single-page applications is this asynchronous behavior -- different action take place on their own timeline, sometimes simultaneously, and no one is stopping to watch the beans grind. 
+Note that there's a specific order of operations, with some actions requiring others to be done before others can begin.  *Synchronous* actions take place in sequential order, each action waiting for the previous one to complete before starting. Meanwhile, our *asynchronous* actions like `'GRIND_BEANS'` and `'FROTH_MILK'` can be occurring simultanouesly, in the background.  The key to the fast, responsive feel of single-page applications is this asynchronous behavior -- different action take place on their own timeline, sometimes simultaneously, and no one is stopping to watch the beans grind. 
 
 This kind of thing is common with asynchronous actions like API calls in React applications -- start the process, go do something else, then come back to handle the response when it's complete. When the code gets confusing, remember this example to understand what asynchronous actions are all about. 
 
-Here's how that `MAKE-COFFEE` step might look above, in a coffee subcomponent:
+Here's how that `'MAKE_COFFEE'` step might look above, in a coffee subcomponent:
   * Dispatch `'GRIND_BEANS'`
   * Dispatch `'FROTH_MILK'`
   * When bean grinding is complete, dispatch `'BREW_ESPRESSO'`
