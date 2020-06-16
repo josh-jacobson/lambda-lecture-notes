@@ -7,7 +7,7 @@ In Javascript there are several "primitive types" (e.g., `Number`, `String`, `Bo
 
 Objects, arrays and functions, however, are more advanced data structures and they require a more sophisticated system of memory allocation and management. So an Object actually stores a "pointer" to another memory location, where the right amount of storage space can be dynamically allocated.
 
-`Object` in Javascript is known as a "reference type" because it stores a reference (also often called a "pointer") to another memory location rather than storing data in a fixed memory block. Since all non-primitive data structures (including Array and Function) inherit from this same Object prototype in JavaScript, just about every data structure we ever work with in React is stored by reference in memory.
+`Object` in Javascript is known as a "reference type" because it stores a reference to another memory location rather than storing it directly. Since all non-primitive data structures (including Array and Function) inherit from this same Object prototype in JavaScript, just about every data structure we ever work with in React is stored by reference in memory.
 
 That may feel a bit abstract at first, so here's an example:
 
