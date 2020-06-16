@@ -19,7 +19,7 @@ const logger = reduxLogger.createLogger();
 const store = createStore(rootReducer, applyMiddleware(logger));
 ```
 
-** Thunk
+## Thunk
 In Redux, our reducers are *synchronous* by default. If we need to perform asynchronous operations, they need to happen before the actions reach the reducers. So this is why we use middleware to handle asynchronous requests. 
 
 "Thunk" is a name for a function that’s returned by another function. In Redux, actions are normally just objects, but Redux-thunk allows us to return functions instead of objects from our action creators, enabling more dynamic behavior. Then those functions can handle side effects like api calls, and also return regular actions to be handled by the reducer.
