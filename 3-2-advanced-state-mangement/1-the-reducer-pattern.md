@@ -71,7 +71,13 @@ const action = {
 ```
 
 ## useReducer Hook
-We're not diving into Redux just yet, but we can start getting comfortable with the Reducer pattern and all of its conventions by working with the `useReducer` hook, an alternative to `useState`. Here's how it works, with a simplified version of our coffee example:
+We're not diving into Redux just yet, but we can start getting comfortable with the Reducer pattern and all of its conventions by working with the `useReducer` hook, an alternative to `useState`:
+
+```javascript
+  const [state, dispatch] = useReducer(reducer, initialState);
+```
+
+Here's how it works, with a simplified version of our coffee example:
 
 ```javascript
 // A coffee shop with useReducer:
