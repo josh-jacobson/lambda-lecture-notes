@@ -13,7 +13,7 @@ Note that there's a specific order of operations, with some actions requiring ot
 
 This kind of thing is common with asynchronous actions like API calls in React applications -- start the process, go do something else, then come back to handle the response when it's complete. When the code gets confusing, remember this example to understand what asynchronous actions are all about. 
 
-Here's how that `'MAKE_COFFEE'` step might look above, in a coffee subcomponent:
+Here's how that `'MAKE_COFFEE'` step might look, as a more complex action that dispatches actions of its own:
   * Dispatch `'GRIND_BEANS'`
   * Dispatch `'FROTH_MILK'`
   * When bean grinding is complete, dispatch `'BREW_ESPRESSO'`
