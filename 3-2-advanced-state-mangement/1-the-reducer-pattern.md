@@ -48,9 +48,9 @@ Say you're starting a local business, like a coffee shop. Throughout the course 
 * State updated. New state: `{order: 'oat milk macchiato', cost: 3.50, status: 'complete'}`
 * Dispatch action `'SERVE_COFFEE'`
 
-Even in this simplistic coffee example, you can imagine how things get complicated quickly. For a small menu we could easily have 20+ different actions. Rather than hiring a new employee for each action, we hire a skilled barista who can juggle all of these different tasks and keep things organized in the process.
+Even in this coffee example, you can imagine how things get complicated quickly. `'PREPARE_COFFEE'` is a simplification of what would actually be many separate actions like `'GRIND_BEANS'`, `'BREW_ESPRESSO'` and `'FROTH_MILK'`. For a small menu we could easily have 20+ different actions, with a specific order of oprations where some actions can be multitasked while other actions can only be started once others complete. Rather than hiring a new employee for each action, we choose to hire a skilled barista who can juggle all of these different tasks and keep things organized in an efficient process.
 
-Likewise, when managing state in a React application, we're not going to want to write a separate state management function for every possible state transition. Instead, a **reducer** can play the role of barista and handle all of these actions in an organized, predictable way. 
+Likewise, in React, things will get out of hand quickly if we write a separate state management function for every possible state transition. Instead, a **reducer** can play the role of barista and handle all of these actions in an organized, predictable way. 
 
 ## Reducers in React
 A reducer is a pure function that takes the previous state and an action, and returns the next state. It "reduces" those two arguments to one output:
