@@ -11,7 +11,7 @@ Action reaching the reducer
 
 Redux middleware is often used for logging, crash reporting, talking to an asynchronous API, routing, and more. `redux-logger` and `redux-thunk` are common examples of middleware used with Redux.
 
-## `applyMiddleware`: How to use middleware in Redux
+## How to use middleware in Redux
 Redux library provides a function called applyMiddleware. This gets applied like this:
 
 ```javascript
@@ -19,7 +19,7 @@ const logger = reduxLogger.createLogger();
 const store = createStore(rootReducer, applyMiddleware(logger));
 ```
 
-## Thunk
+## Asynchronous requests and redux-thunk
 In Redux, our reducers are *synchronous* by default. If we need to perform asynchronous operations, they need to happen before the actions reach the reducers. So this is why we use middleware to handle asynchronous requests. 
 
 "Thunk" is a name for a function that’s returned by another function. In Redux, actions are normally just objects, but Redux-thunk allows us to return functions instead of objects from our action creators, enabling more dynamic behavior. Then those functions can handle side effects like api calls, and also return regular actions to be handled by the reducer.
