@@ -6,6 +6,19 @@ In the context of React and state management, a reducer is a pure function that 
 reducer = (previousState, action) => nextState
 ```
 
+Here are the three main aspects of the reducer pattern:
+* **Reducer**: takes an action and current state, returns the new state
+* **Action**: object that includes a string specifying the type of action to be performed, and any data needed by the reducer to properly update state (e.g., the text inputted by a user in a form)
+* **Dispatch function**: *dispatches* an action to the reducer
+
+An "action" is simply an object with this format:
+```javascript
+const action = {
+  type: 'TAKE_ORDER' // action types are UPPER_CASE string constants by convention
+  payload: 'oat milk macchiato' // data needed to update state
+}
+```
+
 ## 3 core concepts of Redux
 1. Store - holds the state of your application
 2. Action - describes the changes in the state of the application
