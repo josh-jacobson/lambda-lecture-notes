@@ -14,8 +14,8 @@ Here are the three main aspects of the reducer pattern:
 An "action" is simply an object with this format:
 ```javascript
 const action = {
-  type: 'TAKE_ORDER' // action types are UPPER_CASE string constants by convention
-  payload: 'oat milk macchiato' // data needed to update state
+  type: 'UPDATE_TITLE' // action types are UPPER_CASE string constants by convention
+  payload: 'New Title' // data needed to update state
 }
 ```
 
