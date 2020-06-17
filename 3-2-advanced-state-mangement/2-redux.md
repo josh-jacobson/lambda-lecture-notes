@@ -7,7 +7,7 @@ reducer = (previousState, action) => nextState
 ```
 
 Here are the three main aspects of the reducer pattern:
-* **Reducer**: takes an action and current state, returns the new state
+* **Reducer**: takes an action and current state (both objects!) and returns the new state
 * **Action**: object that includes a string specifying the type of action to be performed, and any data needed by the reducer to properly update state (e.g., the text inputted by a user in a form)
 * **Dispatch function**: *dispatches* an action to the reducer
 
