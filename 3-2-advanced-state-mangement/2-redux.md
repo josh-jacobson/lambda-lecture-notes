@@ -62,7 +62,7 @@ So how do we interact with the store from our React components? We wrap our appl
 
 When we **connect** a component to the Redux store, we're providing a helpful interface to be able to update our component with the latest application-level state, and also trigger updates to the application-level state from our component.
 
-The way we actually set things up is a bit complex, but the goals behind this pattern are intuitive -- just remember that the whole idea is for components to be able to communicate with the store, to both read and update application state. Our component receives the most up-to-date values from the store as props, and to update the store we just call functions that are also passed to the component as props.
+The way we actually set things up is a bit complex, but the goals behind this pattern are intuitive. Just remember that the whole idea is for components to be able to communicate with the store, to both read and update application state. Our component receives the most up-to-date values from the store as props, and to update the store we just call functions that are also passed to the component as props.
 
 ## Putting it all together
 
@@ -113,7 +113,7 @@ We can use this "object shorthand" format for `mapDispatchToProps`:
 
 ```javascript
 // This works exactly the same as the more verbose version above.
-// We're also using ES6 shorthand. In ES5 we'd write {updateTitle: updateTitle, toggleEditing: toggleEditing}
+// This is also ES6 object shorthand, equivalent to {updateTitle: updateTitle, toggleEditing: toggleEditing}
 const mapDispatchToProps = {updateTitle, toggleEditing};
 ```
 
