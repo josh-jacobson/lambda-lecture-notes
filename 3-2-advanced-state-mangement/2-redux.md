@@ -42,7 +42,7 @@ We also have the newer Context API to work with, and you'll hear about these thr
 * Context-level state
 * Component-level state
 
-## Redux and React: connect
+## Working with the Redux store from React components: connect
 Then we **connect** a component to the Redux store, we're providing a very friendly interface for a component to be able to interact with the Redux store. 
 
 We can still work with `useState` for managing state at the component level, but for bigger-picture concerns of our application we'll make the Redux store our single source of truth. With the two arguments we provide to **connect**, we set up both directions of communication:
