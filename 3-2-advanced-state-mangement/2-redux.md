@@ -65,7 +65,7 @@ export default connect(mapStateToProps,mapDispatchToProps)(Title);
 Just remember the key idea here: **we `connect` commponents so that they can communicate with the Redux store.**
 
 Once we've written this boilerplate code, most of the complexity is abstracted away and each component is enhanced with this convenient interface to interact with the store:
-* Application state relevant to the component get passed in as props (updated with every application state change)
+* State relevant to the component gets passed in as props (updated with every application state change)
 * Functions to update application state also get passed to the component as props. (Each of these functions dispatches a corresponding action to a reducer in order to update the Redux store)
 
 ## Behind the 'magic': action creators and mapDispatchToProps object shorthand
@@ -94,9 +94,8 @@ const mapDispatchToProps = {updateTitle, toggleEditing}
 
 Behind the scenes, React Redux calls `bindActionCreators({updateTitle, toggleEditing}, dispatch)` to convert the shorthand object into the actual dispatch mapping function we need for `connect`. We'll generally just use the shorthand, but feel free to write it out the long way at first and you may find that it makes the whole concept a bit more clear. 
 
-React Redux takes this one step further
 ## Helpful Resources
 * [Redux Glossary](https://redux.js.org/glossary)
-* [connect, mapStateToProps, mapDispatchToProps (react-redux Docs)](https://react-redux.js.org/api/connect)
+* [React Redux docs: connect, mapStateToProps, mapDispatchToProps](https://react-redux.js.org/api/connect)
 * [Codevolution React Redux tutorial](https://www.youtube.com/playlist?list=PLC3y8-rFHvwheJHvseC3I0HuYI2f46oAK)
 * [A Cartoon Intro to Redux](https://code-cartoons.com/a-cartoon-intro-to-redux-3afb775501a6)
