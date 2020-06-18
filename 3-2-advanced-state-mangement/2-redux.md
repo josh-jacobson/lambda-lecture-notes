@@ -69,7 +69,7 @@ Once we've written this boilerplate code, most of the complexity is abstracted a
 * Functions to update application state also get passed to the component as props. (Each of these functions dispatches a corresponding action to a reducer in order to update the Redux store)
 
 ## Behind the 'magic': action creators and mapDispatchToProps object shorthand
-In Redux we'll use a slightly different pattern than we used with the `useReducer` hook. Rather than dispatching actions directly, we'll follow a different pattern that allows Redux to do more of the work for us. The first step is to define  *action creators*, functions that return each action. Like this:
+In Redux we'll use a slightly different pattern than we used with the `useReducer` hook. Rather than dispatching actions directly from our components, we define  *action creators*. An action creator is just a function that returns an action object: 
 
 ```javascript
 // updateTitle action creator
