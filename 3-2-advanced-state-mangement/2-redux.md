@@ -37,11 +37,6 @@ const action = {
 ## Managing shared state across multiple components
 Without a state management system like Redux, our only notion of state is at the level of each component and all interactions must be achieved with “prop drilling”, passing data and state management functions down the component tree. Redux is all about consolidating this and managing **application-level state**.
 
-We also have the newer Context API to work with, and you'll hear about these three main "levels" of state:
-* Application-level state
-* Context-level state
-* Component-level state
-
 ## Working with the Redux store from React components: connect
 Then we **connect** a component to the Redux store, we're providing a very friendly interface for a component to be able to interact with the Redux store. 
 
