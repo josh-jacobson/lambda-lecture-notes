@@ -38,9 +38,9 @@ We can still work with `useState` for managing state at the component level, but
 3. Reducer - actually carries out the state transition depending on the action
 
 ## 3 principles of Redux
-1. The state of your whole application is stored in an object tree (maintain our application state in a single object which is managed by Redux)
-2. The only way to change the state is to emit an action (i.e., you’re not allowed to directly update the state object)
-3. To specify how the state tree is transformed by actions, you write pure reducers.
+1. Single source of truth: Redux manages the global state of your application within a single store
+2. State is read-only: The only way to change the state is to emit an action
+3. To describe how the state tree is transformed by actions, we write pure reducers.
 
 ## Actions and action creators
 An action is:
@@ -136,6 +136,7 @@ Redux is a predictable state container based on the reducer pattern, and it's of
 
 ## Helpful Resources
 * [Redux Glossary](https://redux.js.org/glossary)
+* [Three Principles of Redux](https://redux.js.org/introduction/three-principles)
 * [React Redux docs: connect, mapStateToProps, mapDispatchToProps](https://react-redux.js.org/api/connect)
 * [Codevolution React Redux tutorial](https://www.youtube.com/playlist?list=PLC3y8-rFHvwheJHvseC3I0HuYI2f46oAK)
 * [A Cartoon Intro to Redux](https://code-cartoons.com/a-cartoon-intro-to-redux-3afb775501a6)
