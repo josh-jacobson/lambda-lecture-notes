@@ -62,7 +62,8 @@ In effect the interface becomes somewhat similar to how we managed state before 
 
 Now that you know what connect does, let's revel in its (admittedly confusing) HOC format:
 ```javascript
-// before adding connect: export default Title;
+// without Redux: export default Title;
+// with Redux, connecting Title component to the store:
 export default connect(mapStateToProps,mapDispatchToProps)(Title);
 ```
 
