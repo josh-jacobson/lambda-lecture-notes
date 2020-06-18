@@ -45,14 +45,20 @@ In the context of Redux, we'll be using this pattern with the `connect` function
 ## Managing shared state across multiple components
 Without a state management system like Redux, our only notion of state is at the level of each component and all interactions must be achieved with “prop drilling”, passing data and state management functions down the component tree. Redux is all about consolidating this and managing **application-level state**.
 
-## Working with the Redux store from React components: `connect`
-When we **connect** a component to the Redux store, we're providing a helpful interface for a component to be able to interact with the Redux store. The way we actually set things up is a bit complex, but the goals behind this pattern are intuitive -- just remember that the whole idea is for components to be able to communicate with the store, to both read and write.
+## Updating and reading from the Redux store
+We can still work with `useState` for managing state at the component level, but for bigger-picture concerns of our application we'll make the Redux store our single source of truth. 
 
-We can still work with `useState` for managing state at the component level, but for bigger-picture concerns of our application we'll make the Redux store our single source of truth. With the two arguments we provide to `connect`, we set up both directions of communication:
-* `mapStateToProps` indicates the state values to be provided from the store to our component, as props
-* `mapDispatchToProps` sets up convenient standalone functions to be provided to our component as props, each of which dispatches an action to update the store. Within the component we can simply call these functions, and have no need to worry about the additional complexity of dispatching actions in the reducer pattern. 
+So how does it all work? We use a function called `connect`, which takes two arguments corresponding to the two direction of communication (read and write). Here's what they mean, on a high level:
+* `mapStateToProps`: which parts of application-level state are relevant to you (the component)? Let me (Redux) know and I'll keep you up to date, sending over those values directly as props whenever the store is updated.
+* `mapDispatchToProps`: in what specific ways would you (the component) like to be able to update the store? List each action here and I'll provide a corresponding function for each one, passed to you as props. When you're looking to update application-level state, just call one of those functions and you're done. I'll handle all the reducer-y stuff for you.
+
+When we **connect** a component to the Redux store, we're providing a helpful interface to be able to update our component with the latest application-level state, and also trigger updates to the application-level state from our component.
+
+The way we actually set things up is a bit complex, but the goals behind this pattern are intuitive -- just remember that the whole idea is for components to be able to communicate with the store, to both read and write.
 
 In effect the interface becomes somewhat similar to how we managed state before learning about reducers and all of these additional abstractions. Our component receives the most up-to-date values from the store as props, and to update the store we just call functions that are also passed in as props.
+
+## Putting it all together: `connect`
 
 Now that you know what connect does, let's revel in its (admittedly confusing) HOC format:
 ```javascript
