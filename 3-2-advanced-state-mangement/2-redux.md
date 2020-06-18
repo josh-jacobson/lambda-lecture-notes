@@ -29,6 +29,10 @@ We can still work with `useState` for managing state at the component level, but
 2. Action - describes the changes in the state of the application
 3. Reducer - actually carries out the state transition depending on the action
 
+Redux uses a strict **unidirectional data flow** to keep everything organized:
+
+![Redux gif](images/redux.gif)
+
 ## 3 principles of Redux
 1. Single source of truth: Redux manages the global state of your application within a single store
 2. State is read-only: The only way to change the state is to emit an action
