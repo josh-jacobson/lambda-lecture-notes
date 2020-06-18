@@ -42,7 +42,7 @@ We also have the newer Context API to work with, and you'll hear about these thr
 * Context-level state
 * Component-level state
 
-## connect
+## Redux and React: connect
 Then we **connect** a component to the Redux store, we're providing a very friendly interface for a component to be able to interact with the Redux store. 
 
 We can still work with `useState` for managing state at the component level, but for bigger-picture concerns of our application we'll make the Redux store our single source of truth. With the two arguments we provide to **connect**, we set up both directions of communication:
@@ -51,11 +51,13 @@ We can still work with `useState` for managing state at the component level, but
 
 In effect the interface becomes pretty similar to how we managed state before learning about reducers and all of these additional abstractions. Our component receives the most up-to-date values from the store as props, and to update the store we just call normal functions.
 
-Now that you know what connect does, revel in it's (confusing at first) higher-order-function format:
+Now that you know what connect does, let's revel in it's (confusing at first) higher-order-function format:
 ```javascript
 // before connecting: export default Title;
 export default connect(mapStateToProps,mapDispatchToProps)(Title);
 ```
+
+Calling `connect` returns another function, which we then invoke on our Title component in order to "enhance" the component with these new features described above. All of this functional programming stuff can get confusing, so just remember the key idea that we're **connect**ing commponents so that they can interact with the Redux store. After writing this boilerplate code, our components receive the values they need from the store as well as functions to update the store, all as props.
 
 ## Behind the 'magic': action creators and mapDispatchToProps object shorthand
 In Redux we'll use a slightly different pattern than we used with the `useReducer` hook. Rather than dispatching actions directly, we'll follow a different pattern that allows Redux to do more of the work for us. The first step is to define  *action creators*, functions that return each action. Like this:
@@ -68,10 +70,22 @@ export const updateTitle = newTitle => {
 ```
 Then we can use those action creators in `mapDispatchToProps` like this:
 ```javascript
-const mapDispatchToProps
+const mapDispatchToProps = dispatch => {
+  return {
+    updateTitle: newTitle => dispatch(updateTitle(newTitle)),
+    toggleEditing: () => dispatch(toggleEditing()),
+    // other actions here
+  };
 ```
-Rather than having to worry about reducers and dispatching actions,  to receiving functions as props set things up so that the dispatch
+Within our component, we can just call `props.updateTitle` with our new title, and an action will be dispatched to the reducer. So we get all of the power of reducers and application-level state management, with the simplicity of just calling a regular old function. This mapping of *action creators* to functions with the same name is the pattern behind the magic here, and React Redux simplifies things one step further by allowing us to just pass in an object rather than a function for `mapDispatchToProps`:
+```javascript
+// This works just the same as the more verbose version above
+const mapDispatchToProps = {updateTitle, toggleEditing}
+```
 
+Behind the scenes, React Redux calls `bindActionCreators({updateTitle, toggleEditing}, dispatch)` to convert the shorthand object into the actual dispatch mapping function we need for `connect`. We'll generally just use the shorthand, but feel free to write it out the long way at first and you may find that it makes the whole concept a bit more clear. 
+
+React Redux takes this one step further
 ## Helpful Resources
 * [Redux Glossary](https://redux.js.org/glossary)
 * [connect, mapStateToProps, mapDispatchToProps (react-redux Docs)](https://react-redux.js.org/api/connect)
