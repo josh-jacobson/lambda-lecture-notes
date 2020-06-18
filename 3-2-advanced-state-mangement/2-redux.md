@@ -127,10 +127,10 @@ We'll almost always just use the shorthand, as it's useful in making `connect` e
 
 ## Summary / TL;DR
 Redux is a predictable state container based on the reducer pattern, and it's often used with React to manage application-level state. To connect our components to the Redux store:
-1. Wrap the entire application with a Provider: `<Provider><App/></Provider>`
-2. Call `connect` on each component that needs to read from and update the store. Define the interface in this way:
-* `mapStateToProps` (read interface): a function that returns an object mapping state values from the store to component props
-* `mapDispatchToProps` (write interface): an object containing the relevant *action creators* your component will use to update the store 
+1. Wrap the entire application with a Provider: `<Provider><App/></Provider>`. The Provider component (from react-redux) *provides the store*, allowing every component in the app tree to access the Redux store.
+2. Call `connect` on each component that needs to read from and update the store. Most components will need only a small subset of the application state, and many components may not need to use connect at all. We use these two arguments of `connect` to define the interface between the component and the store:
+* `mapStateToProps` (read interface): a function that returns an object, mapping specific values from the Redux state object to props that will be passed into the current component 
+* `mapDispatchToProps` (write interface): an object containing the relevant *action creators* your component will use to update the store. The true form of `mapDispatchToProps` is in a format similar to `mapStateToProps`, a function that returns an object. But as long as we adhere to the standard pattern with action creators we can use this more convenient object shorthand.
 
 ## Helpful Resources
 * [Redux Glossary](https://redux.js.org/glossary)
