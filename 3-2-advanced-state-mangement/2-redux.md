@@ -19,6 +19,14 @@ const action = {
 }
 ```
 
+## Higher Order Components
+A higher-order component (HOC) is a function that takes a component and returns a new component:
+```javascript
+const EnhancedComponent = higherOrderComponent(WrappedComponent);
+```
+
+In the context of Redux, we'll be using this pattern with the `connect` function in order to "enhance" the components of our application with the ability to seamlessly update and read from the Redux store.
+
 ## 3 core concepts of Redux
 1. Store - holds the state of your application
 2. Action - describes the changes in the state of the application
@@ -38,21 +46,25 @@ const action = {
 Without a state management system like Redux, our only notion of state is at the level of each component and all interactions must be achieved with “prop drilling”, passing data and state management functions down the component tree. Redux is all about consolidating this and managing **application-level state**.
 
 ## Working with the Redux store from React components: connect
-Then we **connect** a component to the Redux store, we're providing a very friendly interface for a component to be able to interact with the Redux store. 
+Then we **connect** a component to the Redux store, we're providing a helpful interface for a component to be able to interact with the Redux store. The way we actually set things up is a bit complex, but the goals are intuitive.
 
 We can still work with `useState` for managing state at the component level, but for bigger-picture concerns of our application we'll make the Redux store our single source of truth. With the two arguments we provide to **connect**, we set up both directions of communication:
 * `mapStateToProps` indicates the state values to be provided from the store to our component, as props
-* `mapDispatchToProps` sets up convenient standalone functions for the store, so that within the component we can simply call these functions rather than worrying about the additional complexity of dispatching actions to a reducer. 
+* `mapDispatchToProps` sets up convenient standalone functions to be provided to our component as props, each of which dispatches an action to update the store. Within the component we can simply call these functions, and have no need to worry about the additional complexity of dispatching actions in the reducer pattern. 
 
-In effect the interface becomes pretty similar to how we managed state before learning about reducers and all of these additional abstractions. Our component receives the most up-to-date values from the store as props, and to update the store we just call normal functions.
+In effect the interface becomes somewhat similar to how we managed state before learning about reducers and all of these additional abstractions. Our component receives the most up-to-date values from the store as props, and to update the store we just call functions that are also passed in as props.
 
-Now that you know what connect does, let's revel in it's (confusing at first) higher-order-function format:
+Now that you know what connect does, let's revel in its (admittedly confusing) higher-order-function format:
 ```javascript
-// before connecting: export default Title;
+// before adding connect: export default Title;
 export default connect(mapStateToProps,mapDispatchToProps)(Title);
 ```
 
-Calling `connect` returns another function, which we then invoke on our Title component in order to "enhance" the component with these new features described above. All of this functional programming stuff can get confusing, so just remember the key idea that we're **connect**ing commponents so that they can interact with the Redux store. After writing this boilerplate code, our components receive the values they need from the store as well as functions to update the store, all as props.
+The return value of `connect` is a higher order component (defined above), which we then invoke on our Title component in order to "enhance" it with the ability to interact with the Redux store. All of this functional programming stuff can get confusing, so just remember the key idea that we're **connect**ing commponents so that they can communicate with the store. 
+
+Once we've written this boilerplate code, most of the complexity is abstracted away and each component is enhanced with this convenient interface for communicating with the store:
+* Application state relevant to the component get passed in as props (updated with every application state change)
+* Functions to update application state also come in to the component as props. (Each of these functions dispatches a corresponding action to a reducer in order to update the Redux store)
 
 ## Behind the 'magic': action creators and mapDispatchToProps object shorthand
 In Redux we'll use a slightly different pattern than we used with the `useReducer` hook. Rather than dispatching actions directly, we'll follow a different pattern that allows Redux to do more of the work for us. The first step is to define  *action creators*, functions that return each action. Like this:
