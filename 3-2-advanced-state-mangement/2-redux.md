@@ -11,7 +11,7 @@ Here are the three main aspects of the reducer pattern:
 * **Action**: object that includes a string specifying the type of action to be performed, and any data needed by the reducer to properly update state (e.g., the text inputted by a user in a form)
 * **Dispatch function**: *dispatches* an action to the reducer
 
-## Higher Order Components
+## Review: Higher Order Components
 A higher-order component (HOC) is a function that takes a component and returns a new component:
 ```javascript
 const EnhancedComponent = higherOrderComponent(WrappedComponent);
@@ -78,7 +78,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  // map each action creator to a dispatching function to be used by the component
+  // build a dispatching function from each action creator
   return {
     updateTitle: newTitle => dispatch(updateTitle(newTitle)), 
     toggleEditing: () => dispatch(toggleEditing()),
@@ -88,7 +88,7 @@ const mapDispatchToProps = dispatch => {
 export default connect(mapStateToProps,mapDispatchToProps)(Title);
 ```
 
-`connect` is itself a  a higher order function that *returns* a higher order component, which we then immediately invoke on our Title component in order to "enhance" it. That's a lot to take in, and if all this functional programming stuff feels like Inception to you, you're not alone. But the "enhancement" we're going for with all this is simply the ability to interact with the store. 
+`connect` is itself a higher order function that *returns* a higher order component, which we then immediately invoke on our Title component in order to "enhance" it. That's a lot to take in, and if all this functional programming stuff feels like Inception to you, you're not alone. But the "enhancement" we're going for with all this is simply the ability to interact with the store. 
 
 The key idea to remember here is: **we `connect` commponents so that they can communicate with the Redux store.**
 
@@ -96,25 +96,23 @@ Once we've wired up our `<Provider>` and `connect` with all of this boilerplate 
 * State values relevant to the component get passed in as props (updated with every application state change)
 * Functions to update application state also get passed to the component as props. (Each of these functions dispatches a corresponding action to a reducer in order to update the Redux store)
 
-## Some 'magic' behind the scenes: action creators and mapDispatchToProps shorthand
+## Some magic behind the scenes: action creators and mapDispatchToProps shorthand
 In Redux we generally use a slightly different pattern than what we saw with the `useReducer` hook. Rather than dispatching actions directly from our components, we define  *action creators*. Then we use those action creators to define simple functions that our components can call directly in order to update the store. That mapping happens in the second argument to `connect`, `mapDispatchToProps`. 
 
-Thanks to `connect`, we can now just call the function `props.updateTitle` from within our component, and the right action type and payload will be dispatched to the reducer. This pattern of mapping *action creators* to functions with the same name allows React Redux to simplify things one step further, working some magic behind the scenes. Rather than writing all this:
+Thanks to `connect`, we can now just call the function `props.updateTitle` from within our component, and the right action type and payload will be dispatched to the reducer. This pattern of mapping *action creators* to functions with the same name allows React Redux to simplify things one step further, working some magic behind the scenes. Rather than writing all of this:
 
 ```javascript
 const mapDispatchToProps = dispatch => {
-  // map each action creator to a dispatching function to be used by the component
   return {
     updateTitle: newTitle => dispatch(updateTitle(newTitle)), 
-    toggleEditing: () => dispatch(toggleEditing()),
-    // other actions here
+    toggleEditing: () => dispatch(toggleEditing())
   };
 };
 ```
 We can use this "object shorthand" format for `mapDispatchToProps`:
 
 ```javascript
-// This works exactly the same as the more verbose version above
+// This works exactly the same as the more verbose version above.
 // We're also using ES6 shorthand. In ES5 we'd write {updateTitle: updateTitle, toggleEditing: toggleEditing}
 const mapDispatchToProps = {updateTitle, toggleEditing};
 ```
