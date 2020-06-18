@@ -72,8 +72,8 @@ Now that you know what connect does, let's see how it works in practice. The two
 const mapStateToProps = state => {
   // map each value to be read from the store to a prop
   return {
-    editing: state.titleReducer.editing,
-    title: state.titleReducer.title
+    editing: state.editing,
+    title: state.title
   };
 };
 
