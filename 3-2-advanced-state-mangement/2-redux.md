@@ -46,7 +46,7 @@ In the context of Redux, we'll be using this pattern with the `connect` function
 Without a state management system like Redux, our only notion of state is at the level of each component and all interactions must be achieved with “prop drilling”, passing data and state management functions down the component tree. Redux is all about consolidating this and managing **application-level state**.
 
 ## Working with the Redux store from React components: connect
-Then we **connect** a component to the Redux store, we're providing a helpful interface for a component to be able to interact with the Redux store. The way we actually set things up is a bit complex, but the goals are intuitive.
+When we **connect** a component to the Redux store, we're providing a helpful interface for a component to be able to interact with the Redux store. The way we actually set things up is a bit complex, but the goals behind this pattern are intuitive -- just remember that the whole idea is for components to be able to communicate with the store, to both read and write.
 
 We can still work with `useState` for managing state at the component level, but for bigger-picture concerns of our application we'll make the Redux store our single source of truth. With the two arguments we provide to **connect**, we set up both directions of communication:
 * `mapStateToProps` indicates the state values to be provided from the store to our component, as props
