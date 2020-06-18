@@ -2,7 +2,7 @@
 
 ## A visual example
 Here's the Redux data flow visualized, with the addition of asynchronous API calls:
-![async Redux gif](images/redux_middleware.gif)
+![async Redux gif](images/redux_async.gif)
 
 ## A real-world example
 Back to our coffee shop. Let's consider just the step where we actually make the coffee.
