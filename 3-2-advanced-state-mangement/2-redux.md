@@ -54,13 +54,13 @@ We can still work with `useState` for managing state at the component level, but
 
 In effect the interface becomes somewhat similar to how we managed state before learning about reducers and all of these additional abstractions. Our component receives the most up-to-date values from the store as props, and to update the store we just call functions that are also passed in as props.
 
-Now that you know what connect does, let's revel in its (admittedly confusing) higher-order-function format:
+Now that you know what connect does, let's revel in its (admittedly confusing) HOC format:
 ```javascript
 // before adding connect: export default Title;
 export default connect(mapStateToProps,mapDispatchToProps)(Title);
 ```
 
-The return value of `connect` is a higher order component (defined above), which we then invoke on our Title component in order to "enhance" it with the ability to interact with the Redux store. All of this functional programming stuff can get confusing, so just remember the key idea that we're **connect**ing commponents so that they can communicate with the store. 
+`connect` is itself a  a higher order function that *returns* a higher order component Then we immediately invoke the returned HOC on our Title component in order to "enhance" it with the ability to interact with the Redux store. So technically `connect` is only called once, not twice. The second function call, taking `Title` as argument, is invoking the return value of `connect` as an anonymous function. If this feels like Inception to you, you're not alone. Don't worry about the specifics too much! Just remember the key idea here: **we are `connect`ing commponents so that they can communicate with the store.**
 
 Once we've written this boilerplate code, most of the complexity is abstracted away and each component is enhanced with this convenient interface for communicating with the store:
 * Application state relevant to the component get passed in as props (updated with every application state change)
