@@ -96,7 +96,7 @@ Once we've wired up our `<Provider>` and `connect` with all of this boilerplate 
 * State values relevant to the component get passed in as props (updated with every application state change)
 * Functions to update application state also get passed to the component as props. (Each of these functions dispatches a corresponding action to a reducer in order to update the Redux store)
 
-## Some magic behind the scenes: action creators and mapDispatchToProps shorthand
+## Some magic behind the scenes: mapDispatchToProps shorthand
 In Redux we generally use a slightly different pattern than what we saw with the `useReducer` hook. Rather than dispatching actions directly from our components, we define  *action creators*. Then we use those action creators to define simple functions that our components can call directly in order to update the store. That mapping happens in the second argument to `connect`, `mapDispatchToProps`. 
 
 Thanks to `connect`, we can now just call the function `props.updateTitle` from within our component, and the right action type and payload will be dispatched to the reducer. This pattern of mapping *action creators* to functions with the same name allows React Redux to simplify things one step further, working some magic behind the scenes. Rather than writing all of this:
@@ -109,11 +109,11 @@ const mapDispatchToProps = dispatch => {
   };
 };
 ```
-We can use this "object shorthand" format for `mapDispatchToProps`:
+We can instead use this "object shorthand" format for `mapDispatchToProps`:
 
 ```javascript
-// This works exactly the same as the more verbose version above.
-// This is also ES6 object shorthand, equivalent to {updateTitle: updateTitle, toggleEditing: toggleEditing}
+// This works exactly the same as the more verbose version above
+// ES6 object shorthand for {updateTitle: updateTitle, toggleEditing: toggleEditing}
 const mapDispatchToProps = {updateTitle, toggleEditing};
 ```
 
