@@ -11,14 +11,6 @@ Here are the three main aspects of the reducer pattern:
 * **Action**: object that includes a string specifying the type of action to be performed, and any data needed by the reducer to properly update state (e.g., the text inputted by a user in a form)
 * **Dispatch function**: *dispatches* an action to the reducer
 
-An "action" is simply an object with this format:
-```javascript
-const action = {
-  type: 'UPDATE_TITLE' // action types are UPPER_CASE string constants by convention
-  payload: 'New Title' // data needed to update state
-}
-```
-
 ## Higher Order Components
 A higher-order component (HOC) is a function that takes a component and returns a new component:
 ```javascript
@@ -32,7 +24,7 @@ Without a state management system like Redux, our only notion of state is at the
 
 We can still work with `useState` for managing state at the component level, but for bigger-picture concerns of our application we'll make the Redux store our single source of truth. 
 
-## 3 core concepts of Redux
+## The Redux architecture
 1. Store - holds the state of your application
 2. Action - describes the changes in the state of the application
 3. Reducer - actually carries out the state transition depending on the action
@@ -43,11 +35,15 @@ We can still work with `useState` for managing state at the component level, but
 3. To describe how the state tree is transformed by actions, we write pure reducers.
 
 ## Actions and action creators
-An action is:
-* a plain Javascript object with the format `{type: 'ACTION_TYPE', payload: 'data to pass to the reducer'}`
-* *dispatched* by your component to the reducer in order to update the store
+An action is simply an object with this format:
+```javascript
+const action = {
+  type: 'UPDATE_TITLE' // action types are UPPER_CASE string constants by convention
+  payload: 'New Title' // data needed to update state
+}
+```
 
-In Redux, we take the pattern one step further by defining functions called *action creators*. These are exactly what they sound like, and their only purpose is to simply return an action object, like this:
+In Redux, we take the pattern one step further by defining functions called *action creators*. These are exactly what they sound like, and their only purpose is to simply return an action.
 ```javascript
 // updateTitle action creator
 export const updateTitle = newTitle => {
@@ -56,7 +52,7 @@ export const updateTitle = newTitle => {
 ```
 
 ## Communicating with the Redux store: `connect`
-Now that we've learned the reducer pattern, we already understand the fundamentals of Redux. The Redux store is just a "state container" that stores application state and uses reducers to make updates.
+Since we've learned the reducer pattern, we already understand the fundamentals of Redux. The Redux store is just a "state container" that stores application state and uses reducers to update state in a predictable way.
 
 So how do we interact with the store from our React components? We wrap our application with `<Provider>` and then use the `connect` function on each component to make the Redux store available from that component.
 
@@ -97,7 +93,7 @@ export default connect(mapStateToProps,mapDispatchToProps)(Title);
 The key idea to remember here is: **we `connect` commponents so that they can communicate with the Redux store.**
 
 Once we've wired up our `<Provider>` and `connect` with all of this boilerplate code, most of the complexity is abstracted away and each component is enhanced with this convenient interface to interact with the store:
-* State relevant to the component gets passed in as props (updated with every application state change)
+* State values relevant to the component get passed in as props (updated with every application state change)
 * Functions to update application state also get passed to the component as props. (Each of these functions dispatches a corresponding action to a reducer in order to update the Redux store)
 
 ## Some 'magic' behind the scenes: action creators and mapDispatchToProps shorthand
@@ -119,7 +115,7 @@ We can use this "object shorthand" format for `mapDispatchToProps`:
 
 ```javascript
 // This works exactly the same as the more verbose version above
-// We're also using ES6 shorthand, in ES5, we'd write {updateTitle: updateTitle, toggleEditing: toggleEditing}
+// We're also using ES6 shorthand. In ES5 we'd write {updateTitle: updateTitle, toggleEditing: toggleEditing}
 const mapDispatchToProps = {updateTitle, toggleEditing};
 ```
 
