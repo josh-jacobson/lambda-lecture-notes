@@ -44,6 +44,6 @@ We also have the newer Context API to work with, and you'll hear about these thr
 
 ## Helpful Resources
 * [Redux Glossary](https://redux.js.org/glossary)
-* [connect, mapStateToProps, mapDispatchToProps (Redux Docs)](https://react-redux.js.org/api/connect)
+* [connect, mapStateToProps, mapDispatchToProps (react-redux Docs)](https://react-redux.js.org/api/connect)
 * [Codevolution React Redux tutorial](https://www.youtube.com/playlist?list=PLC3y8-rFHvwheJHvseC3I0HuYI2f46oAK)
 * [A Cartoon Intro to Redux](https://code-cartoons.com/a-cartoon-intro-to-redux-3afb775501a6)
