@@ -1,6 +1,10 @@
 # Async Redux
 
-## A Real-World Example
+## A visual example
+Here's the Redux data flow visualized, with the addition of asynchronous API calls:
+![async Redux gif](images/async_redux.gif)
+
+## A real-world example
 Back to our coffee shop. Let's consider just the step where we actually make the coffee.
 
 When we dispatch `'MAKE_COFFEE'`, we're actually looking to trigger a sequence of coffee-making actions. We could of course break everything down into individual steps, but all actions in Redux are **synchronous** by default. But do we really want to stand there and watch the beans grind? We can get things done more efficently with some multiasking. 
