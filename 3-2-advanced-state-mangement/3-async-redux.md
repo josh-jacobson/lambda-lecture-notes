@@ -21,8 +21,8 @@ Here's how that `'MAKE_COFFEE'` step might look, as a more complex action that d
   * Dispatch `'GRIND_BEANS'`
   * Dispatch `'FROTH_MILK'`
   * When bean grinding is complete, dispatch `'BREW_ESPRESSO'`
-  * when `'BREW_ESPRESSO'` and `'FROTH_MILK'` are complete, dispatch `'MAKE_MACCHIATO'`
-  * when macchiato is complete, update application state
+  * when `'BREW_ESPRESSO'` and `'FROTH_MILK'` are complete, dispatch `'PREPARE_MACCHIATO'`
+  * when macchiato is complete, update application state with `status: "complete"`
 
 ## Redux Middleware
 In the context of Redux, middleware is a way to extend the standard functionality with additional behavior, Middleware provides a third-party extension point after an action is disaptched, before it reaches the reducer:
