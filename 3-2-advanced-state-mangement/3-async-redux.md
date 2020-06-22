@@ -53,4 +53,5 @@ Here's a typical setup:
 * Within those async actions, use axios to make requests to an api endpoint
 
 ## Helpful Resources
+* [Handling Asynchronous Actions in Redux](https://medium.com/better-programming/handling-asynchronous-actions-in-redux-86724ed87c6c)
 * [What is a thunk?](https://daveceddia.com/what-is-a-thunk/)
