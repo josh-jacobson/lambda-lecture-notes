@@ -54,6 +54,7 @@ Here's a typical setup:
 
 ## Helpful Resources
 * [Handling Asynchronous Actions in Redux](https://medium.com/better-programming/handling-asynchronous-actions-in-redux-86724ed87c6c)
+* [Redux by TL Megan Miller](https://www.notion.so/Redux-3ac5db784a1e4a1dbe9ecc7c15bbd9fd)
 * [Redux applyMiddleware docs](https://redux.js.org/api/applymiddleware)
 * [What is a thunk?](https://daveceddia.com/what-is-a-thunk/)
 * [Redux-thunk](https://github.com/reduxjs/redux-thunk)
