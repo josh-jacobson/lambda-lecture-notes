@@ -78,8 +78,8 @@ Here's a quick comparison:
     * provides a middleware API
     * defines a complete architecture pattern
 * You can use reducers with Context API, but they're not required
-* Setting up Redux: 1) `createStore` 2) wrap entire application with <Provider> 3) `connect` components 
-* Setting up Context: 1) `createContext` 2) wrap components with <Provider> 3) consume with `Context.Consumer` or `useContext`
+* Setting up Redux: 1) `createStore` 2) wrap entire application with `<Provider>` 3) `connect` components 
+* Setting up Context: 1) `createContext` 2) wrap components with `<Provider>` 3) consume with `Context.Consumer` or `useContext`
 * Redux is built for large scale, currently used in many massive production apps. Context is newer and may eventually replace Redux for many use cases, but Redux has simply been around longer and is still a good, battle-tested choice for many applications (including those built with frameworks other than React)
 
 ## Helpful Resources
