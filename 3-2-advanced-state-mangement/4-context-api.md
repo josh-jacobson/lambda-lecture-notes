@@ -31,7 +31,7 @@ function App(){
 }
 ```
 
-Rather than `connect`ing components, React's Context API uses a more straightforward pattern of provider and consumer. We can either wrap our view logic with a `Consumer` or make things easier by using the `useContext` hook. Here are two ways to consume a context:
+Rather than `connect` at the component level, React's Context API uses a more straightforward pattern of provider and consumer. We can either wrap our view logic with a `Consumer` or make things easier by using the `useContext` hook. Here are two ways to consume a context:
 ```javascript
 // First way: wrap with Consumer
 // render props pattern (aka ‘function as a child’)
