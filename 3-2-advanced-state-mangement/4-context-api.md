@@ -10,6 +10,41 @@ You'll hear about these three main "levels" of state:
 * Context is designed to share data that can be considered “global” among a tree of React components. This component tree doesn't necessarily meed to be your entire application, it could be just a subtree of components dealing with user login or another applicatoin concern where it's helpful to manage state above the individual component level.
 
 ## Provider and Consumer
+The setup of Context API is similar to Redux, just simpler. First we create a context (just like creating a store in Redux), and wrap our components with a Provider:
+```javascript
+const appContext = React.createContext();
+export const Provider = appContext.Provider;
+
+function App(){
+    return (
+        <Provider value={value}>
+            <ChildComponent />
+        </Provider>
+    )
+}
+```
+
+Rather than `connect`ing components, React's Context API uses a more straightforward pattern of provider and consumer. We can either wrap our view logic with a `Consumer` or make things easier by using the `useContext` hook. Here are two ways to consume a context:
+```javascript
+// First way: wrap with Consumer
+// render props pattern (aka ‘function as a child’)
+const Component = () => {
+  return (
+      <appContext.Consumer>
+        {value => (
+            <div>{value}</div>
+        )}
+      </appContext.Consumer>
+  );
+};
+
+
+// Second way (nicer): useContext
+function ChildComponent(){
+    const contextValue = useContext(appContext)
+    return <div>{contextValue}</div>
+}
+```
 
 ## useContext Hook
 
