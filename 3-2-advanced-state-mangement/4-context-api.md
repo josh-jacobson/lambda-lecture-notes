@@ -1,11 +1,6 @@
 # Context API
 
-The React Context API allows you to easily access data at different levels of a component tree, without having to pass data down through props.
-
-## Objectives
-* Describe what the Context API is and the problem is solves
-* Provide data to the component tree with a context provider
-* Consume data from a context object in nested components
+The React Context API allows you to easily access data at different levels of a component tree, without having to pass data down through props. 
 
 ## A hierarchy of state management
 You'll hear about these three main "levels" of state:
@@ -19,29 +14,28 @@ You'll hear about these three main "levels" of state:
 ## Provider and Consumer
 The setup of Context API is similar to Redux, just simpler. First we create a context (just like creating a store in Redux), and wrap our components with a Provider:
 ```javascript
-const AppContext = React.createContext();
-export const Provider = AppContext.Provider;
+// Calling createContext creates a Provider and a Consumer
+const FamilyContext = React.createContext();
 
 function App(){
     return (
-        <Provider value={value}>
+        <FamilyContext.Provider value={value}>
             <ChildComponent />
-        </Provider>
+        </FamilyContext.Provider>
     )
 }
 ```
 
 Rather than `connect` at the component level, React's Context API uses a more straightforward pattern of provider and consumer. We can either wrap our view logic with a `Consumer` or make things easier by using the `useContext` hook. Here are two ways to consume a context:
 ```javascript
-// First way: wrap with Consumer
-// render props pattern (aka ‘function as a child’)
+// First way: wrap with Consumer, render props pattern
 const Component = () => {
   return (
-      <AppContext.Consumer>
+      <FamilyContext.Consumer>
         {value => (
             <div>{value}</div>
         )}
-      </ApContext.Consumer>
+      </FamilyContext.Consumer>
   );
 };
 
