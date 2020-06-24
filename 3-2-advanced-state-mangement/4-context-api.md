@@ -19,7 +19,7 @@ const FamilyContext = React.createContext();
 
 function App(){
     return (
-        <FamilyContext.Provider value={value}>
+        <FamilyContext.Provider value={value}> // the value stored in our context can be any data type -- object, array, string, number, etc.
             <ChildComponent />
         </FamilyContext.Provider>
     )
