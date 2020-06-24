@@ -9,7 +9,12 @@ You'll hear about these three main "levels" of state:
 * Component-level state
 
 ## When to use Context
-* Context is designed to share data that can be considered “global” among a tree of React components. This component tree doesn't necessarily meed to be your entire application, it could be just a subtree of components dealing with user login or another applicatoin concern where it's helpful to manage state above the individual component level.
+Context is useful for sharing data that can be considered “global” among a tree of React components, generally a subset of components rather than the entire application. On its own, the Context API simply provies an alternative to prop drilling, and it's helpful to think of it as providing the same behavior. The idea is to share state from the component at the top level of the context tree to any subcomponents that need that data, without having to pass the data through each level of the tree. 
+
+Context API on its own is *not* a comprehensive application state management system like Redux. Combining the `useContext` and `useReducer` hooks can provide a powerful architecture that is similar to Redux in many ways, and this is becoming increasingly popular as an alternative to Redux due to easier setup and the less opinionated nature of these built-in hooks. But just remember that Context itself is nothing more than a way of sharing state directly from a top level component to any of the child components in its subtree. 
+
+Check out the docs (linked below) for a more in-depth understanding of the pros and cons of using Context. There are a few ways of solving this problem of shared state, and you'll find that there are specific tradeoffs involved with each option. Context provides an elegant solution, but baking the state sharing logic into components in this way does make it harder to reuse components.
+
 
 ## Provider and Consumer
 The setup of Context API is similar to Redux, just simpler. First we create a context (just like creating a store in Redux), and wrap our components with a Provider:
