@@ -33,7 +33,7 @@ Higher-level tests (integration and E2E) take longer to run, are more complex an
 Today we'll be focusing on integration testing for React applications, using Jest with React Testing Library.
 
 Here's some new terminology:
-* To isolate the behavior of the function(s) we want to test, we can replace other objects and dependencies with **mocks** that simulate the behavior of the real objects. Entire functions and even node modules can be mocked in order to isolate behavior
+* To isolate the behavior of the component we want to test, we can replace other objects and dependencies with **mocks** that simulate the behavior of the real objects. (Entire functions and even external node modules can be mocked too!)
 * **Spies** help us verify that the things we expect to be called are actually called, in the order we’d expect. 
 
 The main idea to remember with these more advanced testing concepts is that we want to be specific about what we test.
