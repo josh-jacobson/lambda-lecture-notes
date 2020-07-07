@@ -21,6 +21,7 @@ AAA flow of testing:
 * Assert
 
 And the three most common types of automated tests you'll use: 
+![Testing pyramid](images/testing_pyramid.png)
 
 * **End to End testing:** simulating an entire user flow from start to finish. If you're writing an e-commerce app, that flow could be placing items in the cart and completing a purchase. Think of hiring a QA person to go through that whole process and try every edge case they can think of to see if anything breaks. But your QA person is actually a robot. You've seen this before with **Enzyme**
 * **Integration testing:** verifying the functionality of a complete piece of application behavior, agnostic of its implementation details. This is similar to E2E but generally focused on more discrete behavior rather than the big picture. For example, an integration test in your e-commerce app might just verify the behavior of adding an item to your cart rather than simulating an entire purchase flow from start to finish. 
@@ -32,7 +33,7 @@ Higher-level tests (integration and E2E) take longer to run, are more complex an
 Today we'll be focusing on integration testing for React applications, using Jest with React Testing Library.
 
 Here's some new terminology:
-* A function in testing may have inconvenient dependencies on other objects. To isolate the behavior of the function, we can replace the other objects with **mocks** that simulate the behavior of the real objects. (Entire functions and even node modules can be mocked in order to isolate behavior!)
+* To isolate the behavior of the function(s) we want to test, we can replace other objects and dependencies with **mocks** that simulate the behavior of the real objects. Entire functions and even node modules can be mocked in order to isolate behavior
 * **Spies** help us verify that the things we expect to be called are actually called, in the order we’d expect. 
 
 The main idea to remember with these more advanced testing concepts is that we want to be specific about what we test.
