@@ -39,9 +39,8 @@ Here's some new terminology:
 The main idea to remember with these more advanced testing concepts is that we want to be specific about what we test.
 
 ## Helpful Resources
-* [Testing Library cheatsheet](https://testing-library.com/docs/react-testing-library/cheatsheet)
-* [Jest Cheat sheet](https://github.com/sapegin/jest-cheat-sheet/blob/master/Readme.md)
-* [Understanding Jest Mocks](https://medium.com/@rickhanlonii/understanding-jest-mocks-f0046c68e53c)
-* [RTL Cheat Sheet](pdf/RTL_cheat_sheet.pdf)
-* [Earlier testing lecture - more links & notes](https://github.com/josh-jacobson/lambda-lecture-notes/blob/master/3-1-advanced-react/4-testing-web-applications.md)
 * [Write tests. Not too many. Mostly integration.](https://kentcdodds.com/blog/write-tests)
+* [Understanding Jest Mocks](https://medium.com/@rickhanlonii/understanding-jest-mocks-f0046c68e53c)
+* [React Testing Library cheatsheet](https://testing-library.com/docs/react-testing-library/cheatsheet)
+* [Jest Cheat sheet](https://github.com/sapegin/jest-cheat-sheet/blob/master/Readme.md)
+* [Previous testing lecture - more links & notes](https://github.com/josh-jacobson/lambda-lecture-notes/blob/master/3-1-advanced-react/4-testing-web-applications.md)
