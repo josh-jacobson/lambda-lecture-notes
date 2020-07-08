@@ -24,7 +24,7 @@ Since you'll also be working directly with an API for the Auth Friends project, 
 |-------------------|------------------|-------------------------------------|------------------------------|
 | get               | Read             | Read a representation of a resource | 200 (OK)                     |
 | post              | Create           | Create new resources                | 201 (created)                |
-| put               | Update / Replace | Update a resource                   | 200 (OK) or 201 (created)    |
+| put               | Update           | Update a resource                   | 200 (OK) or 201 (created)    |
 | delete            | Delete           | Delete a resource                   | 200 (OK) or 204 (no content) |
 
 Log any errors out to the console from your axios requests while building out a client, and keep an eye out for these common error codes (sad path!) that may show up. Understanding what they mean will make debugging a lot easier:
