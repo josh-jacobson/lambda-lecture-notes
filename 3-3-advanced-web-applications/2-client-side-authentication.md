@@ -39,12 +39,12 @@ Log any errors out to the console from your axios requests while building out a 
 
 
 ## Videos
-[Protected Routes in React using React Router](https://www.youtube.com/watch?v=Y0-qdp-XBJg)
-[React Client Side Authentication](https://www.youtube.com/watch?v=oRL-pttfNSc)
+* [Protected Routes in React using React Router](https://www.youtube.com/watch?v=Y0-qdp-XBJg)
+* [React Client Side Authentication](https://www.youtube.com/watch?v=oRL-pttfNSc)
 
 ## Articles
-[Introduction to JSON Web Tokens](https://jwt.io/introduction/)
-[Protected Routes - React tutorial](https://medium.com/javascript-in-plain-english/how-to-set-up-protected-routes-in-your-react-application-a3254deda380)
-[Building Basic React Authentication](https://medium.com/better-programming/building-basic-react-authentication-e20a574d5e71)
-[Introduction to Local Storage](https://sebhastian.com/local-storage-introduction)
-[HTTP Verbs and Error Codes](https://developers.evrythng.com/docs/http-verbs-and-error-codes)
+* [Introduction to JSON Web Tokens](https://jwt.io/introduction/)
+* [Protected Routes - React tutorial](https://medium.com/javascript-in-plain-english/how-to-set-up-protected-routes-in-your-react-application-a3254deda380)
+* [Building Basic React Authentication](https://medium.com/better-programming/building-basic-react-authentication-e20a574d5e71)
+* [Introduction to Local Storage](https://sebhastian.com/local-storage-introduction)
+* [HTTP Verbs and Error Codes](https://developers.evrythng.com/docs/http-verbs-and-error-codes)
