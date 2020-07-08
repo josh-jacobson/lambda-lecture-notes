@@ -27,15 +27,15 @@ Since you'll also be working directly with an API for the Auth Friends project, 
 | put               | Update           | Update a resource                   | 200 (OK) or 201 (created)    |
 | delete            | Delete           | Delete a resource                   | 200 (OK) or 204 (no content) |
 
-Log any errors out to the console from your axios requests while building out a client, and keep an eye out for these common error codes (sad path!) that may show up. Understanding what they mean will make debugging a lot easier:
+Log any errors out to the console from your axios requests while building out a client, and keep an eye out for these common error codes (sad path!) that may show up. Understanding what they mean will make debugging a lot easier.
 
-**400 Bad Request:** you sent an invalid JSON document (e.g. a "}" is missing), or the syntax/content is incorrect.
+* **400 Bad Request:** you sent an invalid JSON document (e.g. a "}" is missing), or the syntax/content is incorrect.
 
-**401 Unauthorized:** the access credentials (via the Authorization header) were missing or are invalid.
+* **401 Unauthorized:** the access credentials (via the Authorization header) were missing or are invalid.
 
-**403 Forbidden:** the credentials you provided are valid, but you are not authorized to access the resource you requested.
+* **403 Forbidden:** the credentials you provided are valid, but you are not authorized to access the resource you requested.
 
-**404 Not found:** the request itself is valid, but the resource you try to access does not exist, or is outside your scope.
+* **404 Not found:** the request itself is valid, but the resource you try to access does not exist, or is outside your scope.
 
 
 ## Videos
