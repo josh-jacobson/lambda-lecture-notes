@@ -17,7 +17,7 @@ localStorage.getItem('key'); // returns 'value
 
 You'll sometimes need `localStorage.removeItem` and `localStorage.clear()` for cleanup, but that's basically the entire API! Nice and simple. Note that there are other, more secure methods of saving JWT auth tokens locally and `localStorage` is rarely a good choice for this in practice. But the functionality is similar in principle, so this approach provides a great introduction to the topic for learning purposes.
 
-## Review: HTTP and CRUD for RESTful services
+## HTTP and CRUD for RESTful services
 Since you'll also be working directly with an API for the Auth Friends project, here's a quick review / cheat sheet for how to interact with web services. Most modern API's conform to this common "representational state transfer" (REST) architecture.
 
 | HTTP Verb (axios) | CRUD naming      | Description                         | Happy Path                   |
