@@ -17,8 +17,8 @@ localStorage.getItem('key'); // returns 'value
 
 You'll sometimes need `localStorage.removeItem` and `localStorage.clear()` for cleanup, but that's basically the entire API! Nice and simple. Note that there are other, more secure methods of saving JWT auth tokens locally and `localStorage` is rarely a good choice for this in practice. But the functionality is similar in principle, so this approach provides a great introduction to the topic for learning purposes.
 
-## HTTP and CRUD for RESTful services
-Since you'll also be working directly with an API for the Auth Friends project, here's a quick review / cheat sheet for how to interact with web services. Most modern API's conform to this common "representational state transfer" (REST) architecture.
+## API review: HTTP and RESTful services
+Since you'll also be working directly with an API for the Auth Friends project, here's a quick review / cheat sheet for how to interact with web services. Most modern API's conform to the "representational state transfer" (REST) architecture.
 
 | HTTP Verb (axios) | CRUD naming      | Description                         | Happy Path                   |
 |-------------------|------------------|-------------------------------------|------------------------------|
@@ -27,7 +27,7 @@ Since you'll also be working directly with an API for the Auth Friends project, 
 | put               | Update           | Update a resource                   | 200 (OK) or 201 (created)    |
 | delete            | Delete           | Delete a resource                   | 200 (OK) or 204 (no content) |
 
-Log any errors out to the console from your axios requests while building out a client, and keep an eye out for these common error codes (sad path!) that may show up. Understanding what they mean will make debugging a lot easier.
+To make debugging easier as you're building out your web client, log any errors to the console from your axios requests. You can always just Google the error codes and messages that show up, but knowing the common ones will make your life a lot easier! Here are some good ones to know:
 
 * **400 Bad Request:** you sent an invalid JSON document (e.g. a "}" is missing), or the syntax/content is incorrect.
 
