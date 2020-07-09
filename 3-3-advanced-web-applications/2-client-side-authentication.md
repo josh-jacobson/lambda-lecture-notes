@@ -17,7 +17,7 @@ Thanks Mark Macneil for this diagram! In our case, there's just one server (rath
 
 Some version of this pattern is used in virtually every web application and mobile app in existence today. If you've ever wondered how you're able to "stay logged in" to websites and mobile apps (all of which consume external API's), this is the answer. And more specifically, this is all achieved using JSON Web Tokens. 
 
-For our purposes, we can simply think of a JSON web token (or JWT for short, pronounced “jot”) as a credential format, used for transferring information securely between a client app and a web server. Check out [https://jwt.io/](jwt.io) for more info if you're curious about the specifics.
+For our purposes, we can simply think of a JSON web token (or JWT for short, pronounced “jot”) as a credential format, used for transferring information securely between a client app and a web server. Check out [jwt.io](https://jwt.io/) for more info if you're curious about the specifics.
 
 ## Review: Local Storage
 For your Auth Friends project, you'll be using an auth token to make requests to protected API endpoints. After initial authentication, saving the returned auth token locally is a common practice for allowing the user to remain "logged in." We'll use Local Storage for this, since it provides a very straightforward way of saving key/value pairs locally in the browser. Here's a quick review:
