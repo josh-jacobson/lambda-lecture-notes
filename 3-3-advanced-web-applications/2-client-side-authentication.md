@@ -6,17 +6,18 @@ At the end of this module, you should be able to:
 * implement protected routes using an authentication token and Redirect
 
 ## JSON Web Tokens and Auth
-Visuals first :) (shout out Mark Macneil for this diagram!)
+Visuals first :) here's what we're learning about today:
+
+![JWT Auth Flow](images/auth_flow.png)
+
+Thanks Mark Macneil for this diagram! In our case, there's just one server (rather than separate auth and database servers) but the concept is the same. Here's a typical auth flow, in words:
+1. Client app (our front-end React app, running "client-side" in the browser) makes a request to the login endpoint on a web server, sending username and password
+2. If successful, the server responds with a token, which the client app saves locally in the browser (localStorage, cookies, etc)
+3. When making a request to a "protected" (login required) endpoint, our client app includes this token as an authorization header for every axios request.
+
+Some version of this pattern is used in virtually every web application and mobile app in existence today. If you've ever wondered how you're able to "stay logged in" to websites and mobile apps (all of which consume external API's), this is the answer. And more specifically, this is all achieved using JSON Web Tokens. 
 
 For our purposes, we can simply think of a JSON web token (or JWT for short, pronounced “jot”) as a credential format, used for transferring information securely between a client app and a web server. Check out [https://jwt.io/](jwt.io) for more info if you're curious about the specifics.
-
-Today we're learning about a typical kind of auth flow:
-1. Client app (our front-end React app, running "client-side" in the browsr) makes a request to the login endpoint on a web server, sending username and password
-2. If successful, the server responds with a JWT, which the client app saves locally in the browser (localStorage, cookies, etc)
-3. When making a request to a "protected" (login required) endpoint, our client app includes this JWT as an authorization header for every axios request
-
-Some version of this pattern is used in virtually every web application and mobile app in existence today. If you've ever wondered how you're able to "stay logged in" to websites and mobile apps (all of which consume external API's), JWT's are the answer. 
-
 
 ## Review: Local Storage
 For your Auth Friends project, you'll be using an auth token to make requests to protected API endpoints. After initial authentiction, saving the returned auth token locally is a common practice for allowing the user to remain "logged in." We'll use Local Storage for this, since it provides a very straightforward way of saving key/value pairs locally in the browser. Here's a quick review:
