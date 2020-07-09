@@ -1,9 +1,9 @@
 # Client-Side Authentication
 
 ## Objectives
-At the end of this module, you should be able to:
-* handle authentication with tokens in a React app
-* implement protected routes using an authentication token and Redirect
+After today's guided project, you should be able to:
+* Handle authentication with tokens in a React app
+* Implement protected routes using an authentication token and Redirect
 
 ## JSON Web Tokens and Auth
 Visuals first :) here's what we're learning about today:
