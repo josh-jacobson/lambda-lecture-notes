@@ -6,24 +6,27 @@ At the end of this module, you should be able to:
 * implement protected routes using an authentication token and Redirect
 
 ## JSON Web Tokens and Auth
-For our purposes, we can simply think of a JSON web token (or JWT for short, pronounced “jot”) as a credential format, used for transferring information securely between a client app and a web server. There's a lot more to the format, and [https://jwt.io/](jwt.io) has great info if you're curious.
+Visuals first :) (shout out Mark Macneil for this diagram!)
 
-Today we're learning about this kind of typical auth flow:
-1. Client app (our front-end React app, running "client-side" in the browsr) makes an axios request to the login endpoint on a web server, sending username and password
-2. If successful, the server responds with a JWT, which our client app saves in the browser (localStorage, cookies, etc)
-3. When making a request to a "protected" (login required) endpoint, our client app includes this JWT as an authorization header with every axios request
+For our purposes, we can simply think of a JSON web token (or JWT for short, pronounced “jot”) as a credential format, used for transferring information securely between a client app and a web server. Check out [https://jwt.io/](jwt.io) for more info if you're curious about the specifics.
 
-This flow allows the app to work seamlessly, without requiring the user to re-authorize for every interaction between client and server. Some form of this exists in virtually every web application and mobile app in existence today. Some of the technical details may get a bit complex, so be sure to keep the big picture in mind and you'll avoid getting lost in the weeds :) 
+Today we're learning about a typical kind of auth flow:
+1. Client app (our front-end React app, running "client-side" in the browsr) makes a request to the login endpoint on a web server, sending username and password
+2. If successful, the server responds with a JWT, which the client app saves locally in the browser (localStorage, cookies, etc)
+3. When making a request to a "protected" (login required) endpoint, our client app includes this JWT as an authorization header for every axios request
+
+Some version of this pattern is used in virtually every web application and mobile app in existence today. If you've ever wondered how you're able to "stay logged in" to websites and mobile apps (all of which consume external API's), JWT's are the answer. 
+
 
 ## Review: Local Storage
-For your Auth Friends project, you'll be using an auth token to make requests to protected API endpoints. After initial authentiction, saving the returned auth token locally is a common practice for allowing the user to remain "logged in." We'll use Local Storage for this, since it provides a very straightforward way of saving key/value pairs locally. Here's a quick review:
-s
+For your Auth Friends project, you'll be using an auth token to make requests to protected API endpoints. After initial authentiction, saving the returned auth token locally is a common practice for allowing the user to remain "logged in." We'll use Local Storage for this, since it provides a very straightforward way of saving key/value pairs locally in the browser. Here's a quick review:
+
 ```javascript
 localStorage.setItem('key', 'value');
 localStorage.getItem('key'); // returns 'value
 ```
 
-You'll sometimes need `localStorage.removeItem` and `localStorage.clear()` for cleanup, but that's basically the entire API! Nice and simple. Note that there are other, more secure methods of saving JWT auth tokens locally and `localStorage` is rarely a good choice for this in practice. But the functionality is similar in principle, so this approach provides a great introduction to the topic for learning purposes.
+Along with `localStorage.removeItem` and `localStorage.clear()` for cleanup, that's basically the entire API! Nice and simple. Note that there are other, more secure methods of saving JWT auth tokens locally and `localStorage` is rarely a good choice for storing auth tokens in production applications. The functionality is pretty similar though, so the localStorage approach provides a good introduction for learning client-side auth.
 
 ## API review: HTTP and RESTful services
 Since you'll also be working directly with an API for the Auth Friends project, here's a quick review / cheat sheet for how to interact with web services. Most modern API's conform to the "representational state transfer" (REST) architecture.
