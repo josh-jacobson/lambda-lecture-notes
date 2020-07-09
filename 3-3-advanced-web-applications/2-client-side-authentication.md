@@ -5,7 +5,15 @@ At the end of this module, you should be able to:
 * handle authentication with tokens in a React app
 * implement protected routes using an authentication token and Redirect
 
-## JSON Web Tokens (jwt)
+## JSON Web Tokens and Auth
+For our purposes, we can simply think of a JSON web token (or JWT for short, pronounced “jot”) as a credential format, used for transferring information securely between a client app and a web server. There's a lot more to the format, and [https://jwt.io/](jwt.io) has great info if you're curious.
+
+Today we're learning about this kind of typical auth flow:
+1. Client app (our front-end React app, running "client-side" in the browsr) makes an axios request to the login endpoint on a web server, sending username and password
+2. If successful, the server responds with a JWT, which our client app saves in the browser (localStorage, cookies, etc)
+3. When making a request to a "protected" (login required) endpoint, our client app includes this JWT as an authorization header with every axios request
+
+This flow allows the app to work seamlessly, without requiring the user to re-authorize for every interaction between client and server. Some form of this exists in virtually every web application and mobile app in existence today. Some of the technical details may get a bit complex, so be sure to keep the big picture in mind and you'll avoid getting lost in the weeds :) 
 
 ## Review: Local Storage
 For your Auth Friends project, you'll be using an auth token to make requests to protected API endpoints. After initial authentiction, saving the returned auth token locally is a common practice for allowing the user to remain "logged in." We'll use Local Storage for this, since it provides a very straightforward way of saving key/value pairs locally. Here's a quick review:
