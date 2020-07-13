@@ -23,9 +23,9 @@ Most modern API's conform to the "representational state transfer" (REST) archit
 * PUT /users/123    (update user 123 with data in payload)
 * DELETE /users/123 (delete user 123)
 
-If you're keeping score, HTTP is a *protocol* that defines how servers and clients communicate over a network. HTTP is essentially the foundation of the Internet as we know it.
+HTTP is a *protocol* that defines how servers and clients communicate over a network, essentially the foundation of the Internet as we know it. REST is an *architecture pattern* to standardize the way we build HTTP-based web services and clients. 
 
-It's also common for API endpoints to be "namespaced" with something like "v1/" to indicate the api version, and to have additional nesting based on the structure of your app.
+Side note for the routes shown above: it's very common for API endpoints to be "namespaced" with something like "v1/" to indicate the api version. Depending on the structure of your app, you might have endpoints with additional nesting, with a URL structure more like "api/v1/users".
 
 ## PUT vs POST
 The difference between these two types of requests is fairly straightforward: POST to create a new resource, PUT to update an existing one. If you're ever unsure which to use, here's a good rule of thumb. 
