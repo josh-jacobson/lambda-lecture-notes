@@ -1,4 +1,4 @@
-# HTTP / AJAX II
+# HTTP / AJAX II: PUT / DELETE
 
 ## Objectives
 After today's guided project, you should be able to:
@@ -12,8 +12,8 @@ Here's a cheat sheet for how to interact with server-side web services from a fr
 |-------------------|------------------|-------------------------------------|------------------------------|
 | get               | Read             | Read a representation of a resource | 200 (OK)                     |
 | post              | Create           | Create new resources                | 201 (created)                |
-| put               | Update           | Update a resource                   | 200 (OK) or 201 (created)    |
-| delete            | Delete           | Delete a resource                   | 200 (OK) or 204 (no content) |
+| **put**               | Update           | Update a resource                   | 200 (OK) or 201 (created)    |
+| **delete**            | Delete           | Delete a resource                   | 200 (OK) or 204 (no content) |
 
 Most modern API's conform to the "representational state transfer" (REST) architecture, with a standardized format for how the "endpoints" (the addresses you send your API calls to) are laid out and how they behave. For example, a typical RESTful resource endpoint might look like this:
 
