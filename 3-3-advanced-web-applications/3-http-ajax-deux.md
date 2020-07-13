@@ -30,3 +30,4 @@ Today's lecture is all about these two HTTP verbs, which we haven't used as much
 
 ## Helpful Resources
 * [RESTful Web Services tutorial](https://www.tutorialspoint.com/restful/restful_introduction.htm)
+* [A Brief Introduction to REST](https://www.infoq.com/articles/rest-introduction/)
