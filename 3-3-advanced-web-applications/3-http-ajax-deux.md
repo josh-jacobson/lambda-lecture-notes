@@ -23,10 +23,24 @@ Most modern API's conform to the "representational state transfer" (REST) archit
 * PUT /users/123    (update user 123 with data in payload)
 * DELETE /users/123 (delete user 123)
 
+If you're keeping score, HTTP is a *protocol* that defines how servers and clients communicate over a network. HTTP is essentially the foundation of the Internet as we know it.
+
 It's also common for API endpoints to be "namespaced" with something like "v1/" to indicate the api version, and to have additional nesting based on the structure of your app.
 
-## PUT and DELETE
-Today's lecture is all about these two HTTP verbs, which we haven't used as much as GET or POST so far. 
+## PUT vs POST
+The difference between these two types of requests is fairly straightforward: POST to create a new resource, PUT to update an existing one. If you're ever unsure which to use, here's a good rule of thumb. 
+
+**Does the resource I'd like to write to the database already exist?**
+* If **yes**, we're **updating** that resource so we should use PUT.
+* If **no**, we're **creating** a new resource and should use POST.
+
+For both of these requests, we going the resource id along with data we'd like the API to write to the database. In practice, HTTP (the *HyperText Transfer Protocol*) doesn't strictly enforce any of this so it's up to you as the developer to think in terms of resources and follow the standard patterns of the REST architecture. Whether you're a front-end, back-end, or full-stack developer, knowing these patterns and best practices is extermely important for being able to write good code.
+
+## DELETE
+With a delete request, we simply pass the id of the resource to be deleted. It ends up looking quite similar to a GET request for a single resource, hitting the same URL and just using a different verb.
+
+* GET /users/123    (get user with id '123')
+* DELETE /users/123 (delete user 123)
 
 ## Helpful Resources
 * [RESTful Web Services tutorial](https://www.tutorialspoint.com/restful/restful_introduction.htm)
