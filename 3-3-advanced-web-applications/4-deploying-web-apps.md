@@ -15,7 +15,13 @@ In the case of a single-page React app (SPA), the server delivers that applicati
 
 As you get more familiar with the big picture of how all of these pieces work together, just be sure to keep in mind which pieces of the architecture run in a browser ("client-side" / "front end") and which run on a server ("server-side" / "back end").
 
+## Static & Dynamic Web Apps
+A "static" application has hardcoded data that doesn’t change. While our React apps use data from third-party libraries and provide a user experience that is anything but "static", they still deploy very much like a static app. Your Javascript code is delivered directly to the browser to run client-side.
+
+There's a lot more setup involved in deploying a database-backed web service, but there are also "Platform as a Service" providers like Heroku that help streamline this kind of deployment just like Vercel helps out with deploying React apps. 
+
 ## Deployment with Vercel
+Vercel (formerly known as ZEIT) is a cloud platform for static sites that allows developers to deploy instantly and host apps with minimal configuration. Their documentation refers to the "JAMstack", which simply means JavaScript, reusable APIs, and prebuilt Markup.
 
 ## Helpful Links
 * [Vercel](https://vercel.com/)
