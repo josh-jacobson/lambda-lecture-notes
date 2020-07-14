@@ -6,7 +6,7 @@ After today's guided project, you should be able to:
 * explain what it means to "deploy" a static web app
 * demonstrate the ability to deploy and maintain a React App using Vercel
 
-## SPAs, mobile apps and database-backed API's:
+## Modern web architecture 
 ![REST API and clients diagram](images/rest_api.png)
 
 Thanks to HappyCoding.io for this diagram. You can visualize this more effectively with bidirectional arrows, but the main idea is that a single API can be standardized to serve a variety of clients, including web apps (like the React apps we've built) as well as native mobile and even desktop (Mac/PC) apps.
