@@ -15,6 +15,11 @@ We standardize API's with the help of the REST architecture and communication wi
 
 This architecture is the most popular approach to web development at the moment: client apps (React, iOS, Android and others) truly behave like apps, and handle all database-related behavior through asynchronous API requests.
 
+Note how radically different this is from the most popular way of doing things just 5-10 years ago:
+![Rails app diagram](images/rails_app.png)
+
+Older MVC frameworks like Ruby on Rails, Django and many others basically do almost everything server-side and just deliver each page to the client. Originally there was no notion of an "app" on the client side, just some basic click handlers and other interactive features implemented with Javascript. As the desire for highly interactive web apps grew, more and more functionality moved to the client side in order to avoid the lag time of waiting on an external server for every new page. This older model is all but archaic now, but it's interesting to know the progression and understand the context of how web development has evolved.
+
 ## Review: Client / Server
 Whenever we're writing React apps, these are web applications that run in a browser, "client-side" or "front-end".
 
