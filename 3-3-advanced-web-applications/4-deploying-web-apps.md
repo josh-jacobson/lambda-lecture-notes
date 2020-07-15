@@ -22,7 +22,7 @@ As you get more familiar with the big picture of how all of these pieces work to
 
 You can visualize this more effectively with bidirectional arrows, but the main idea is that a single API can be standardized to serve a variety of clients, including web apps (like the React apps we've built) as well as mobile (iOS / Android) and even desktop (Mac/PC) apps.
 
-We standardize API's with the help of the REST architecture and communication with JSON. This whole approach isn't exactly new, but it's come into greater popularity over the last decade or so as the Internet has evolved from older "Web 2.0" sites (where a server handles all the logic and delivers each page with a reload) to the current focus on fast, responsive single-page apps. Our phones & computers have become so powerful that they can just handle all of the logic, leaving the server-side API with only the simple task of interacting with a database. 
+We standardize API's with the help of the REST architecture and communication with JSON. This whole approach isn't exactly new, but it's come into greater popularity over the last decade or so as the Internet has evolved from older "Web 2.0" sites (where a server handles all the logic and delivers each page with a reload) to the current focus on fast, responsive single-page apps. Our phones & computers have become so powerful that they can just handle all of the logic, leaving the server-side API with only the simple task of managing our "cloud" data. 
 
 This architecture is the most popular approach to web development at the moment: client apps (React, iOS, Android and others) truly behave like apps, and handle all database-related behavior through asynchronous API requests.
 
