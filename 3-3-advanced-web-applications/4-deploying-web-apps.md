@@ -26,12 +26,14 @@ We standardize API's with the help of the REST architecture and communication wi
 
 This architecture is the most popular approach to web development at the moment: client apps (React, iOS, Android and others) truly behave like apps, and handle all database-related behavior through asynchronous API requests.
 
-Note how radically different this is from the most popular way of doing things just 5-10 years ago:
+Note how different this is from a popular way of doing things just 5-10 years ago with MVC (model, view, controller) frameworks like Ruby on Rails:
 
 ![Rails app diagram](images/rails_app.png)
 
 
-Older MVC frameworks like Ruby on Rails, Django and many others basically do almost everything server-side and just deliver each page to the client. Originally there was no notion of an "app" on the client side, just some basic click handlers and other interactive features implemented with Javascript. As the desire for highly interactive web apps grew, more and more functionality moved to the client side in order to avoid the lag time of waiting on an external server for every new page. This older model is all but archaic now, but it's interesting to know the progression and understand the context of how web development has evolved.
+Older web frameworks like Rails do almost everything server-side and just deliver each page to the client. Originally there was no notion of an "app" on the client side, just some basic click handlers and other interactive features implemented with Javascript. As the desire for highly interactive web apps grew, more and more functionality moved to the client side in order to avoid the lag time of waiting on an external server for every new page. 
+
+This older model is all but archaic now, but it's interesting to know the progression and understand the context of how web development has evolved! MVC frameworks and other similar approaches are still sometimes used for building API's, but the "view" portion is just the JSON response rather than a webpage. 
 
 ## Static & Dynamic Web Apps
 A "static" application has hardcoded data that doesn’t change. While our React apps use data from third-party libraries and provide a user experience that is anything but "static", they still deploy very much like a static app. Your Javascript code is delivered directly to the browser to run client-side.
