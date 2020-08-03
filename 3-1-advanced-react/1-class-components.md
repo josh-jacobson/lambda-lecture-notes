@@ -1,6 +1,37 @@
 # Class Components
 
-## Review: JavaScript function prototypes and ES6 classes
+## The Basics
+
+React development originally focused on components written as ES6 classes, like this:
+
+```javascript
+class Lambda extends React.Component {
+  constructor() {
+    super(); // calls the constructor from React.Component, which intializes this.props
+    // initialize state here
+  }
+  
+  // lifecycle methods: componentWillMount, componentDidMount, componentWillReceiveProps, shouldComponentUpdate, componentWillUpdate, componentDidUpdate, and componentWillUnmount
+  
+  render() {
+    return <h1>Hello, {this.props.name}</h1>;
+  }
+}
+
+export default Lambda;
+```
+
+The base Component class includes built-in functionality for handling state and props, with specific methods that run at various points throughout the component's "lifecycle" (from mounting in your app, to updating, and eventually unmounting -- we'll study these in the next lecture).
+
+The default `React.Component` constructor initializes `this.props` and other useful things -- feel free to look at the [React.Component constructor source code](https://github.com/facebook/react/blob/1d25aa5787d4e19704c049c3cfa985d3b5190e0d/packages/react/src/ReactBaseClasses.js#L22) if you're curious about what that `super()` call actually does.
+
+## Class components vs Function components:
+  * In class components we use lifecycle methods to manage state and side effects. For function components we use Hooks.
+  * Hooks cannot be used in class components! (and lifecycle methods are not used in function components)
+  * Class components have just one state variable, an object with multiple keys
+  * Function components have the option to store state in one or multiple variables, managed with `useState` and/or `useReducer`
+
+## Classes and function prototypes in JavaScript
 
 Javascript has something called prototype-based inheritance, which is actually simpler than traditional class-based inheritance. So in JavaScript we use a style of object-oriented programming that makes use of constructor functions and prototypes rather than true classes. 
 
@@ -47,31 +78,6 @@ In other languages, a class constructor creates an instance of the class, but a 
 
 In React, when we define a class component that `extends React.Component` we're basically just taking that base component class and extending it with our own custom behavior.
 
-## React Class Component Syntax
-
-React development originally focused on class components, written like this:
-
-```javascript
-class Lambda extends React.Component {
-  constructor() {
-    super(); // calls the constructor from React.Component, which intializes this.props
-    // initialize state here
-  }
-  
-  // lifecycle methods: componentWillMount, componentDidMount, componentWillReceiveProps, shouldComponentUpdate, componentWillUpdate, componentDidUpdate, and componentWillUnmount
-  
-  render() {
-    return <h1>Hello, {this.props.name}</h1>;
-  }
-}
-
-export default Lambda;
-```
-
-The base Component class includes built-in functionality for handling state and props, with specific methods that run at various points throughout the component's "lifecycle" (from mounting in your app, to updating, and eventually unmounting -- we'll study these in the next lecture).
-
-The default `React.Component` constructor initializes `this.props` and other useful things -- feel free to look at the [React.Component constructor source code](https://github.com/facebook/react/blob/1d25aa5787d4e19704c049c3cfa985d3b5190e0d/packages/react/src/ReactBaseClasses.js#L22) if you're curious about what that `super()` call actually does.
-
 ## Are class components still relevant?
 
 Function components were originally limited in their abilities, but React 16.8 introduced Hooks, allowing function components to "hook into" state and side effects without the need for class components.
@@ -79,12 +85,6 @@ Function components were originally limited in their abilities, but React 16.8 i
 Hooks streamline things a lot, and most developers prefer writing new components this way. But you'll also learn something new about the philosophy and principles behind React by learning the "old way" with class components.
 
 And in the real world, you'll usually encounter applications with a mix of class and function components, so it'll help a lot in your career to fully understand both styles.
-
-## Class components vs Function components:
-  * In class components we use lifecycle methods to manage state and side effects. For function components we use Hooks.
-  * Hooks cannot be used in class components! (and lifecycle methods are not used in function components)
-  * Class components have just one state variable, an object with multiple keys
-  * Function components have the option to store state in one or multiple variables, managed with `useState` and/or `useReducer`
 
 
 ## Helpful Resources
