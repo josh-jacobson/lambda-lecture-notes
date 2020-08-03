@@ -16,7 +16,8 @@ class Lambda extends React.Component {
     // initialize state here
   }
   
-  // lifecycle methods: componentDidMount, componentDidUpdate, componentWillUnmount, etc
+  // lifecycle methods: 
+  // componentDidMount, componentDidUpdate, componentWillUnmount, etc
   
   render() {
     return <h1>Hello, {this.props.name}</h1>;
