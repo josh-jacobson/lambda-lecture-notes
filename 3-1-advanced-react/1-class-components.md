@@ -1,5 +1,10 @@
 # Class Components
 
+## Objectives
+* Explain class components, and use a class component to render some state data to the DOM
+* Share data between components using state and props
+* Respond to events triggered by user interaction and handle user input via forms in React
+
 ## The Basics
 
 React development originally focused on components written as ES6 classes, like this:
@@ -11,7 +16,7 @@ class Lambda extends React.Component {
     // initialize state here
   }
   
-  // lifecycle methods: componentWillMount, componentDidMount, componentWillReceiveProps, shouldComponentUpdate, componentWillUpdate, componentDidUpdate, and componentWillUnmount
+  // lifecycle methods: componentDidMount, componentDidUpdate, componentWillUnmount, etc
   
   render() {
     return <h1>Hello, {this.props.name}</h1>;
