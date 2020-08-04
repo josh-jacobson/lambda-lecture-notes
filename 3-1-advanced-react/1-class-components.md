@@ -4,6 +4,7 @@
 * Explain class components, and use a class component to render some state data to the DOM
 * Share data between components using state and props
 * Respond to events triggered by user interaction and handle user input via forms in React
+* (looking ahead to Redux) Start thinking about "component-level" and "application-level" state
 
 ## The Basics
 
