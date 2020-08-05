@@ -1,5 +1,10 @@
 # The React Lifecycle
 
+## Objectives
+* describe the three phases of the React Component Lifecycle
+* properly explain what the constructor and render methods do and what their place is in the React Component Lifecycle
+* use the componentDidMount function to set a component's state post render
+
 ## Review: Class Components
 
 Here's the basic format you'll use when writing class components in React:
