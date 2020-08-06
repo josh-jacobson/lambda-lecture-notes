@@ -3,7 +3,7 @@
 
 ## Objectives
 * describe the three phases of the React Component Lifecycle (mounting, updating, unmounting)
-* properly explain what the constructor and render methods do and what their place is in the React Component Lifecycle
+* properly explain what the `constructor` and `render` methods do, and what their place is in the React Component Lifecycle
 * use the componentDidMount function to set a component's state post-render
 * bring it all together: use class components and their lifecycle methods to:
   * fetch data asynchronously from an external API (we'll use axios)
