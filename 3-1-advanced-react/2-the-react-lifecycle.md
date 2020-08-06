@@ -18,7 +18,7 @@ Here's the basic format you'll use when writing class components in React:
 class Lambda extends React.Component {
   constructor() {
     super(); // calls the constructor from React.Component, which intializes this.props
-    // initialize state here
+    // initialize this.state here
   }
   
   // lifecycle methods: componentDidMount, componentDidUpdate, componentWillUnmount, etc.
