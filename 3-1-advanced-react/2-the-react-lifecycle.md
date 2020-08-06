@@ -4,6 +4,7 @@
 * describe the three phases of the React Component Lifecycle
 * properly explain what the constructor and render methods do and what their place is in the React Component Lifecycle
 * use the componentDidMount function to set a component's state post render
+* Fetch data asynchronously from an external API, render the data and handle updates using the most common lifecycle methods (for similar functionality to the useEffect hook)
 
 ## Review: Class Components
 
