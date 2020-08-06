@@ -1,9 +1,10 @@
 # The React Lifecycle
+🌑🌒🌓🌔🌕
 
 ## Objectives
-* describe the three phases of the React Component Lifecycle
+* describe the three phases of the React Component Lifecycle (mounting, updating, unmounting)
 * properly explain what the constructor and render methods do and what their place is in the React Component Lifecycle
-* use the componentDidMount function to set a component's state post render
+* use the componentDidMount function to set a component's state post-render
 * bring it all together: use class components and their lifecycle methods to:
   * fetch data asynchronously from an external API (we'll use axios)
   * render the data to your app's UI
@@ -35,9 +36,9 @@ export default Lambda;
 This may feel a bit complex at first, especially coming from the more streamlined Hooks approach. An easy way to understand the React lifecycle is that it's simply “when a component does what it does, and why". 
 
 Just like a 🌿 or 🦔, a React component has three phases to its "lifecycle", and different things need to happen at each stage of life:
-* Birth / mounting (`componentDidMount`)
-* Growth / updating (`componentDidUpdate`)
-* Death / unmounting (`componentWillUnmount`)
+* 🐛 Birth / mounting (`componentDidMount`)
+* 🦋 Growth / updating (`componentDidUpdate`)
+* 💀 Death / unmounting (`componentWillUnmount`)
 
 Sometimes they even render child components 🐣 too! But I may be overextending a questionable metaphor. Moving on...
 
