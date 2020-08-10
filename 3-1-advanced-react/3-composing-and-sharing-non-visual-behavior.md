@@ -1,7 +1,7 @@
 # Composing and Sharing Non-Visual Behavior
 
 ## Custom Hooks 🤠
-We all love the convenient interface of `useState` and `useEffect`. We'll also be working with `useReducer` a lot later on in this unit. Sometimes when you're building an app, you'll come up with a clever implementation that is helpful in a lot of different contexts rather than just in the component you're working on at the moment! You can always just write a helper function to share across your app, but when you're working with hooks specifically you can actually just write your own hook to extend the functionality of the hooks built into React.
+We all love the convenient interface of `useState` and `useEffect`. We'll also be working with `useReducer` a lot later on in this unit. Sometimes when you're building an app, you'll come up with a clever implementation that is helpful in a lot of different contexts rather than just in the component you're working on at the moment! You can actually just write your own hook to extend the functionality of the hooks built into React. Just like a helper function you'd write to share some functionality across your app, but with React flavor.
 
 Sounds a bit complicated, but it's actually super easy in practice. From the React docs:
 > A custom Hook is a JavaScript function whose name starts with ”use” and that may call other Hooks.
