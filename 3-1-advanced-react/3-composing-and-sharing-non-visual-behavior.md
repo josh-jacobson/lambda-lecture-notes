@@ -1,6 +1,6 @@
 # Composing and Sharing Non-Visual Behavior
 
-## Review: stateful logic and non-visual behavior
+## Stateful logic and non-visual behavior
 When we talk about "stateful logic" and "non-visual behavior" in React, we're simply referring to all of the logic in a component other than the basics. These are all part of the "stateful logic" in a component:
 * Updating state
 * Handling form inputs
@@ -10,7 +10,29 @@ Rendering something to the DOM is an example of basic behavior that is not consi
 
 On a high level, we can simply think about stateful logic as the stuff we do with `useState` and non-visual behavior as the stuff we do with `useEffect`.
 
-We won't be working with class components in this lecture, but the same ideas apply. Your stateful logic will include `this.setState` calls, and non-visual behavior like event listeners and api calls will happen in the lifecycle methods.
+(No class components in this lecture, but the same ideas apply there too! In class components, your stateful logic will include `this.setState` calls, and non-visual behavior like event listeners and api calls will happen in the lifecycle methods.)
+
+## Custom Hooks
+We all love the convenient interface of `useState` and `useEffect`. We'll also be working with `useReducer` a lot later on in this unit. Sometimes when you're building an app, you'll come up with a clever implementation that is helpful in a lot of different contexts rather than just in the component you're working on at the moment! You can always just write a helper function to share across your app, but when you're working with hooks specifically you can actually just write your own hook to extend the functionality of the hooks built into React.
+
+Sounds a bit complicated, but it's actually super easy in practice. From the React docs:
+> A custom Hook is a JavaScript function whose name starts with ”use” and that may call other Hooks.
+
+Here are some examples of real custom hooks you'll see in the wild:
+* useLocalStorage: just like useState, but persist the values to localStorage in case a session is interrupted (we'll do this today)
+* useHistory and useParams: nice custom hooks included in React Router for accessing url params and browser history
+* useSpeechSynthesis: easy text-to-sound synthesis for your React app (part of `react-speech-kit`)
+
+## Local Storage
+In today's guided project we'll be persisting data to the browser to improve the user experience. One very straightforward way to do this is with the localStorage api, which basically just saves key/value pairs locally in the browser. Here's `localStorage` in a nutshell: 
+
+```javascript
+localStorage.setItem('key', 'value');
+localStorage.getItem('key'); // returns 'value
+```
+
+Along with `localStorage.removeItem` and `localStorage.clear()` for cleanup, that's basically the entire API! Nice and simple. As we get comfortable with differnt levels of state management over the next few weeks, 
+
 
 ## Functional Programming
 In this lecture we'll be composing functions and building our own custom hooks.
