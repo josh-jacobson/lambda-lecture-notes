@@ -31,19 +31,19 @@ localStorage.setItem('key', 'value');
 localStorage.getItem('key'); // returns 'value
 ```
 
-Along with `localStorage.removeItem` and `localStorage.clear()` for cleanup, that's basically the entire API! Nice and simple. As we get comfortable with differnt levels of state management over the next few weeks, 
+Along with `localStorage.removeItem` and `localStorage.clear()` for cleanup, that's basically the entire API! Nice and simple. As we get comfortable with different levels of state management over the next few weeks, 
 
 
 ## Functional Programming
-In this lecture we'll be composing functions and building our own custom hooks.
+Today we'll be "composing" functions and building our own custom hooks. Pretty trendy sounding, but what does *function composition* really mean?
 
-You may notice that in building custom hooks, we're creating many layers of abstraction with functions that accept functions as their inputs and also return other functions as outputs. All of this may seem very confusing at first, but don't let it intimidate you! 
+In building custom hooks, we're writing functions that accept functions as their inputs and also return other functions as outputs. "Functional programming" is a whole paradigm (just like object-oriented programming and other styles) but on a basic level it's really just about this clever way of building useful abstractions by allowing functions to receive, call, and return other functions. 
 
-Functions are just a type of object in JavaScript, inheriting from the same Object prototype. And they're treated as "first-class objects" in JavaScript, meaning that they can be passed around as arguments, assigned to variables, and returned by other functions. 
+This is all possible because functions are treated as "first-class objects" in JavaScript, meaning that they can be passed around as arguments, assigned to variables, and returned by other functions. Not every programming language is like this! It's a helpful feature of JavaScript that functions are just another type of object inheriting from the same Object prototype.
 
-All of this allows for some pretty powerful programming paradigms, many of which we've already seen in React! So if functional programming sounds complex just realize that you've already done a lot of it and you'll only continue to get more and more comfortable with it as we explore advanced programming techniques with React.
+All of this allows for some pretty powerful programming paradigms, many of which we've already seen in React. So if "functional programming" and "function composition" sound overly complex just realize that you've already worked with these paradigms before and you'll only continue to get more and more comfortable with it as we explore advanced techniques in React.
 
-(Side note: the [λ calculus](https://personal.utdallas.edu/~gupta/courses/apl/lambda.pdf) is a mathematical system underpinning functional programming. Perhaps this is how Lambda School got its name.)
+(Side note: the [λ calculus](https://personal.utdallas.edu/~gupta/courses/apl/lambda.pdf) is a mathematical system underpinning functional programming. Perhaps this is how Lambda School got its name?)
 
 
 ## Helpful Resources:
