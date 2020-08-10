@@ -7,7 +7,7 @@ Sounds a bit complicated, but it's actually super easy in practice. From the Rea
 > A custom Hook is a JavaScript function whose name starts with ”use” and that may call other Hooks.
 
 Here are some examples of real custom hooks you'll see in the wild:
-* useLocalStorage: just like useState, but persist the values to localStorage in case a session is interrupted (we'll do this today)
+* useLocalStorage: just like useState, but persist the values to localStorage in case a session is interrupted (we'll build a version of this today)
 * useHistory and useParams: nice custom hooks included in React Router for accessing url params and browser history
 * useSpeechSynthesis: easy text-to-sound synthesis for your React app (part of `react-speech-kit`)
 
