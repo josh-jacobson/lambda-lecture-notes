@@ -17,7 +17,7 @@ When we talk about "stateful logic" and "non-visual behavior" in React, we're si
 * Handling form inputs
 * Responding to events 
 
-Rendering something to the DOM is an example of basic behavior that is not considered "stateful logic". We can write a simple function component that acts as a templating engine, taking a few inputs and formatting them to look nice on the page. A component like that has no "stateful logic".
+Rendering something to the DOM is an example of basic behavior that is *not* considered "stateful logic". We can write a simple function component that acts as a templating engine, taking a few inputs and formatting them to look nice on the page. A component like that has no "stateful logic".
 
 On a high level, we can simply think about stateful logic as the stuff we do with `useState` and non-visual behavior as the stuff we do with `useEffect`.
 
