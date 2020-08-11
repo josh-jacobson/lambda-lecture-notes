@@ -31,7 +31,7 @@ localStorage.setItem('key', 'value');
 localStorage.getItem('key'); // returns 'value
 ```
 
-Along with `localStorage.removeItem` and `localStorage.clear()` for cleanup, that's basically the entire API! Nice and simple. As we get comfortable with different levels of state management over the next few weeks, 
+Along with `localStorage.removeItem` and `localStorage.clear()` for cleanup, that's basically the entire API! Nice and simple. 
 
 
 ## Functional Programming 🤯
