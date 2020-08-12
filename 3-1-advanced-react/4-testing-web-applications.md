@@ -51,7 +51,7 @@ React Testing Library is just a lightweight library that provides some additiona
 * ☑️ query (queryBy / queryAllBy): returns null rather than causing an error if no matching elements are found. Rarely used -- basically you should only use the query variant if you're specifically looking to verify that an element is *not* rendered to the page.
 
 If you're trying decide whether to use a singular or plural matcher:
-* 🧖‍♂️ Singular matchers (getBy, findBy, queryBy) will make your test fail if there's more than one matching element! There's an implicit assertion bulit in, asserting that there should be **only 1** matching element.
+* 🧖‍♂️ Singular matchers (getBy, findBy, queryBy) return an error if there's more than one matching element! There's an implicit assertion bulit in, asserting that there should be **1 and only 1** matching element.
 * 👩‍👩‍👧‍👦 Plural matchers (getAllBy, queryAllBy, findAllBy) are more flexible, allowing one or more matching elements.
 
 Just open up the [cheatsheet](https://testing-library.com/docs/dom-testing-library/cheatsheet) for reference while writing tests with RTL, no need to memorize all this. Remember the basics will help though: **get and find are more strict than query**, and **singular matchers are more strict than plural ones**. In general, being very strict and specific about your assertions will allow for better tests.
