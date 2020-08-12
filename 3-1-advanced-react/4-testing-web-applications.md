@@ -1,5 +1,5 @@
 # Testing Web Applications
-👩‍🔬🧪🧬
+⚛️👩‍🔬🧪🧬
 
 ## Why Test? 
 * Having a comprehensive test suite allows us to trust the code
