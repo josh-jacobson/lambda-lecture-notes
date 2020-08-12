@@ -45,16 +45,16 @@ As an example to understand the difference, for a basic form component you'd hav
 
 React Testing Library is just a lightweight library that provides some additional utilitiy functions, extending the functionality of `react-dom` and `react-dom/test-utils`. It's intended as a replacement for Enzyme (a testing library developed by engineers at Airbnb, released in 2016 and popular until recently). Note that RTL itself is **not a test runner or framework** -- it's just a library that you can use *with* a testing framework like Jest. Jest + RTL is a popular combination, and we'll be working with this stack to learn some testing basics.
 
-## RTL Matchers -- get, query, or find?
+## RTL Matchers -- get, find or query?
 * ✅ get (getBy / getAllBy): you'll probably use this one the most. It has an implicit assertion built in, meaning that the query itself will make your test fail if the node isn't found, rather than just returning null.
-* ✅ query (queryBy / queryAllBy): a more gentle version of get, returning null if no matching elements are found
 * ✅ find (findBy / findAllBy): useful for testing async behavior, like making an API call and rendering the new content to the DOM.
+* ☑️ query (queryBy / queryAllBy): returns null rather than causing an error if no matching elements are found. Rarely used -- basically you should only use the query variant if you're specifically looking to verify that an element is *not* rendered to the page.
 
 If you're trying decide whether to use a singular or plural matcher:
-* 🧖‍♂️ Singular matchers (getBy, queryBy, findBy) will make your test fail if there's more than one matching element! There's an implicit assertion bulit in, asserting that there should be **only 1** matching element.
+* 🧖‍♂️ Singular matchers (getBy, findBy, queryBy) will make your test fail if there's more than one matching element! There's an implicit assertion bulit in, asserting that there should be **only 1** matching element.
 * 👩‍👩‍👧‍👦 Plural matchers (getAllBy, queryAllBy, findAllBy) are more flexible, allowing one or more matching elements.
 
-Just open up the [cheatsheet](https://testing-library.com/docs/dom-testing-library/cheatsheet) for reference while writing tests with RTL, no need to memorize all this. Remember the basics will help though: **get and find are more strict than query**, and **singular matchers are more strict than plural ones**.
+Just open up the [cheatsheet](https://testing-library.com/docs/dom-testing-library/cheatsheet) for reference while writing tests with RTL, no need to memorize all this. Remember the basics will help though: **get and find are more strict than query**, and **singular matchers are more strict than plural ones**. In general, being very strict and specific about your assertions will allow for better tests.
 
 ## PDF's to download
 * ["What Should I Test?" by Kent C Dodds](pdf/Print_Worksheet_US.pdf)
