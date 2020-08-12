@@ -1,6 +1,7 @@
 # Testing Web Applications
+👩‍🔬🧪🧬
 
-## Why Test?
+## Why Test? 
 * Having a comprehensive test suite allows us to trust the code
 * Safety net for future changes & refactoring (especially helpful for team collaboration)
 * Bugs will immediately be surfaced in the future
@@ -12,10 +13,10 @@
 ## Four Kinds of Tests
 There's a lot of different terminology floating around, and sometimes the categories overlap but here's a relatively easy way to understand the main categories of automated tests. (Kent C. Dodds explains ths really nicely -- check out his article and pdf's below!)
 
-* **End to End testing:** simulating an entire user flow from start to finish. If you're writing an e-commerce app, that flow could be placing items in the cart and completing a purchase. Think of hiring a QA person to go through that whole process and try every edge case they can think of to see if anything breaks. But your QA person is actually a robot. You've seen this before with **Enzyme**
-* **Integration testing:** verifying the functionality of a complete piece of application behavior, agnostic of its implementation details. This is similar to E2E but generally focused on more discrete behavior rather than the big picture. For example, an integration test in your e-commerce app might just verify the behavior of adding an item to your cart rather than simulating an entire purchase flow from start to finish. 
-* **Unit testing:** verifying that an individual function or component of your application works as expected
-* **Static testing:** catch errors and typos in code. (Code linters like ESLint help you with this)
+* 🌲 **End to End testing:** simulating an entire user flow from start to finish. If you're writing an e-commerce app, that flow could be placing items in the cart and completing a purchase. Think of hiring a QA person to go through that whole process and try every edge case they can think of to see if anything breaks. But your QA person is actually a robot. You've seen this before with **Enzyme**
+* 🌿 **Integration testing:** verifying the functionality of a complete piece of application behavior, agnostic of its implementation details. This is similar to E2E but generally focused on more discrete behavior rather than the big picture. For example, an integration test in your e-commerce app might just verify the behavior of adding an item to your cart rather than simulating an entire purchase flow from start to finish. 
+* 🌱 **Unit testing:** verifying that an individual function or component of your application works as expected
+* 👀 **Static testing:** catch errors and typos in code. (Code linters like ESLint help you with this)
 
 ![Testing pyramid](../3-3-advanced-web-applications/images/testing_pyramid.png)
 
@@ -32,7 +33,7 @@ AAA flow of testing:
 ## Unit Testing with Jest
 Unit tests are for the individual "units" of your application -- functions, event handlers, and small components.
 
-Jest is a testing framework developed by Facebook. We'll be starting with Jest on its own for unit tests in this lecture, then we'll also see how Jest works together with a DOM testing utility library (RTL is most popular at the moment) for integration testing.
+Jest is a testing framework developed by Facebook. We'll be starting with Jest on its own for unit tests in this lecture, then we'll also see how Jest works together with a DOM utility library (RTL is most popular at the moment) for integration testing.
 
 ## Integration Testing with React Testing Library and Jest
 Here's a nice overview of the integration testing concept from the React Testing Library docs:
@@ -43,6 +44,17 @@ So integration testing is a higher-level form of testing, in which we actually i
 As an example to understand the difference, for a basic form component you'd have unit tests for each method (`handleChanges`, `submitForm`, etc) and an integration test to verify the overall behavior of a certain action that involves multiple components.
 
 React Testing Library is just a lightweight library that provides some additional utilitiy functions, extending the functionality of `react-dom` and `react-dom/test-utils`. It's intended as a replacement for Enzyme (a testing library developed by engineers at Airbnb, released in 2016 and popular until recently). Note that RTL itself is **not a test runner or framework** -- it's just a library that you can use *with* a testing framework like Jest. Jest + RTL is a popular combination, and we'll be working with this stack to learn some testing basics.
+
+## RTL Matchers -- get, query, or find?
+* ✅ get (getBy / getAllBy): you'll probably use this one the most. It has an implicit assertion built in, meaning that the query itself will make your test fail if the node isn't found, rather than just returning null.
+* ✅ query (queryBy / queryAllBy): a more gentle version of get, returning null if no matching elements are found
+* ✅ find (findBy / findAllBy): useful for testing async behavior, like making an API call and rendering the new content to the DOM.
+
+If you're trying decide whether to use a singular or plural matcher, also remember:
+* 🧖‍♂️ Singular matchers (getBy, queryBy, findBy) will make your test fail if there's more than one matching element! There's an implicit assertion bulit in, asserting that there should be **only 1** matching element.
+* 👩‍👩‍👧‍👦 Plural matchers (getAllBy, queryAllBy, findAllBy) are more flexible, allowing one or more matching elements.
+
+Just open up the [cheatsheet](https://testing-library.com/docs/dom-testing-library/cheatsheet) for reference while writing tests with RTL, no need to memorize all this. Remember the basics will help though: **get and find are more strict than query**, and **singular matchers are more strict than plural ones**.
 
 ## PDF's to download
 * ["What Should I Test?" by Kent C Dodds](pdf/Print_Worksheet_US.pdf)
