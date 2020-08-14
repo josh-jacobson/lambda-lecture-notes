@@ -2,7 +2,16 @@
 
 Today we'll be learning about reducers, a key concept in functional programming that is at the core of Redux. First, we'll take a step back to learn about data structures in JavaScript and study the idea of *immutable state.*
 
-## Data types in JavaScript
+## What is a reducer?
+A reducer is a pure function that takes the previous state and an action, and returns the next state. It "reduces" those two arguments to one output:
+
+![Reducer diagram](images/reducer.png)
+
+```javascript
+reducer = (previousState, action) => nextState
+```
+
+## Review: Data types in JavaScript
 In Javascript there are several "primitive types" (e.g., `Number`, `String`, `Boolean`), each of which stores a value of a fixed size in memory. For example, a Number type is always exactly 8 bytes of data, to store a 64-bit floating point value.
 
 Objects, arrays and functions, however, are more advanced data structures and they require a more sophisticated system of memory allocation and management. So an Object actually stores a "pointer" to another memory location, where the right amount of storage space can be dynamically allocated.
@@ -32,7 +41,7 @@ In order to keep state changes and their effects throughtout the application **p
 
 We've been following this convention all along, but it becomes especially important in larger applications with more complex and numerous state transitions. Immutable state is one of the core ideas in React, and is necessary for application-level state management with tools like Redux and Context API. 
 
-## What is a Reducer?
+## Let's make some coffee, y'all
 Say you're starting a local business, like a coffee shop. Throughout the course of a day there are many different actions to be done -- grinding beans, making espresso, accepting payments, and so on. Within a single transaction with a customer, there are several state changes that take place and we'd like them to take place in a specific order. Once the customer pays we'll "dispatch" an action to update the state of their order and kick off the process of making their coffee. Here's an example, in the language of reducers:
 
 * Initial state: `{order: '', cost: null, status: 'ordering'}`
