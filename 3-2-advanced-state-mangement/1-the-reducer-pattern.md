@@ -2,7 +2,7 @@
 
 Today we'll be learning about reducers, a key concept in functional programming that is at the core of Redux. First, we'll take a step back to learn about data structures in JavaScript and study the idea of *immutable state.*
 
-## What is a reducer?
+## Fergalicious definition
 A reducer is a pure function that takes the previous state and an action, and returns the next state. It "reduces" those two arguments to one output:
 
 ![Reducer diagram](images/reducer.png)
