@@ -41,7 +41,7 @@ In order to keep state changes and their effects throughtout the application **p
 
 We've been following this convention all along, but it becomes especially important in larger applications with more complex and numerous state transitions. Immutable state is one of the core ideas in React, and is necessary for application-level state management with tools like Redux and Context API. 
 
-## Let's make some coffee, y'all
+## Let's make some artisanal coffee (with actions and reducers)
 Say you're starting a local business, like a coffee shop. Throughout the course of a day there are many different actions to be done -- grinding beans, making espresso, accepting payments, and so on. Within a single transaction with a customer, there are several state changes that take place and we'd like them to take place in a specific order. Once the customer pays we'll "dispatch" an action to update the state of their order and kick off the process of making their coffee. Here's an example, in the language of reducers:
 
 * Initial state: `{order: '', cost: null, status: 'ordering'}`
