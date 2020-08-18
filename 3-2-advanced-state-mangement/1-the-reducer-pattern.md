@@ -23,7 +23,7 @@ That may feel a bit abstract at first, so here's an example:
 ```javascript
 // Using "=" to copy objects just duplicates the pointer, not the object itself
 const josh = {name: "josh", color: "blue"};
-const josh_two = a;
+const josh_two = josh;
 josh_two.color = "red";
 
 console.log(josh, josh_two); // both have color: red
