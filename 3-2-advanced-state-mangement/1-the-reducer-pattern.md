@@ -78,7 +78,7 @@ const action = {
 ```
 
 ## useReducer Hook
-We're not diving into Redux just yet, but we can start getting comfortable with the Reducer pattern and all of its conventions by working with the `useReducer` hook, an alternative to `useState`:
+We can start getting comfortable with the Reducer pattern and all of its conventions by working with the `useReducer` hook, an alternative to `useState`:
 
 ```javascript
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -116,7 +116,7 @@ function Menu() {
 }
 ```
 
-Redux builds on this pattern to provide a "predictable state container", and over the next two weeks we'll be learning about various ways of managing application-level and context-level state with Redux and Context API. Things can get confusing with the amount of abstraction involved, but as long as you're really solid on these fundamentals you'll be good to go.
+Redux builds on this pattern to provide a "predictable state container", and over the next two weeks we'll be learning about various ways of managing application-level and context-level state with Redux and Context API. Things can get confusing with the amount of abstraction involved, but as long as you're really solid on these fundamentals you'll be good to go!
 
 ## Helpful Resources:
 * [JavaScript data types - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
