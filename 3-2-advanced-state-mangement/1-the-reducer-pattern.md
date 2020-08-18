@@ -5,7 +5,7 @@ Today we'll be learning about reducers, a key concept in functional programming 
 ## Fergalicious definition
 A reducer is a pure function that takes the previous state and an action, and returns the next state. It "reduces" those two arguments to one output:
 
-![Reducer diagram](images/reducer.png)
+![Reducer diagram](images/reducer.jpg)
 
 ```javascript
 reducer = (previousState, action) => nextState
