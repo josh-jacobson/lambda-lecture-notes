@@ -11,7 +11,7 @@ A reducer is a pure function that takes the previous state and an action, and re
 reducer = (previousState, action) => nextState
 ```
 
-## Review: Data types in JavaScript
+## Data types in JavaScript
 In Javascript there are several "primitive types" (e.g., `Number`, `String`, `Boolean`), each of which stores a value of a fixed size in memory. For example, a Number type is always exactly 8 bytes of data, to store a 64-bit floating point value.
 
 Objects, arrays and functions, however, are more advanced data structures and they require a more sophisticated system of memory allocation and management. So an Object actually stores a "pointer" to another memory location, where the right amount of storage space can be dynamically allocated.
@@ -42,7 +42,7 @@ In order to keep state changes and their effects throughtout the application **p
 We've been following this convention all along, but it becomes especially important in larger applications with more complex and numerous state transitions. Immutable state is one of the core ideas in React, and is necessary for application-level state management with tools like Redux and Context API. 
 
 ## Let's make some artisanal coffee (with actions and reducers)
-Say you're starting a local business, like a coffee shop. Throughout the course of a day there are many different actions to be done -- grinding beans, making espresso, accepting payments, and so on. Within a single transaction with a customer, there are several state changes that take place and we'd like them to take place in a specific order. Once the customer pays we'll "dispatch" an action to update the state of their order and kick off the process of making their coffee. Here's an example, in the language of reducers:
+Say you're starting a local business, like a coffee shop. Throughout the course of a day there are many different *actions* to be done -- grinding beans, making espresso, accepting payments, and so on. Within a single transaction with a customer, there are several state changes that take place and we'd like them to take place in a specific order. Once the customer pays we'll "dispatch" an action to update the state of their order and kick off the process of making their coffee. Here's an example, to help us get comfortable with the language of reducers:
 
 * Initial state: `{order: '', cost: null, status: 'ordering'}`
 * Customer orders. Dispatch action `'PLACE_ORDER'` with payload `'oat milk macchiato'`
@@ -55,18 +55,16 @@ Say you're starting a local business, like a coffee shop. Throughout the course 
 * State updated. New state: `{order: 'oat milk macchiato', cost: 3.50, status: 'complete'}`
 * Dispatch action `'SERVE_COFFEE'`
 
-Even in this coffee example, you can imagine how things get complicated quickly. `'PREPARE_COFFEE'` is a simplification of what would actually be many separate actions like `'GRIND_BEANS'`, `'BREW_ESPRESSO'` and `'FROTH_MILK'`. For a small menu we could easily have 20+ different actions, with a specific order of oprations where some actions can be multitasked while other actions can only be started once others complete. Rather than hiring a new employee for each action, we choose to hire a skilled barista who can juggle all of these different tasks and keep things organized in an efficient process.
+Even in this coffee example, you can imagine how things get complicated quickly. `'PREPARE_COFFEE'` is a simplification of what would actually be many separate actions like `'GRIND_BEANS'`, `'BREW_ESPRESSO'` and `'FROTH_MILK'`. For a small menu we could easily have 20+ different actions, with a specific order of oprations where some actions can be multitasked while other actions can only be started once others complete. 
 
-Likewise, in React, things will get out of hand quickly if we write a separate state management function for every possible state transition. Instead, a **reducer** can play the role of barista and handle all of these actions in an organized, predictable way. 
+Rather than hiring a new employee for each action, we choose to hire a skilled barista who can juggle all of these different tasks and keep things organized in an efficient process.
+
+Likewise, in React, we don't need to write a separate function for every possible state transition. Instead, a **reducer** can play the role of barista and handle all of these actions in an organized, predictable way. 
 
 ## Reducers in React
-A reducer is a pure function that takes the previous state and an action, and returns the next state. It "reduces" those two arguments to one output:
+So we've learned that a reducer basically handles several functions (now called "actions") in an efficient way. In a React context, reducers are very helopful for state management, since we can write a single reducer that does the work of several different state management functions, all wrapped into one. 
 
-```javascript
-reducer = (previousState, action) => nextState
-```
-
-So in React, a reducer can effectively do the work of several different state management functions, all wrapped into one. Here are the three main aspects of the pattern:
+Here are the three main aspects of the pattern:
 * **Reducer**: takes an action and current state, returns the new state
 * **Action**: object that includes a string specifying the type of action to be performed, and any data needed by the reducer to properly update state (e.g., the text inputted by a user in a form)
 * **Dispatch function**: *dispatches* an action to the reducer
