@@ -118,10 +118,13 @@ function Menu() {
 
 Redux builds on this pattern to provide a "predictable state container", and over the next two weeks we'll be learning about various ways of managing application-level and context-level state with Redux and Context API. Things can get confusing with the amount of abstraction involved, but as long as you're really solid on these fundamentals you'll be good to go!
 
-## Helpful Resources:
-* [JavaScript data types - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
-* [Primitive vs Reference Values](https://www.javascripttutorial.net/javascript-primitive-vs-reference-values/)
+## Videos:
+* [Codevolution - Reducers with cake shop example](https://www.youtube.com/watch?v=qdAThMLtF98&list=PLC3y8-rFHvwheJHvseC3I0HuYI2f46oAK&index=6)
+
+## Helpful Articles & Docs:
 * [useReducer vs useState](https://www.robinwieruch.de/react-usereducer-vs-usestate)
 * [useReducer Hook](https://reactjs.org/docs/hooks-reference.html#usereducer)
+* [The Reducer Pattern - notion](https://www.notion.so/The-Reducer-Pattern-a779a5bb46e14882b5ae7d130185931b)
 * [Reducers, from the Redux Docs](https://redux.js.org/basics/reducers)
-* [Lambda School - The Reducer Pattern](https://www.notion.so/The-Reducer-Pattern-a779a5bb46e14882b5ae7d130185931b)
+* [JavaScript data types - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
+* [Primitive vs Reference Values](https://www.javascripttutorial.net/javascript-primitive-vs-reference-values/)
