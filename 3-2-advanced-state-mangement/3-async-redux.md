@@ -1,5 +1,10 @@
 # Async Redux
 
+## Goals
+* describe the Finite State Machine pattern and it's relationship to building Redux applications
+* implement Redux Middleware libraries into a Redux Store using `applyMiddleware`
+* effectively use `redux-thunk` and asynchronous action creators to consume data from external API's
+
 ## A visual example
 Here's the Redux data flow visualized, with the addition of asynchronous API calls:
 ![async Redux gif](images/redux_async.gif)
