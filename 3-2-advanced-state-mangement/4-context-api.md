@@ -61,7 +61,7 @@ The `useContext` & `useReducer` architecture is less opinionated than Redux, and
 const [state, dispatch] = useReducer(reducer, initialState);
 
 // within a component:
-<button onclick={() => dispatch({type: 'ACTION_TYPE'})>Update</button>
+<button onclick={() => dispatch({type: 'UPDATE_TITLE'})>Update</button>
 ```
 
 It's up to you to decide whether you'd like to define actions inline like this, or store them in a dedicated file (usually a better choice). You could even recreate the action creators pattern and use the same abstractions as Redux, but the idea of an *unopinionated* API like this is that those decisions are left up to you.
