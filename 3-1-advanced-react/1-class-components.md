@@ -33,14 +33,16 @@ The base Component class includes built-in functionality for handling state and 
 The default `React.Component` constructor initializes `this.props` and other useful things -- feel free to look at the [React.Component constructor source code](https://github.com/facebook/react/blob/1d25aa5787d4e19704c049c3cfa985d3b5190e0d/packages/react/src/ReactBaseClasses.js#L22) if you're curious about what that `super()` call actually does.
 
 ## Class components vs Function components:
+  * Class components have just one state variable, an object with multiple keys. We use `this.setState` to update state
+  * Function components may have one or more state variables, managed with `useState` and/or `useReducer`
+  * What gets rendered to the DOM? When using class components, it's the JSX returned by the `render()` method. For function components, the component itself is simply a function and its return value is the JSX that gets rendered. 
   * In class components we use lifecycle methods to manage state and side effects. For function components we use Hooks.
   * Hooks cannot be used in class components! (and lifecycle methods are not used in function components)
-  * Class components have just one state variable, an object with multiple keys
-  * Function components have the option to store state in one or multiple variables, managed with `useState` and/or `useReducer`
+
 
 ## Classes and function prototypes in JavaScript
 
-Javascript has something called prototype-based inheritance, which is actually simpler than traditional class-based inheritance. So in JavaScript we use a style of object-oriented programming that makes use of constructor functions and prototypes rather than true classes. 
+A good random fact to know for your coding interviews is that Javascript is built on "prototype-based inheritance", a simpler version of the traditional class-based inheritance found in other languages like Java and C++. Though we're now used to seeing `class` terminology used in newer ES6 syntax, Javascript does handle things a bit differently under the hood, and it's worth understanding the differences. 
 
 ES6 has changed things for the better, allowing inheritance without having to write a lot of messy, potentially confusing code. You'll almost always end up just writing ES6 classes because they're nicer and easier to understand, but just remember that your ES6 code compiles down to vanilla Javascript and it's the same prototype-based inheritance model at play. Let's take a look at how object-oriented programming works in JavaScript with and without ES6 classes, and try to demystify thigs a bit.
 
@@ -79,11 +81,11 @@ josh = new Person("josh", "jazz");
 josh.listen();
 ```
 
-ES6 provides a syntax for object-oriented programming that is more familiar to coders from more traditional object-oriented languages (e.g., C++, Python, Ruby), but this syntax doesn't actually change the protoype-based inheritance model of JavaScript. 
+ES6 provides a syntax for object-oriented programming that is more familiar to software developers from more traditional object-oriented languages (e.g., C++, Python, Ruby), but this syntax doesn't actually change the protoype-based inheritance model of JavaScript. 
 
 In other languages, a class constructor creates an instance of the class, but a constructor in JavaScript is simply a function that returns an object. You've seen constructors like `String`, `Array` and `Object` that are built into JavaScript and we've also defined our own. The subtle differences between true class-based OOP and what we do in JavaScript won't make much difference for our purposes in React, but just know that Babel compiles your ES6 `class` down to a constructor function and definitions on its prototype.
 
-In React, when we define a class component that `extends React.Component` we're basically just taking that base component class and extending it with our own custom behavior.
+In React, when we define a class component that `extends React.Component` we're basically just taking that pre-defined base component class and extending it with our own custom behavior.
 
 ## Are class components still relevant?
 
