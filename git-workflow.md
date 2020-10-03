@@ -20,19 +20,29 @@
    * `git push -u origin feature-branch-name` 
    * The `-u` flag sets the upstream branch so you can just say `git push` and `git pull` in the future
 * !CODE SOME MORE!
-* Add your new changes: `git add .` 
-    * Pro tip: use `git add -p` to review your changes before pushing. 
-    * Alternatively, use `git show` (show last commit) or `git diff master` (show all the changes you've made on your branch, relative to the master branch -- this is what GitHub does when it shows you a preview of the changes in a pull request)
-    * Either way, be sure to review your own code before sharing! When collaborating on a team, thoughtful review is a better strategy than "huck and pray"
+* Add your new changes: `git add .` (or `git add -p` to review changes first)
 * Commit your new changes: `git commit -m 'Update stuff and fix bugs'`
 * Push to GitHub: `git push` (this works now without specifiying where you're pushing, because you already set the upstream branch above!)
 
+## Pro tip: `git add -p`
+Use `git add -p` to review your changes before pushing. It's a helpful line-by-line interface that will help you catch any `console.log`s, white space errors, and other things you meant to fix before sharing your code with the team.
+
+Alternatively, you can use `git show` to see your last commit and `git diff main` to see all the changes made on your branch (this is what GitHub shows in the UI for the code changes in a pull request). `git log` is also useful to see a list of your commmit messages and make sure there are no "wip"s or other annoyingly vague placeholders in the commit history.
+
+There are many good approaches here, but regardless of the workflow you choose, just make sure Either way, be sure to review your own code before sharing! When collaborating on a team, thoughtful review is a better strategy than "huck and pray"
+
 ## Merging in the latest changes from GitHub
-```bash
-git pull origin master
+When collaborating as part of a team, you'll often want to pull down the latest changes that have been merged into the main branch on GitHub by other developers while you've been working
+```
+git pull origin main
 ```
 
-This updates your local codebase with the latest code from GitHub. Usually you can simply type `git pull`
+A less common use case: you and other developers are working on the same feature branch, so you want to pull down the latest changes:
+```
+git pull origin head
+```
+
+This updates your local codebase with the latest code from GitHub. Once you're upstream branch is set, you can simply type `git pull`
 
 ## Merging 
 When working on a team, you'll often be collaborating with other developers and need to 
@@ -84,3 +94,5 @@ To push the current branch and set the remote as upstream, use
 This means you need to set up your local branch to track . Run the command given (or the equivalent `-u` flag and you should be good to go!
 
 Another common mistake is forgetting to fork before you clone. Please make sure you see your own Github name in the top left corner before you clone!
+
+(Note: many legacy codebases have a default branch called `master`, but it's more common for new apps to call the default branch  `main`. `develop` and other names are also common for bigger production apps where there may be multiple stages between pushing your code and going live to users.)
