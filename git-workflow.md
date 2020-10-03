@@ -55,9 +55,9 @@ This updates your local codebase with the latest code from GitHub. Once you're u
 ## Naming commits
 Make sure your commit messages are clear and concise, so anyone viewing the list of commits can get a bird's eye view of recent dev work. "First commit on the new feature", "wip trying to get this working" and "fix the bug" are all examples of vague, unhelpful commits that no one wants to see in the history!
 
-Every team has their own preferences, and some even have specific requirements for verb tense ("Add booking feature" vs "Added booking feature") and other phrasing specifics, or including other relevant info like the id for the feature/bug story on your team's project tracker. 
+Every team has their own preferences, and some even have specific requirements for verb tense ("Add booking feature" vs "Added booking feature") and other phrasing details. Some also like to include an id to reference the feature/bug story on your team's project tracker, either in commits or when you submit a pull request.
 
-Though the phrasing of your commit messages will probably never be the most important thing, it's a subtle code style cue that, along with other thoughtful approaches to the way you lay out your code and communicate with your team, will make everyone love working with you! 
+Though the phrasing of your commit messages will probably never be the most important thing, it's a subtle cue that, along with other thoughtful approaches to the way you lay out your code and communicate with your team, will make everyone love working with you! 
 
 ## Collaborating on GitHub and keeping your branch up to date
 
@@ -78,8 +78,8 @@ To push the current branch and set the remote as upstream, use
 
     git push --set-upstream origin branch-name
 ```
-This means you need to set up your local branch to track . Run the command given (or the equivalent `-u` flag and you should be good to go!
+This means you need to set up your local branch to track . Run the command given (or the equivalent `-u` flag) and you should be good to go!
 
 Another common mistake is forgetting to fork before you clone. Please make sure you see your own Github name in the top left corner before you clone!
 
-(Note: many legacy codebases have a default branch called `master`, but it's more common for new apps to call the default branch  `main`. `develop` and other names are also common for bigger production apps where there may be multiple stages between pushing your code and going live to users.)
+(Note: many older codebases have a default branch called `master`, but it's more common for new apps to call the default branch  `main`. `develop` and other names are also common for bigger production apps where there may be multiple stages between pushing your code and going live to users.)
