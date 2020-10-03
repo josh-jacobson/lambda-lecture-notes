@@ -1,4 +1,5 @@
 # Git workflow: tips and tricks
+🚀🚀🚀
 
 ## Review: command line basics, navigating around the filesystem
 `cd` ("current directory") helps you move around the file system:
@@ -67,7 +68,6 @@ The first time you push a new branch, be sure to include the `-u` flag (or `--se
 Did you save a "wip" commit before calling it a night? Update the commit message (and optionally add more code changes) with `git commit --amend`
 
 Note that this is a more advanced approach and may require some knowledge of vim, unless you've setup VSCode as your default editor from your shell.
-
 
 ## Common errors
 Have you ever seen an error like this?
