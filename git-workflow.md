@@ -1,32 +1,30 @@
 # Git workflow: tips and tricks
 
+## Review: command line basics, navigating around the filesystem
+`cd` ("current directory") helps you move around the file system:
+* `cd project-name` navigates into your project folder (you'll do this every time you clone from GitHub)
+* `cd ..` moves up a directory
+
+`ls` ("list") lists files in the current directory. 
 
 ## A typical workflow
 * fork to your own repo (remember to do this before you clone!)
 * on the GitHub page for your forked repo (should be under your own username), copy the git url from the code button
 * `git clone {url}`
 * cd into new directory
-* Create a new branch:
+* Create a new local branch:
 ```
-git checkout -b 'feature-branch-name'
+git checkout -b feature-branch-name
 ```
 * !CODE! ☕️
 * git add .
-* git commit -m 'Add new feature message...'
-* git push origin -u fname-lname
+* `git commit -m 'Add my exciting new feature...'`
+* git push -u origin feature-branch-name (this sets the upstream branch so you don't have to specify later)
 * !CODE SOME MORE!
-* git add .
-* git commit -m 'made something'
-* git push
-
-## Collaborating on GitHub and keeping your branch up to date
-
-The first time you push a new branch, be sure to include the `-u` flag (or `--set-upstream`) to make sure git knows that you'd like to map your local branch to a branch of the same name on GitHub. Git is set up for a wide range of use cases (and existed long before GitHub), so it doesn't assume this intuitive 1:1 mapping by default. But once you've run this command just once, you should be able to `git pull` and `git push` without the extra typing in the future.
-
-## Pushing your branch to GitHub
-``` 
-git push origin head
-```
+* `git add .` 
+    * Pro tip: use `git add -p` to review your changes before pushing. When sharing code, thoughtful review is a better strategy than "huck and pray"
+* git commit -m 'Update stuff and fix bugs'
+* git push (this works without specifiying where you're pushing, because you already set the upstream branch above!)
 
 ## Merging in the latest changes from GitHub
 ```bash
@@ -43,9 +41,30 @@ Here's the difference:
 
 Every team has their own preferences. I personally like rebasing for a few reasons, but you're free to choose any workflow that works best for you and your team!
 
-## Squashing commits
-`git commit --amend`
 
+## A helpful shortcut: `head`
+
+
+## Naming commits
+Make sure your commit messages are clear and concise, so anyone viewing the list of commits can get a bird's eye view of recent dev work. "First commit on the new feature", "wip trying to get this working" and "fix the bug" are all examples of vague, unhelpful commits that no one wants to see in the history!
+
+Every team has their own preferences, and some even have specific requirements for verb tense ("Add booking feature" vs "Added booking feature") and other phrasing specifics, or including other relevant info like the id for the feature/bug story on your team's project tracker. 
+
+Though the phrasing of your commit messages will probably never be the most important thing, it's a subtle code style cue that, along with other thoughtful approaches to the way you lay out your code and communicate with your team, will make everyone love working with you! 
+
+## Collaborating on GitHub and keeping your branch up to date
+
+The first time you push a new branch, be sure to include the `-u` flag (or `--set-upstream`) to make sure git knows that you'd like to map your local branch to a branch of the same name on GitHub. Git is set up for a range of use cases (and existed long before GitHub), so it doesn't assume this intuitive 1:1 mapping by default. But once you've run this command just once, you should be able to `git pull` and `git push` without the extra typing in the future.
+
+## Pushing your branch to GitHub
+``` 
+git push origin head
+```
+
+## Amdending commits
+Did you save a "wip" commit before calling it a night? If you're `git commit --amend`
+
+Note that this is a more advanced approach and may require some knowledge of vim, unless you've setup VSCode as your default editor from your shell.
 
 ## Understand local, remote and "origin"
 When you clone a repo from GitHub, git will automatically assign a "remote" repository called origin with the address you cloned from. 
