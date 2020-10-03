@@ -8,20 +8,24 @@
 `ls` ("list") lists files in the current directory. 
 
 ## A typical workflow
-* fork to your own repo (remember to do this before you clone!)
-* on the GitHub page for your forked repo (should be under your own username), copy the git url from the code button
+* Fork to your own repo (remember to do this before you clone!)
+* On the GitHub page for your forked repo (you should see your own username up top), copy the git url from the code button
 * `git clone {url}`
 * cd into new directory
 * Create a new local branch: `git checkout -b feature-branch-name`
 * !CODE! ☕️
-* git add .
-* `git commit -m 'Add my exciting new feature...'`
-* git push -u origin feature-branch-name (this sets the upstream branch so you don't have to specify later)
+* Add your new changes: `git add .`
+* Commit your changes: `git commit -m 'Add my exciting new feature...'`
+* Everything so far is just on your computer, in your own local git repo. Now, if you're sure your code is ready to share, push to GitHub:
+   * `git push -u origin feature-branch-name` 
+   * The `-u` flag sets the upstream branch so you can just say `git push` and `git pull` in the future
 * !CODE SOME MORE!
-* `git add .` 
-    * Pro tip: use `git add -p` to review your changes before pushing. (When sharing code, thoughtful review is a better strategy than "huck and pray")
-* git commit -m 'Update stuff and fix bugs'
-* git push (this works without specifiying where you're pushing, because you already set the upstream branch above!)
+* Add your new changes: `git add .` 
+    * Pro tip: use `git add -p` to review your changes before pushing. 
+    * Alternatively, use `git show` (show last commit) or `git diff master` (show all the changes you've made on your branch, relative to the master branch -- this is what GitHub does when it shows you a preview of the changes in a pull request)
+    * Either way, be sure to review your own code before sharing! When collaborating on a team, thoughtful review is a better strategy than "huck and pray"
+* Commit your new changes: `git commit -m 'Update stuff and fix bugs'`
+* Push to GitHub: `git push` (this works now without specifiying where you're pushing, because you already set the upstream branch above!)
 
 ## Merging in the latest changes from GitHub
 ```bash
