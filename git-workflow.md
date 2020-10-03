@@ -12,17 +12,14 @@
 * on the GitHub page for your forked repo (should be under your own username), copy the git url from the code button
 * `git clone {url}`
 * cd into new directory
-* Create a new local branch:
-```
-git checkout -b feature-branch-name
-```
+* Create a new local branch: `git checkout -b feature-branch-name`
 * !CODE! ☕️
 * git add .
 * `git commit -m 'Add my exciting new feature...'`
 * git push -u origin feature-branch-name (this sets the upstream branch so you don't have to specify later)
 * !CODE SOME MORE!
 * `git add .` 
-    * Pro tip: use `git add -p` to review your changes before pushing. When sharing code, thoughtful review is a better strategy than "huck and pray"
+    * Pro tip: use `git add -p` to review your changes before pushing. (When sharing code, thoughtful review is a better strategy than "huck and pray")
 * git commit -m 'Update stuff and fix bugs'
 * git push (this works without specifiying where you're pushing, because you already set the upstream branch above!)
 
