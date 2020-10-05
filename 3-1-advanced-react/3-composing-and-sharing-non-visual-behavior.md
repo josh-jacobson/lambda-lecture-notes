@@ -1,7 +1,14 @@
 # Composing and Sharing Non-Visual Behavior
 
+## Objectives
+* define "stateful logic"
+* apply non-visual behavior (stateful logic) with custom hooks
+* compose hooks in a custom hook to extend multiple pieces of stateful logic
+
 ## Custom Hooks 🤠
-We all love the convenient interface of `useState` and `useEffect`. We'll also be working with `useReducer` a lot later on in this unit. Sometimes when you're building an app, you'll come up with a clever implementation that is helpful in a lot of different contexts rather than just in the component you're working on at the moment! You can actually just write your own hook to extend the functionality of the hooks built into React. Just like a helper function you'd write to share some functionality across your app, but with React flavor.
+We all love the convenient interface of React Hooks like `useState` and `useEffect`. We'll also be working with `useReducer` quite a bit later on in this unit. But did you realize you can also create your own hooks?
+
+Sometimes when you're building an app, you'll come up with a clever implementation that is helpful in a lot of different contexts rather than just in the component you're working on at the moment! You can actually just write your own hook to extend the functionality of the hooks built into React. Just like a helper function you'd write to share some functionality across your app, but with React flavor.
 
 Sounds a bit complicated, but it's actually super easy in practice. From the React docs:
 > A custom Hook is a JavaScript function whose name starts with ”use” and that may call other Hooks.
