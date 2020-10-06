@@ -30,6 +30,25 @@ On a high level, we can simply think about stateful logic as the stuff we do wit
 
 (No class components in this lecture, but the same ideas apply there too! In class components, your stateful logic will include `this.setState` calls, and non-visual behavior like event listeners and api calls will happen in the lifecycle methods.)
 
+## A bit of magic: computed property names 🔮
+We've had a lot of experience building form handlers with React, and forms are one of the most common pieces of reusable UI in any application.
+
+What if we could abstract the entirety of the form handling logic into a helper function? That's the idea behind the custom hook `useForm` in today's guided project. The most clever bit of logic has to do with the `handleChanges` function. We're used to writing something like this:
+```javascript
+const handleChanges = (e) => {
+    setValue(e.target.value);
+};
+```
+
+That works just fine if we write a new change handler for every single form field, but that gets messy very quickly as the form grows! So we write a single change handler that works for every field, with the help of the `"name"` attribute on each text input. This way, your change handler knows not only the value but *which form field the value came from*. So we can now store all the form fields as keys in an object and update the key for the field that's been changed:
+```javascript
+const handleChanges = (e) => {
+    setValues({...values, [e.target.name]: values.e.target.value});
+};
+```
+
+The magic behind this clever one-liner is `[e.target.name]`, a "computed property name" to dynamically choose which key to write the new value to. As long as the `name` of each form field matches up to a key in the `values` object, this single line of code effectively manages state for the entire form, with any number of fields! Pretty cool. Check the link on computed property names below for more info if you're curious.
+
 ## Local Storage 🤖
 In today's guided project we'll be persisting data to the browser to improve the user experience. One very straightforward way to do this is with the localStorage api, which basically just saves key/value pairs locally in the browser. Here's `localStorage` in a nutshell: 
 
@@ -38,7 +57,20 @@ localStorage.setItem('key', 'value');
 localStorage.getItem('key'); // returns 'value
 ```
 
-Along with `localStorage.removeItem` and `localStorage.clear()` for cleanup, that's basically the entire API! Nice and simple. 
+Along with `localStorage.removeItem` and `localStorage.clear()` for cleanup, that's basically the entire API.
+
+Local Storage is easy to work with, and the only tricky part is remembering to stringify and parse when working with objects. In a nutshell:
+* localStorage can store primitive types and strings, but it doesn't directly store objects, arrays, or other advanced data structures.
+* JSON, the language of the web that we use to communicate with API's and store data of all kinds, is just a form of **text**, aka a string!
+* So to store complex data structures in localStorage, we `JSON.stringify` them
+* and after retrieving a JSON string from localStorage, we turn it back into data with `JSON.parse`
+
+So, putting it all together, here's a common workflow:
+```javascript
+var josh = {username: 'joshjacobson', favoriteColor: 'blue'};
+localStorage.setItem('signupFormValues', JSON.stringify(josh));
+var savedJosh = localStorage.getItem('signupFormValues');
+```
 
 
 ## Functional Programming 🤯
@@ -55,6 +87,8 @@ All of this allows for some pretty powerful programming paradigms, many of which
 
 ## Helpful Resources:
 [Building Your Own Hooks](https://reactjs.org/docs/hooks-custom.html)
+
+[Computed Property Names in ES6](https://medium.com/front-end-weekly/javascript-object-creation-356e504173a8)
 
 [Function composition in computer science](https://en.wikipedia.org/wiki/Function_composition_(computer_science))
 
