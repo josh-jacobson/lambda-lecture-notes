@@ -69,7 +69,9 @@ So, putting it all together, here's a common workflow:
 ```javascript
 var josh = {username: 'joshjacobson', favoriteColor: 'blue'};
 localStorage.setItem('signupFormValues', JSON.stringify(josh));
-var savedJosh = JSON.parse(localStorage.getItem('signupFormValues'));
+
+// new browsing session, retrieving saved value:
+var savedJosh = JSON.parse(localStorage.getItem('signupFormValues')); // equal to the original object
 ```
 
 
