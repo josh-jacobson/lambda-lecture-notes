@@ -1,6 +1,11 @@
 # Testing Web Applications
 ⚛️👩‍🔬🧪🧬
 
+## Objectives
+* explain what automated testing is and its importance
+* use react-testing-library for testing react components
+* use react-testing-library to test user interactions with fireEvent
+
 ## Why Test? 
 * Having a comprehensive test suite allows us to trust the code
 * Safety net for future changes & refactoring (especially helpful for team collaboration)
