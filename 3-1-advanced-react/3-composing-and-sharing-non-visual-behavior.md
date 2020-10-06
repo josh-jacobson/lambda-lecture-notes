@@ -61,7 +61,7 @@ Along with `localStorage.removeItem` and `localStorage.clear()` for cleanup, tha
 
 Local Storage is easy to work with, and the only tricky part is remembering to stringify and parse when working with objects. In a nutshell:
 * localStorage can store primitive types and strings, but it doesn't directly store objects, arrays, or other advanced data structures.
-* JSON, the language of the web that we use to communicate with API's and store data of all kinds, is just a form of **text**, aka a string!
+* JSON (JavaScript Object Notation), the language of the web that we use to communicate with API's and send objects and arrays back and forth, is just a form of **text**, aka a string!
 * So to store complex data structures in localStorage, we `JSON.stringify` them
 * and after retrieving a JSON string from localStorage, we turn it back into data with `JSON.parse`
 
