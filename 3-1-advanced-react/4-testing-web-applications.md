@@ -77,7 +77,7 @@ fireEvent.click(button);
 const newAnimal = await screen.findByText(/grizzly bear/i);
 ```
 
-This works well for most use cases, but there's also a more advanced companion library `@testing-library/user-event` in active development. The idea behind `userEvent` is to more fully simulate behavior from the user perspective, providing the extra nuances in the user flow beyond the level of DOM events.
+This works well for most use cases, but there's also a more advanced companion library `@testing-library/user-event` in active development. The idea behind `userEvent` is to more fully simulate behavior from the user perspective, providing extra nuances of user interaction beyond the basic actions represented by DOM events.
 
 ## Why not just QA manually?
 It's easy to just run through some test cases in the browser before shipping a new feature, but the manual approach quickly gets unmanageable at scale. What if your app has hundreds of thousands of lines of code? It's easy to unexpectedly (and invisibly) break a legacy feature when you go live with a new feature. While it's impossible with a manual approach to comprehensively test your app top to bottom every time you push some new code, it's easy to do exactly that with a thoughtful suite of integration tests.
