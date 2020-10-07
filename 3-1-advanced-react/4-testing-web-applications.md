@@ -73,8 +73,8 @@ fireEvent.change(speciesInput, { target: { value: "Grizzly Bear" } });
 const button = screen.getByRole("button", { name: /submit!/i });
 fireEvent.click(button);
 
-// assert that the new animal has been added to the list
-  const newAnimal = await screen.findByText(/grizzly bear/i);
+// assert that the new animal has been added to the list (test only passes if a match is found after the page re-renders)
+const newAnimal = await screen.findByText(/grizzly bear/i);
 ```
 
 This works well for most use cases, but there's also a more advanced companion library `@testing-library/user-event` in active development. The idea behind `userEvent` is to more fully simulate behavior from the user perspective, providing the extra nuances in the user flow beyond the level of DOM events.
