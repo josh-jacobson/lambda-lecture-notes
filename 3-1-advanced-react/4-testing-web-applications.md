@@ -35,11 +35,6 @@ AAA flow of testing:
 * Act
 * Assert
 
-## Unit Testing with Jest
-Unit tests are for the individual "units" of your application -- functions, event handlers, and small components.
-
-Jest is a testing framework developed by Facebook. We'll be starting with Jest on its own for unit tests in this lecture, then we'll also see how Jest works together with a DOM utility library (RTL is most popular at the moment) for integration testing.
-
 ## Integration Testing with React Testing Library and Jest
 Here's a nice overview of the integration testing concept from the React Testing Library docs:
 > You want to write maintainable tests for your React components. As a part of this goal, you want your tests to avoid including implementation details of your components and rather focus on making your tests give you the confidence for which they are intended. As part of this, you want your testbase to be maintainable in the long run so refactors of your components (changes to implementation but not functionality) don't break your tests and slow you and your team down.
@@ -60,6 +55,26 @@ If you're trying decide whether to use a singular or plural matcher:
 * 👩‍👩‍👧‍👦 Plural matchers (getAllBy, queryAllBy, findAllBy) are more flexible, allowing one or more matching elements.
 
 Just open up the [cheatsheet](https://testing-library.com/docs/dom-testing-library/cheatsheet) for reference while writing tests with RTL, no need to memorize all this. Remember the basics will help though: **get and find are more strict than query**, and **singular matchers are more strict than plural ones**. In general, being very strict and specific about your assertions will allow for better tests.
+
+## Simulating user actions with fireEvent
+A common QA strategy is to have a human step through the entire user flow for the new feature you've just developed, navigating the UI as a normal user would. My friend CJ does QA on some of the projects I've been working on, and he describes his job as "trying to break stuff." Basically, he'll run through a variety of scenarios and try every edge case he can think of, on every browser and platform. If nothing breaks, we get some "quality assurance" that the new feature works as expected. Otherwise, it's back to the drawing board for the developer (me!)
+
+The whole idea behind integration testing is that for large and complex applications, we'd like to automate this same kind of user-oriented QA process. Modern libraries like RTL are designed to simulate exactly this kind of process -- going through a user flow step by step, clicking buttons, filling out forms, and making sure the right stuff shows up on the page at the right time. With `fireEvent` we can directly simulate DOM events like this:
+
+```javascript
+// User fills out a form in a field
+const speciesInput = screen.getByLabelText(/species/i);
+fireEvent.change(speciesInput, { target: { value: "Grizzly Bear" } });
+
+// User clicks the submit button
+const button = screen.getByRole("button", { name: /submit!/i });
+fireEvent.click(button);
+```
+
+This works well for most use cases, but there's also a newer companion library `@testing-library/user-event` in active development. The idea behind `userEvent` is to more fully simulate behavior from the user perspective. For example, a typical testing workflow is to fire a 'click' event to make sure the right thing happens when a user clicks something in the UI. A real user, however, in the process of clicking a button, would actually fire many different events (mouseMove, mouseOver, mouseDown, mouseUp, click, etc) within a split second. Ths difference isn't important for many use cases, but for more nuanced user interaction testing you may find `userEvent` useful for additional functionality beyond what we can do with `fireEvent`.
+
+## Why not just QA manually?
+It's easy to just run through some test cases in the browser before shipping a new feature, but the manual approach quickly gets unmanageable at scale. What if your app has hundreds of thousands of lines of code? It's easy to unexpectedly (and invisibly) break a legacy feature when you go live with a new feature. While it's impossible with a manual approach to comprehensively test your app top to bottom every time you push some new code, it's easy to do exactly that with a thoughtful suite of integration tests.
 
 ## PDF's to download
 * ["What Should I Test?" by Kent C Dodds](pdf/Print_Worksheet_US.pdf)
