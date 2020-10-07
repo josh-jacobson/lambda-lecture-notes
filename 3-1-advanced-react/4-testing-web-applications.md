@@ -29,22 +29,24 @@ As you might expect, higher-level tests (especially E2E) run a lot slower and ha
 
 We're basically writing software to test the software, and in large production applications this is incredibly important. There's no one "right way", so your job is to know the tradeoffs and write tests in a way that works best for your specific project. In practice we end up creating a kind of hierarchy or "testing pyramid", where simple concerns are handled with quick unit tests while broader application behavior is ensured with integration and E2E tests.
 
-## 
-of automated testing
-AAA flow of testing:
+## AAA flow of testing:
 * Arrange
 * Act
 * Assert
 
-## Integration Testing with React Testing Library and Jest
-Here's a nice overview of the integration testing concept from the React Testing Library docs:
+## Integration Tests (with RTL and Jest)
+Today's guided project is all about integration testing.
+
+Here's a nice overview of the philosophy behind this kind of testing, from the React Testing Library docs:
 > You want to write maintainable tests for your React components. As a part of this goal, you want your tests to avoid including implementation details of your components and rather focus on making your tests give you the confidence for which they are intended. As part of this, you want your testbase to be maintainable in the long run so refactors of your components (changes to implementation but not functionality) don't break your tests and slow you and your team down.
 
 So integration testing is a higher-level form of testing, in which we actually interact with the interface in the same way a user does. While unit tests verify your specific implementation, integration tests are more concerned with the overall *behavior* of your application. With this kind of testing, you could potentially change the details of an implementation and significantly refactor individual functions and components without failing integration tests, as long as the overall behavior is the same.
 
-As an example to understand the difference, for a basic form component you'd have unit tests for each method (`handleChanges`, `submitForm`, etc) and an integration test to verify the overall behavior of a certain action that involves multiple components.
+As an example to understand the difference, for a basic form component you'd have unit tests for each method (`handleChanges`, `submitForm`, etc) and an integration test to verify the overall behavior from a user's perspective, going through an actual use case for the application that may involve multiple components. Integration tests are **implementation agnostic** -- you can entirely change the code and refactor components, but the tests will be green as long as things still work from a user perspective.
 
-React Testing Library is just a lightweight library that provides some additional utilitiy functions, extending the functionality of `react-dom` and `react-dom/test-utils`. It's intended as a replacement for Enzyme (a testing library developed by engineers at Airbnb, released in 2016 and popular until recently). Note that RTL itself is **not a test runner or framework** -- it's just a library that you can use *with* a testing framework like Jest. Jest + RTL is a popular combination, and we'll be working with this stack today!
+React Testing Library provides the DOM matchers and event-firing functionality to be able to simulate a user flow. Note that RTL itself is **not a test runner or framework** -- it's just a library that you can use *with* a testing framework like Jest. Jest + RTL is a popular combination, and we'll be working with this stack today!
+
+With this common approach, we use Jest to make assertions and actually run the tests, and RTL helps out by providing a virtual DOM, matchers to select elements and `fireEvent` to simulate user interaction.
 
 ## RTL Matchers -- get, find or query?
 * ✅ get (getBy / getAllBy): you'll probably use this one the most. It has an implicit assertion built in, meaning that the query itself will make your test fail if the node isn't found, rather than just returning null.
@@ -70,6 +72,9 @@ fireEvent.change(speciesInput, { target: { value: "Grizzly Bear" } });
 // User clicks the submit button
 const button = screen.getByRole("button", { name: /submit!/i });
 fireEvent.click(button);
+
+// assert that the new animal has been added to the list
+  const newAnimal = await screen.findByText(/grizzly bear/i);
 ```
 
 This works well for most use cases, but there's also a more advanced companion library `@testing-library/user-event` in active development. The idea behind `userEvent` is to more fully simulate behavior from the user perspective, providing the extra nuances in the user flow beyond the level of DOM events.
