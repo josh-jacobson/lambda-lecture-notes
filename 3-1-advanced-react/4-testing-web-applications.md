@@ -84,6 +84,7 @@ It's easy to just run through some test cases in the browser before shipping a n
 * [RTL Cheat Sheet](pdf/RTL_cheat_sheet.pdf)
 
 ## Other Helpful Resources
+* [Jest DOM matchers](https://github.com/testing-library/jest-dom)
 * [Static vs Unit vs Integration vs E2E Testing](https://kentcdodds.com/blog/unit-vs-integration-vs-e2e-tests)
 * [Jest cheat sheet](https://devhints.io/jest)
 * [RTL Docs](https://testing-library.com/docs/react-testing-library/intro)
