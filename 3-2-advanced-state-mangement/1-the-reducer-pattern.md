@@ -11,9 +11,9 @@ A reducer is a pure function that takes the previous state and an action, and re
 reducer = (previousState, action) => nextState
 ```
 
-Now you may not exactly be *lining down the block just to* learn about this programming construct, but trust me -- reducers are pretty cool! Very helpful for managing state and keeping things organized in larger React apps.
+Now you may not exactly be *lining down the block* just to learn about this programming construct, but trust me -- reducers are pretty cool! Very helpful for managing state and keeping things organized in larger React apps.
 
-## Data types in JavaScript
+## Review: Data types in JavaScript
 In Javascript there are several "primitive types" (e.g., `Number`, `String`, `Boolean`), each of which stores a value of a fixed size in memory. For example, a Number type is always exactly 8 bytes of data, to store a 64-bit floating point value.
 
 Objects, arrays and functions, however, are more advanced data structures and they require a more sophisticated system of memory allocation and management. So an Object actually stores a "pointer" to another memory location, where the right amount of storage space can be dynamically allocated.
