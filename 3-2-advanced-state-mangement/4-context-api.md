@@ -85,3 +85,4 @@ Here's a quick comparison:
 * [Context Docs](https://reactjs.org/docs/context.html)
 * [How to use the useContext hook in React](https://upmostly.com/tutorials/how-to-use-the-usecontext-hook-in-react)
 * [How to use React Context effecively](https://kentcdodds.com/blog/how-to-use-react-context-effectively)
+* [You Don’t Even Need React-Redux and Redux Thunk](https://medium.com/better-programming/you-dont-even-need-react-redux-and-redux-thunk-d9dce6c0a89f) - read the bottom section for some useful info!
