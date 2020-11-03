@@ -45,3 +45,4 @@ With a delete request, we simply pass the id of the resource to be deleted. It e
 ## Helpful Resources
 * [RESTful Web Services tutorial](https://www.tutorialspoint.com/restful/restful_introduction.htm)
 * [A Brief Introduction to REST](https://www.infoq.com/articles/rest-introduction/)
+* [AJAX Intro](https://www.w3schools.com/xml/ajax_intro.asp)
