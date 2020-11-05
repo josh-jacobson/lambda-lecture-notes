@@ -70,11 +70,11 @@ The way we actually set things up is a bit complex, but the goals behind this pa
 
 ## Putting it all together
 
-Here's a visual summary showing how we set up an app to use Redux and connect to the store with the ability to read state values (`mapStatetoProps`) and update the store with reducer actions (`mapDispatchToProps`) from a React component:
+Here's a visual summary showing how we set up Redux and `connect` a component to be able to read state values from the store (`mapStatetoProps`) and also update the store by dispatching reducer actions (`mapDispatchToProps`):
 
 ![Redux gif](images/connect.png)
 
-Both of these arguments are functions that return objects. 
+Both of these arguments are functions that return objects:
 
 ```javascript
 const mapStateToProps = state => {
@@ -96,7 +96,7 @@ const mapDispatchToProps = dispatch => {
 export default connect(mapStateToProps,mapDispatchToProps)(Title);
 ```
 
-`connect` is itself a higher order function that *returns* a higher order component, which we then immediately invoke on our Title component in order to "enhance" it. That's a lot to take in, and if all this functional programming stuff feels like Inception to you, you're not alone. But the "enhancement" we're going for with all this is simply the ability to interact with the store. 
+`connect` is itself a higher order function that *returns* a higher order component, which we then immediately invoke on our Title component in order to "enhance" it. (That's a lot to take in, and if all this functional programming stuff feels like Inception to you, you're not alone. But the "enhancement" we're going for with all this is simply the ability to interact with the store.)
 
 The key idea to remember here is: **we `connect` commponents so that they can communicate with the Redux store.**
 
