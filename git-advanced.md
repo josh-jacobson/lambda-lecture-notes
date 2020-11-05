@@ -21,6 +21,11 @@ Instead of typing out `git push origin my-current-branch-name` you can simply sa
 
 As long as you add the `-u` flag to map to the upstream branch in GitHub the first time you push, you won't really have to worry about specifying where to push anyhow. But for that first push, it's easy to make a typo and I prefer to use `head` because I know it'll automatically map to a branch with the same name on GitHub.
 
+So I just always default to this (feel free to assign it to a shorter alias):
+```
+git push -u origin head
+```
+
 ## Understand local, remote and "origin"
 When you clone a repo from GitHub, git will automatically assign a "remote" repository called origin with the address you cloned from. 
 
