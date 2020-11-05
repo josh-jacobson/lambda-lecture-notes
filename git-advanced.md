@@ -29,4 +29,4 @@ git push -u origin head
 ## Understand local, remote and "origin"
 When you clone a repo from GitHub, git will automatically assign a "remote" repository called origin with the address you cloned from. 
 
-When you create new branches and make commits, that's all part of your *local* git repository , and merge  local codebase is managFor example, this lecture notes repo 
+When you create new branches and make commits, that's all part of your *local* git repository. Origin is an entirely separate git repository, and you set up a mapping where your local branches track changes from the remote branch (including those made by your collaborators), and you can pull those changes down and also push your own newer changes. Know that it's possible to have multiple remote branches as well!
