@@ -70,7 +70,11 @@ The way we actually set things up is a bit complex, but the goals behind this pa
 
 ## Putting it all together
 
-Now that you know what connect does, let's see how it works in practice. The two arguments to `connect` define the interface for reading from the store (`mapStatetoProps`) and updating the store (`mapDispatchToProps`) from the component. Both of these arguments are functions that return objects. 
+Here's a visual summary showing how we set up an app to use Redux and connect to the store with the ability to read state values (`mapStatetoProps`) and update the store with reducer actions (`mapDispatchToProps`) from a React component:
+
+![Redux gif](images/connect.png)
+
+Both of these arguments are functions that return objects. 
 
 ```javascript
 const mapStateToProps = state => {
