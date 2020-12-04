@@ -124,6 +124,7 @@ Redux builds on this pattern to provide a "predictable state container", and ove
 * [Codevolution - Reducers with cake shop example](https://www.youtube.com/watch?v=qdAThMLtF98&list=PLC3y8-rFHvwheJHvseC3I0HuYI2f46oAK&index=6)
 
 ## Helpful Articles & Docs:
+* [Immutability Guide](https://daveceddia.com/react-redux-immutability-guide/)
 * [useReducer vs useState](https://www.robinwieruch.de/react-usereducer-vs-usestate)
 * [useReducer Hook](https://reactjs.org/docs/hooks-reference.html#usereducer)
 * [The Reducer Pattern - notion](https://www.notion.so/The-Reducer-Pattern-a779a5bb46e14882b5ae7d130185931b)
