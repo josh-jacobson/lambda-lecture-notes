@@ -9,7 +9,9 @@ You'll hear about these three main "levels" of state:
 * Component-level state
 
 ## When to use Context
-Context is useful for sharing data that can be considered “global” among a tree of React components, generally a subset of components rather than the entire application. On its own, the Context API simply provies an alternative to prop drilling, and it's helpful to think of it as providing the same behavior. The idea is to share state from the component at the top level of the context tree to any subcomponents that need that data, without having to pass the data through each level of the tree. 
+Context is useful for sharing data that can be considered “global” among a tree of React components, which can be either the entire application or a subset of components. On its own, the Context API simply provies the "store" part of Redux, providing a cleaner alternative to "prop drilling" to pass down data through the component tree. It's helpful to think of Context API as the "store" part of the architecture, allowing us to share state from the component at the top level of the context tree to any subcomponents that need that data, without having to pass the data through each level of the tree. 
+
+Context API takes a more modular approach to state management, providing the storage piece and allowing any number of customized approaches to the rest of the architecture. It's possible to build something that looks like Redux, but there are many other possibilities! Unlike Redux, **Context API does not require the use of reducers, actions or action creators.**.
 
 Context API on its own is *not* a comprehensive application state management system like Redux. Combining the `useContext` and `useReducer` hooks can provide a powerful architecture that is similar to Redux in many ways, and this is becoming increasingly popular as an alternative to Redux due to easier setup and the less opinionated nature of these built-in hooks. But just remember that Context itself is nothing more than a way of sharing state directly from a top level component to any of the child components in its subtree. 
 
