@@ -2,14 +2,36 @@
 
 The React Context API allows you to easily access data at different levels of a component tree, without having to pass data down through props. 
 
+## Sharing state: two problems to solve
+Without a state management implementation like Redux or Context, we use prop drilling for both of these purposes:
+1. Sharing state from a component to its child components (pass values as props)
+2. Allowing child components to *update* that top-level state (pass setter functions down as props)
+
+In complex applications this can get out of hand really quickly! Redux handles both sides with a complete, opinionated implementation that addresses every aspect in a specific way.
+### With Redux:
+1. Provide a store as the single source of the truth for application-level state, which components can connect to directly to pull the values they need, with live updates
+2. Rather than "prop drilling" state updating functions down the component tree, allow each component to receive the functions it needs as props
+
+*(both of the above are accomplished using the `connect` HOC pattern, largely abstracting anything related to reducers and dispatching out of the component code by design).*
+
+React's Context API is only intended to address the first half! Here's how it looks.
+### With Context:
+1. Provide a Context (just like a store) to child components, as the single source of the truth for globally relevant state values. Child components can "consume" that context directly to access the values they need, with live updates. (The "context" can be the entire application, for a Redux-like implementation, or a more specific subset of your component tree)
+2. Context doesn't solve this part. Choose your own adventure -- common approaches:
+    * Pass down setter functions just like you would in a simple non-Redux implementation
+    * Add `useReducer` and pass down `dispatch`, thereby avoiding passing down multiple setter functions but not entirely eliminating prop drilling
+
+## When to use Context
+Context is useful for sharing data that can be considered “global” among a tree of React components, which can be either the entire application or a subset of components. On its own, the Context API simply provies the "store" part of Redux, providing a cleaner alternative to "prop drilling" to pass down data through the component tree. It's helpful to think of Context API as the "store" part of the architecture, allowing us to share state from the component at the top level of the context tree to any subcomponents that need that data, without having to pass the data through each level of the tree. 
+
+
 ## A hierarchy of state management
 You'll hear about these three main "levels" of state:
 * Application-level state
 * Context-level state
 * Component-level state
 
-## When to use Context
-Context is useful for sharing data that can be considered “global” among a tree of React components, which can be either the entire application or a subset of components. On its own, the Context API simply provies the "store" part of Redux, providing a cleaner alternative to "prop drilling" to pass down data through the component tree. It's helpful to think of Context API as the "store" part of the architecture, allowing us to share state from the component at the top level of the context tree to any subcomponents that need that data, without having to pass the data through each level of the tree. 
+"Context" in this case just encapsulates the idea that you're defining a tree of components among which to share state, and you can define the top of that tree wherever like. Your "context" could be your entire application like it is for Redux, or you could have several different contexts that are each relevant to a "subtree" of your React component tree.
 
 ## What is Context API? (and what isn't it?)
 
@@ -87,7 +109,7 @@ Here's a quick comparison:
 
 ## Helpful Resources
 * [Context Docs](https://reactjs.org/docs/context.html)
-* [Provider Pattern](https://stackoverflow.com/questions/22883759/what-is-the-difference-between-application-state-and-component-local-state-in-cl)
+* [Provider Pattern](https://blog.flexiple.com/provider-pattern-with-react-context-api/)
 * [How to use the useContext hook in React](https://upmostly.com/tutorials/how-to-use-the-usecontext-hook-in-react)
 * [How to use React Context effecively](https://kentcdodds.com/blog/how-to-use-react-context-effectively)
 * [You Don’t Even Need React-Redux and Redux Thunk](https://medium.com/better-programming/you-dont-even-need-react-redux-and-redux-thunk-d9dce6c0a89f) - read the bottom section for some useful info!
