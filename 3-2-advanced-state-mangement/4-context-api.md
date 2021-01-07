@@ -18,7 +18,7 @@ Without a state management implementation like Redux or Context, we use prop dri
 In complex applications this can get out of hand really quickly! Redux handles both parts with a complete, opinionated implementation that makes the most of reducers, action creators, and a HOC pattern to `connect` components to the store. By design, the interface for writing React components largely resembles the original (prop drilling) version, with state values and setter functions all just passed in as props. You don't have to write `dispatch` or anything else related to reducers in your component code -- Redux handles all that behind the scenes. 
 ### With Redux:
 1. Provide a store as the single source of the truth for application-level state, which components can connect to directly to pull the values they need, with live updates
-2. Rather than "prop drilling" state updating functions down the component tree, allow each component to receive the functions it needs as props
+2. Handle all state updates with reducers, so the setter functions are now actually functions that dispatch actions to a reducer. Rather than passing setter functions down the component tree (i.e., prop drilling), use some HOC magic to "enhance" each component so that it receives the functions it needs as props.
 
 React's Context API is more of a simple, modular approach and it doesn't directly address the second question of how child components should update "context level" state.
 ### With Context:
