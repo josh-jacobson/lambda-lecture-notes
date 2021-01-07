@@ -8,7 +8,7 @@ You'll hear about these three main "levels" of state:
 * Context-level state
 * Component-level state
 
-"Context" in this case just encapsulates the idea that you're defining a tree of components among which to share state, and you can define the top of that tree wherever like. Your "context" could be your entire application like it is for Redux, or you could have several different contexts that are each relevant to a "subtree" of your React component tree.
+"Context" in this case just encapsulates the idea that you're defining a tree of components among which to share state, and you can define the top of that tree wherever you like. Your "context" could be your entire application like it is for Redux, or you could have several different contexts that are each relevant to a "subtree" of your React component tree.
 
 ## Sharing state: two problems to solve
 Without a state management implementation like Redux or Context, we use prop drilling for both of these purposes:
