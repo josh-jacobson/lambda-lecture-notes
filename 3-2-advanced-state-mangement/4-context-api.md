@@ -22,7 +22,7 @@ In complex applications this can get out of hand really quickly! Redux handles b
 
 React's Context API is more of a simple, modular approach and it doesn't directly address the second question of how child components should update "context level" state.
 ### With Context:
-1. Provide a Context (just like a store) to child components, as the single source of the truth for state values relevant to all of those components. Child components can "consume" that context directly to access the values they need, with live updates. (The "context" can be the entire application, for a Redux-like implementation, or a more specific subset of your component tree)
+1. Provide a Context (just like a store) to child components, as the single source of the truth for state values relevant to all of those components. Child components can "consume" that context directly to access the values they need, with live updates. 
 2. Context doesn't solve this part directly. Choose your own adventure -- common approaches:
     * Pass down setter functions just like you would in a simple non-Redux implementation (prop drilling)
     * Store the setter functions along with state values in the Context to avoid prop-drilling
