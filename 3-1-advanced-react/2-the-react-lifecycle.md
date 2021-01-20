@@ -87,11 +87,27 @@ And some others that are deprecated now. Focus on just getting really comfortabl
 ## Understanding function components vs class components:
 One simplified way to understand these different styles is that the `return` of a function component is the same as what we return from the `render()` method within a class component. In class components we manage state and side effects with these specifically named lifecycle methods, while in a function component we use hooks like useState() and useEffect() to do the same thing.
 
+## Call Order in the Component Tree
+So if you have a bunch of React components, the parent component at the top of the tree renders and "mounts" first, right?
+
+Not quite! You may be surprised to learn that it actually happens like this:
+* Parent component renders, recursively rendering all of the child components down the tree
+* The **child component at the bottom of the tree mounts first**!
+* Then the "mounting" propogates back **up** the tree
+* Finally, the parent component at the top of the tree mounts last.
+
+Whether you're working with function components or class component, this call order is the same! So any `componentDidMount` or `useEffect` methods towards the top of the tree will actually be called *after* all the children components have mounted.
+This can present a very sneaky bug in many cases, where you expect data to have been passed down to a child component but it's undefined becuase the parents haven't mounted yet!
+
+Check out the "React Call Order" article for a great intro to this advanced concept with some helpful diagrams to explain this "down then back up" render and mount order. Understanding this order of operations will save you many hours of debugging the sneakiest bugs in the future!
+
 ## Helpful Resources
 
 [React.Component lifecycle methods - API reference](https://reactjs.org/docs/react-component.html) 
 
 [Lifecycle method diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+
+[React Call Order](https://blog.logrocket.com/post-hooks-guide-react-call-order/)
 
 [React component’s lifecycle - Medium article](https://medium.com/react-ecosystem/react-components-lifecycle-ce09239010df)
 
