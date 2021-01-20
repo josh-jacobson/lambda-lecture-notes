@@ -96,8 +96,9 @@ Not quite! You may be surprised to learn that it actually happens like this:
 * Then the "mounting" propogates back **up** the tree
 * Finally, the parent component at the top of the tree mounts last.
 
-Whether you're working with function components or class component, this call order is the same! So any `componentDidMount` or `useEffect` methods towards the top of the tree will actually be called *after* all the children components have mounted.
-This can present a very sneaky bug in many cases, where you expect data to have been passed down to a child component but it's undefined becuase the parents haven't mounted yet!
+I like to visualize this initialization process as a "down-up" motion, all happening in the blink of an eye in most cases. So any `componentDidMount` or `useEffect` methods towards the top of the tree will actually be called *after* all the children components have mounted.
+
+This can present a very sneaky bug in many cases, where you expect data to have been passed down to a child component but it's undefined becuase the parents haven't mounted yet! Make sure your child components have safety checks built in to handle null/undefined versions of props used to render UI content, especially when there are maps and other type-specific methods involved! Otherwise you may find that your app crashes randomly and unexpectedly due to these type errors.
 
 Check out the "React Call Order" article for a great intro to this advanced concept with some helpful diagrams to explain this "down then back up" render and mount order. Understanding this order of operations will save you many hours of debugging the sneakiest bugs in the future!
 
