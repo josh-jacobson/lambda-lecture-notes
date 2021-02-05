@@ -134,6 +134,8 @@ In React, when we define a class component that `extends React.Component` we're 
 ## Helpful Resources
 [How ES6 classes really work](https://medium.com/@robertgrosse/how-es6-classes-really-work-and-how-to-build-your-own-fd6085eb326a)
 
+[React without ES6](https://reactjs.org/docs/react-without-es6.html)
+
 [Using arrow functions to avoid binding `this` in React](https://medium.com/@joespinelli_6190/using-arrow-functions-to-avoid-binding-this-in-react-5d7402eec64)
 
 [React.Component documentation](https://reactjs.org/docs/react-component.html)
