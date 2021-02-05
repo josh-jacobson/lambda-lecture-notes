@@ -63,7 +63,7 @@ For initialization, in the constructor we assign `this.state` directly. This is 
 ## Common lifecycle methods
 **`componentDidMount`, `componentDidUpdate` and `componentWillUnmount`**
 
-Together, these three lifecycle methods are roughly equivalent to the `useEffect()` hook.
+Together, these three lifecycle methods are equivalent to the `useEffect()` hook. Let's look at them in detail:
 
 ### `componentDidMount`
 invoked after React inserts the component into the DOM. Used to set a component’s state post-render
