@@ -93,8 +93,7 @@ This can present a very sneaky bug in many cases, where you expect data to have 
 
 Check out the "React Call Order" article for a great intro to this advanced concept with some helpful diagrams to explain this "down then back up" render and mount order. Understanding this order of operations will save you many hours of debugging the sneakiest bugs in the future!
 
-n
-## Rarely used lifecycle methods:
+## Rarely used lifecycle methods 🦖🦕📻📺
 * getDerivedStateFromProps
 * shouldComponentUpdate
 * getSnapshotBeforeUpdate
