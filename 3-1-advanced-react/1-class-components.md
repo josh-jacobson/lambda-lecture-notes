@@ -8,19 +8,23 @@
 * Understand the foundations of React by seeing how things work "under the hood", before Hooks simplified the interface for developers
 * (looking ahead to the next sprint) Start getting comfortable with "component-level" vs "application-level" state
 
-## What is a class component? 😺
+## Intro: OOP vs Functional Programming 😺
 
 Broadly speaking, the two most popular software development styles are object-oriented programming (OOP) and functional programming.
 
 In OOP, programmers design their own advanced data structures called "classes", often to model something in the real world. At my first summer internship at Shmoop, I wrote very cheesy examples of simple classes written in Java for their AP computer science curriculum. For example, an `Animal` class has instance methods `sleep()`, `eat()` and `play()`. We can define a "child class" like `Dog` 🐕 or `Bear` 🐻 to **inherit** the basic functionality of an `Animal` and add some more specific behavior. Maybe `Dog` adds a `cuddle()` method and `Bear` knows how to `maulCarWindowsForPeanutButterSnack()`. In OOP parlance, the blueprint for each kind of animal is called a "class" and each individual is called an "object". When we "instantiate" a new object, it's like birthing a new animal with all the abilities specified by its class.
 
-In old-school React, the "parent class" is `React.Component` and it has some built-in methods that are quite useful in component-land. We `extend` that class to create our own version, inheriting the basics and adding our own useful functions and state.
+In old-school React, the parent `Animal` class" is `React.Component` and it has some built-in methods that are quite useful in component-land. We `extend` that class to create a "class component" in its image, inheriting the basics and adding our own useful functions and state.
 
 Functional programming is decidedly less cuddly and a bit harder to wrap our minds around at first. Functions, rather than objects, are the fundamental building blocks of advanced programs. We build from those functional building blocks using composition and currying rather than inheritance.
 
+## OOP and FP in JavaScript
+
 Believe it or not, you already have quite a bit of practice with both styles! JavaScript allows both, kinda. A truly OOP language implements a rigorous class-based inheritance system. Meanwhile, a truly functional programming language (e.g., Elm, Elixir, Erlang) has immutable data types and specific requirements around what a function can and cannot do (namely, no "side effects" for pure functions). 
 
-JavaScript, however, does none of these things and is a bit more of a "choose your own adventure experience". Rather than true classes, JavaScript has a simpler protoype-based inherance model (more on that below) and the ES6 `class` syntax is just syntactic sugar rather than the real thing. Unlike functional languages, Javascript only enforces immutability for simple primitive types, and is extremely loosey-goosey about everything else. The `const` keyword does nothing to enforce immutability for the actual data structures we use every day (objects, arrays, etc). Despite the challenges presented by these quirks of the language, JavaScript has come into its own as a powerful and widely used language, allowing some version of both major paradigms for developers with different preferences. In React, we can choose to write OOP-style "class components" based on the ES6 class syntax, or we can use the newer "function component" style.
+JavaScript, however, does none of these things and is a bit more of a "choose your own adventure experience". Rather than true classes, JavaScript has a simpler protoype-based inherance model (more on that below) and the ES6 `class` syntax is just syntactic sugar rather than the real thing. Unlike functional languages, Javascript only enforces immutability for simple primitive types, and is extremely loosey-goosey about everything else. The `const` keyword does nothing to enforce immutability for the actual data structures we use every day (objects, arrays, etc). 
+
+Despite the challenges presented by these quirks of the language, JavaScript has come into its own as a powerful and widely used language, allowing some version of both major paradigms for developers with different preferences. In React, we can choose to write OOP-style "class components" based on the ES6 class syntax, or we can use the newer "function component" style.
 
 OOP-style programming in JavaScript was trendy when React came out, hence the class component interface. But the times are a-changin! Now classes are old school, and functional programming is the hot new thing. In a nutshell, that shift in trends is really the reason behind the transition from class components to function components.
 
