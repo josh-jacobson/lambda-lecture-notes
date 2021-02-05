@@ -4,6 +4,7 @@
 * define "stateful logic"
 * apply non-visual behavior (stateful logic) with custom hooks
 * compose hooks in a custom hook to extend multiple pieces of stateful logic
+* understand "separation of concerns" and apply smart refactoring strategies to make your code reusable
 
 ## Custom Hooks 🤠
 We all love the convenient interface of React Hooks like `useState` and `useEffect`. We'll also be working with `useReducer` quite a bit later on in this unit. But did you realize you can also create your own hooks?
