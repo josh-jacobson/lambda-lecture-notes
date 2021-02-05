@@ -8,7 +8,7 @@
 * Understand the foundations of React by seeing how things work "under the hood", before Hooks simplified the interface for developers
 * (looking ahead to the next sprint) Start getting comfortable with "component-level" vs "application-level" state
 
-## Intro: OOP vs Functional Programming 😺
+## Intro: OOP 😺 vs Functional Programming 😎
 
 Broadly speaking, the two most popular software development styles are object-oriented programming (OOP) and functional programming.
 
