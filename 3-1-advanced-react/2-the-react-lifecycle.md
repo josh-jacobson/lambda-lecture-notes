@@ -5,6 +5,7 @@
 * describe the three phases of the React Component Lifecycle (mounting, updating, unmounting)
 * properly explain what the `constructor` and `render` methods do, and what their place is in the React Component Lifecycle
 * use the componentDidMount function to set a component's state post-render
+* understand the order in which components render and "mount"
 * bring it all together: use class components and their lifecycle methods to:
   * fetch data asynchronously from an external API (we'll use axios)
   * render the data to your app's UI
@@ -77,17 +78,7 @@ perform any cleanup, e.g, removing event listeners, invalidating timers or clean
 
 Use these to setup listeners, fetching data from an API and ultimately removing listeners before component is removed ("unmounted") from the DOM.
 
-## Rarely used lifecycle methods:
-* getDerivedStateFromProps
-* shouldComponentUpdate
-* getSnapshotBeforeUpdate
-
-And some others that are deprecated now. Focus on just getting really comfortable with the 3 above, as you'll mainly just see those in most cases. If you're curious about learning all of these though, just take a few minutes for a full read of the API reference below.
-
-## Understanding function components vs class components:
-One simplified way to understand these different styles is that the `return` of a function component is the same as what we return from the `render()` method within a class component. In class components we manage state and side effects with these specifically named lifecycle methods, while in a function component we use hooks like useState() and useEffect() to do the same thing.
-
-## Call Order in the Component Tree
+## In what order do components render and "mount" in a React component tree? 
 So if you have a bunch of React components, the parent component at the top of the tree renders and "mounts" first, right?
 
 Not quite! You may be surprised to learn that it actually happens like this:
@@ -101,6 +92,17 @@ I like to visualize this initialization process as a "down-up" motion, all happe
 This can present a very sneaky bug in many cases, where you expect data to have been passed down to a child component but it's undefined becuase the parents haven't mounted yet! Make sure your child components have safety checks built in to handle null/undefined versions of props used to render UI content, especially when there are maps and other type-specific methods involved! Otherwise you may find that your app crashes randomly and unexpectedly due to these type errors.
 
 Check out the "React Call Order" article for a great intro to this advanced concept with some helpful diagrams to explain this "down then back up" render and mount order. Understanding this order of operations will save you many hours of debugging the sneakiest bugs in the future!
+
+n
+## Rarely used lifecycle methods:
+* getDerivedStateFromProps
+* shouldComponentUpdate
+* getSnapshotBeforeUpdate
+
+And some others that are deprecated now. Focus on just getting really comfortable with the 3 above, as you'll mainly just see those in most cases. If you're curious about learning all of these though, just take a few minutes for a full read of the API reference below.
+
+## Understanding function components vs class components:
+One simplified way to understand these different styles is that the `return` of a function component is the same as what we return from the `render()` method within a class component. In class components we manage state and side effects with these specifically named lifecycle methods, while in a function component we use hooks like useState() and useEffect() to do the same thing.
 
 ## Helpful Resources
 
