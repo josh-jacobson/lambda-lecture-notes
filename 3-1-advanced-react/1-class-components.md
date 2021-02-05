@@ -12,30 +12,31 @@
 
 Broadly speaking, the two most popular software development styles are object-oriented programming (OOP) and functional programming.
 
-In OOP, programmers design their own advanced data structures called "classes", often to model something in the real world. At my first summer internship at Shmoop, I wrote very cheesy examples of simple classes written in Java for their AP computer science curriculum. For example, an `Animal` class has instance methods `sleep()`, `eat()` and `play()`. We can define a "child class" like `Dog` 🐕 or `Bear` 🐻 to **inherit** the basic functionality of an `Animal` and add some more specific behavior. Maybe `Dog` adds a `cuddle()` method and `Bear` knows how to `maulCarWindowsForPeanutButterSnack()`. In OOP parlance, the blueprint for each kind of animal is called a "class" and each individual is called an "object". When we "instantiate" a new object, it's like birthing a new animal with all the abilities specified by its class.
+In OOP, programmers design their own advanced data structures called "classes", often to model something in the real world. At my first summer internship at Shmoop, I wrote very cheesy examples of simple classes in Java for their AP computer science curriculum. For example, an `Animal` class has methods `sleep()`, `eat()` and `play()`. We can define a "child class" like `Dog` 🐕 or `Bear` 🐻 to **inherit** the basic functionality of an `Animal` and add some more specific behavior as well. Maybe `Dog` adds a `cuddle()` method and `Bear` knows how to `maulCarWindowsForPeanutButterSnack()`. In OOP parlance, the blueprint for each kind of animal is called a "class" and each individual is called an "object". When we "instantiate" a new object, it's like birthing a new animal with all the abilities specified by its class.
 
-In old-school React, the parent `Animal` class" is `React.Component` and it has some built-in methods that are quite useful in component-land. We `extend` that class to create a "class component" in its image, inheriting the basics and adding our own useful functions and state.
+In old-school React, the parent `Animal` class" is `React.Component` and it has some built-in methods that are quite useful in component-land. We `extend` that class to create a "class component" in its image, inheriting the basics before adding our own useful functions and state management.
 
 Functional programming is decidedly less cuddly and a bit harder to wrap our minds around at first. Functions, rather than objects, are the fundamental building blocks of advanced programs. We build from those functional building blocks using composition and currying rather than inheritance.
 
 ## OOP and FP in JavaScript
 
-Believe it or not, you already have quite a bit of practice with both styles! JavaScript allows both, kinda. A truly OOP language implements a rigorous class-based inheritance system. Meanwhile, a truly functional programming language (e.g., Elm, Elixir, Erlang) has immutable data types and specific requirements around what a function can and cannot do (namely, no "side effects" for pure functions). 
+Believe it or not, you already have quite a bit of practice with both styles! JavaScript allows both, kinda. A truly OOP language implements a rigorous class-based inheritance system, while a truly functional programming language (e.g., Elm, Elixir, Erlang) has immutable data types and specific requirements around what a function can and cannot do (namely, no "side effects" for pure functions). 
 
-JavaScript, however, does none of these things and is a bit more of a "choose your own adventure experience". Rather than true classes, JavaScript has a simpler protoype-based inherance model (more on that below) and the ES6 `class` syntax is just syntactic sugar rather than the real thing. Unlike functional languages, Javascript only enforces immutability for simple primitive types, and is extremely loosey-goosey about everything else. The `const` keyword does nothing to enforce immutability for the actual data structures we use every day (objects, arrays, etc). 
+JavaScript, however, does none of these things and is a bit more of a "choose your own adventure" kind of experience. Rather than true classes, JavaScript has a simpler protoype-based inherance model (more on that below) and the ES6 `class` syntax is just syntactic sugar to make it look more familiar for OOP devs. Unlike functional languages, Javascript is loosey-goosey about data types and the `const` keyword only enforces immutability for primitive types like numbers and booleans. For the actual data structures we use every day in our programs, `const` does nothing and the keys in an object or the values in an array can be mutated (changed) at will. For this reason, we sometimes find it necessary to enforce our own immutability by constructing a brand new object every time rather than making updates. 
 
-Despite the challenges presented by these quirks of the language, JavaScript has come into its own as a powerful and widely used language, allowing some version of both major paradigms for developers with different preferences. In React, we can choose to write OOP-style "class components" based on the ES6 class syntax, or we can use the newer "function component" style.
-
-OOP-style programming in JavaScript was trendy when React came out, hence the class component interface. But the times are a-changin! Now classes are old school, and functional programming is the hot new thing. In a nutshell, that shift in trends is really the reason behind the transition from class components to function components.
-
+Despite the challenges presented by these quirks, JavaScript has come into its own as a powerful and widely used programming language, allowing some version of both major paradigms for developers with different preferences. In React, we can choose to write OOP-style "class components" based on the ES6 class syntax, or we can use the newer "function component" style along with Hooks for state and side effects. 
 
 ## So, are class components still relevant? 🐢
 
+It may sound funny, but this whole thing is really just based on a change in trends and popularity.
+
+OOP-style programming in JavaScript was trendy when React came out, hence the class component interface. The idea of JavaScript becoming "real programming language" was exciting, and the idea of writing JavaScript on the server too (Node.js) along with the new OOP-style syntax helped make all that possible. But the times are a-changin! Now classes are old school, and functional programming is the hot new thing. 
+
+In a nutshell, that shift in trends is really the reason behind the transition from class components to function components. Perhaps bell bottoms will come back into fashion and bring the OOP flower children back with them someday! I'll still be here wearing my Birkenstock sandals and listening to Erroll Garner.
+
 Function components were originally limited in their abilities, but React 16.8 introduced Hooks, allowing function components to "hook into" state and side effects without the need for class components.
 
-Hooks streamline things a lot, and most developers prefer writing new components this way. But you'll also learn something new about the philosophy and principles behind React by learning the "old way" with class components.
-
-And in the real world, you'll usually encounter applications with a mix of class and function components, so it'll help a lot in your career to fully understand both styles.
+Hooks streamline things a lot, and most developers prefer writing new components this way. But you'll also learn something new about the philosophy and principles behind React by learning the "old way" with class components. And of course, in the real world, you'll usually encounter applications with a mix of class and function components, so it'll help a lot in your career to fully understand both styles. As of this latest update, in February 2021 I'm still working with class components every single day at my job.
 
 ## Class components 🚂 vs Function components 🚝:
   * Class components have just one state variable, an object with multiple keys. We use `this.setState` to update state
