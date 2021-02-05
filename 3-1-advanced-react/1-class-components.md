@@ -30,13 +30,11 @@ Still, JavaScript presents a nice hybrid despite these quirks and has come into 
 
 It may sound funny, but this whole thing is really just based on a change in trends and popularity.
 
-OOP-style programming in JavaScript was trendy when React came out, hence the class component interface. The idea of JavaScript becoming "real programming language" was exciting, and the idea of writing JavaScript on the server too (Node.js) along with the new OOP-style syntax helped make all that possible. But the times are a-changin! Now classes are old school, and functional programming is the hot new thing. 
+OOP-style programming in JavaScript was trendy when React came out, hence the class component interface. The idea of JavaScript becoming a "real programming language" was exciting, and the ability to also write JavaScript on the server (Node.js) along with flashy new language features like this OOP-style syntax helped make all that possible. But the times are a-changin! Now classes are old school, and functional programming is the hot new thing. 
 
-In a nutshell, that shift in trends is really the reason behind the transition from class components to function components. Perhaps bell bottoms will come back into fashion and bring the OOP flower children back with them someday! I'll still be here wearing my Birkenstock sandals and listening to Erroll Garner.
+In a nutshell, that shift in trends is really the reason behind the transition from class components to function components. Perhaps someday bell bottoms will come back into fashion and bring the OOP flower children back with them! I'll still be here wearing my Birkenstock sandals and listening to Erroll Garner.
 
-Function components were originally limited in their abilities, but React 16.8 introduced Hooks, allowing function components to "hook into" state and side effects without the need for class components.
-
-Hooks streamline things a lot, and most developers prefer writing new components this way. But you'll also learn something new about the philosophy and principles behind React by learning the "old way" with class components. And of course, in the real world, you'll usually encounter applications with a mix of class and function components, so it'll help a lot in your career to fully understand both styles. As of this latest update, in February 2021 I'm still working with class components every single day at my job.
+Function components were originally limited in their abilities, but React 16.8 introduced Hooks, allowing function components to "hook into" state and side effects without the need for class components. Most developers prefer writing new components this way, but you'll also learn something new about the philosophy and principles behind React by learning the "old way" with class components. And of course, in the real world, you'll usually encounter applications with a mix of class and function components, so it'll help a lot in your career to fully understand both styles. As of this latest update, in February 2021 I'm still working with class components every single day at my job.
 
 ## Class components 🚂 vs Function components 🚝:
   * Class components have just one state variable, an object with multiple keys. We use `this.setState` to update state
