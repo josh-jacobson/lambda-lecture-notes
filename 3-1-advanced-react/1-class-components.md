@@ -4,21 +4,49 @@
 * Explain class components, and use a class component to render some state data to the DOM
 * Share data between components using state and props
 * Respond to events triggered by user interaction and handle user input via forms in React
-* (looking ahead to the next sprint) Start thinking about "component-level" vs "application-level" state
+* Understand the foundations of React by seeing how things work "under the hood", before Hooks simplified the interface for developers
+* (looking ahead to the next sprint) Start getting comfortable with "component-level" vs "application-level" state
 
-## The Basics
+## Are class components still relevant?
 
-React development originally focused on components written as ES6 classes, like this:
+Function components were originally limited in their abilities, but React 16.8 introduced Hooks, allowing function components to "hook into" state and side effects without the need for class components.
+
+Hooks streamline things a lot, and most developers prefer writing new components this way. But you'll also learn something new about the philosophy and principles behind React by learning the "old way" with class components.
+
+And in the real world, you'll usually encounter applications with a mix of class and function components, so it'll help a lot in your career to fully understand both styles.
+
+## Class components vs Function components:
+  * Class components have just one state variable, an object with multiple keys. We use `this.setState` to update state
+  * Function components may have one or more state variables, managed with `useState` and/or `useReducer`
+  * What gets rendered to the DOM? When using class components, it's the JSX returned by the `render()` method. For function components, the component itself is simply a function and its return value is the JSX that gets rendered. 
+  * In class components we use lifecycle methods to manage state and side effects. For function components we use Hooks.
+  * Hooks cannot be used in class components! (and lifecycle methods are not used in function components)
+
+## Anatomy of a Class Component
+
+Here's a commented example showing all of the pieces of a typipical React class component:
 
 ```javascript
 class Lambda extends React.Component {
   constructor() {
     super(); // calls the constructor from React.Component, which intializes this.props
-    // initialize state here
+    // initialize state here:
+    this.state = {
+      // For each state value that you'd manage with useState in a function component, 
+      // create a key here on the class component's unified state object:
+      firstName: "josh",
+      lastName: ""
+    }
   }
   
   // lifecycle methods: 
-  // componentDidMount, componentDidUpdate, componentWillUnmount, etc
+  // componentDidMount, componentDidUpdate, componentWillUnmount (all three together are equivalent to useEffect)
+  componentDidMount() {
+    // Use this.setState() to update state (never use equals assign outside of the constructor!)
+    // setState performs a "shallow merge" on the state object, meaning that only the keys you include are updated. 
+    // For example, here we can update lastName while leaving firstName as is:
+    this.setState({lastName: "jacobson"}); 
+  }
   
   render() {
     return <h1>Hello, {this.props.name}</h1>;
@@ -32,15 +60,8 @@ The base Component class includes built-in functionality for handling state and 
 
 The default `React.Component` constructor initializes `this.props` and other useful things -- feel free to look at the [React.Component constructor source code](https://github.com/facebook/react/blob/1d25aa5787d4e19704c049c3cfa985d3b5190e0d/packages/react/src/ReactBaseClasses.js#L22) if you're curious about what that `super()` call actually does.
 
-## Class components vs Function components:
-  * Class components have just one state variable, an object with multiple keys. We use `this.setState` to update state
-  * Function components may have one or more state variables, managed with `useState` and/or `useReducer`
-  * What gets rendered to the DOM? When using class components, it's the JSX returned by the `render()` method. For function components, the component itself is simply a function and its return value is the JSX that gets rendered. 
-  * In class components we use lifecycle methods to manage state and side effects. For function components we use Hooks.
-  * Hooks cannot be used in class components! (and lifecycle methods are not used in function components)
 
-
-## Classes and function prototypes in JavaScript
+## Bonus: ES6 classes and function prototypes in JavaScript
 
 A good random fact to know for your coding interviews is that Javascript is built on "prototype-based inheritance", a simpler version of the traditional class-based inheritance found in other languages like Java and C++. Though we're now used to seeing `class` terminology used in newer ES6 syntax, Javascript does handle things a bit differently under the hood, and it's worth understanding the differences. 
 
@@ -87,13 +108,6 @@ In other languages, a class constructor creates an instance of the class, but a 
 
 In React, when we define a class component that `extends React.Component` we're basically just taking that pre-defined base component class and extending it with our own custom behavior.
 
-## Are class components still relevant?
-
-Function components were originally limited in their abilities, but React 16.8 introduced Hooks, allowing function components to "hook into" state and side effects without the need for class components.
-
-Hooks streamline things a lot, and most developers prefer writing new components this way. But you'll also learn something new about the philosophy and principles behind React by learning the "old way" with class components.
-
-And in the real world, you'll usually encounter applications with a mix of class and function components, so it'll help a lot in your career to fully understand both styles.
 
 
 ## Helpful Resources
