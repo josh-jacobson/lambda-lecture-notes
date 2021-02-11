@@ -99,7 +99,7 @@ Check out the "React Call Order" article for a great intro to this advanced conc
 * shouldComponentUpdate
 * getSnapshotBeforeUpdate
 
-And some others that are deprecated now. Focus on just getting really comfortable with the 3 above, as you'll mainly just see those in most cases. If you're curious about learning all of these though, just take a few minutes for a full read of the API reference below.
+And some others that are deprecated now. Focus on just getting really comfortable with the 3 above, as you'll mainly just see those in most cases. If you're curious for more historical context though, feel free to dig into the React.Component API reference linked below.
 
 ## Understanding function components vs class components:
 One simplified way to understand these different styles is that the `return` of a function component is the same as what we return from the `render()` method within a class component. In class components we manage state and side effects with these specifically named lifecycle methods, while in a function component we use hooks like useState() and useEffect() to do the same thing.
