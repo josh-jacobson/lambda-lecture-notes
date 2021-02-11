@@ -61,6 +61,9 @@ If you don’t initialize state and you don’t bind methods, you don’t need t
 For initialization, in the constructor we assign `this.state` directly. This is the only place we ever do this! In all other methods, use `this.setState()`. 
 
 ## Common lifecycle methods
+
+![Lifecycle methods diagram](./images/lifecycle-methods.png)
+
 **`componentDidMount`, `componentDidUpdate` and `componentWillUnmount`**
 
 Together, these three lifecycle methods are equivalent to the `useEffect()` hook. Let's look at them in detail:
