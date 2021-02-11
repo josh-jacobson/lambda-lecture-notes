@@ -64,8 +64,6 @@ For initialization, in the constructor we assign `this.state` directly. This is 
 
 ![Lifecycle methods diagram](./images/lifecycle-methods.png)
 
-**`componentDidMount`, `componentDidUpdate` and `componentWillUnmount`**
-
 Together, these three lifecycle methods are equivalent to the `useEffect()` hook. Let's look at them in detail:
 
 ### `componentDidMount`
