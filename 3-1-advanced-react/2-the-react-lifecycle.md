@@ -103,13 +103,22 @@ And some others that are deprecated now. Focus on just getting really comfortabl
 ## Understanding function components vs class components:
 One simplified way to understand these different styles is that the `return` of a function component is the same as what we return from the `render()` method within a class component. In class components we manage state and side effects with these specifically named lifecycle methods, while in a function component we use hooks like useState() and useEffect() to do the same thing.
 
-## Helpful Resources
+## More Resources
+
+### Videos
+[Codevolution - Component Mounting Lifecycle Methods](https://www.youtube.com/watch?v=KDXZibVdiEI&ab_channel=Codevolution)
+
+[Tiff in Tech - React Lifecycle Explained](https://www.youtube.com/watch?v=deMOuGlpOso&ab_channel=TiffInTech)
+
+[React 16 For Everyone #6 - LifeCycle Methods](https://www.youtube.com/watch?v=9kSXwj_K-6o&ab_channel=LevelUpTuts)
+
+### Articles
 
 [useEffect explained with lifecycle methods](https://dev.to/prototyp/react-useeffect-explained-with-lifecycle-methods-296n)
 
 [React.Component lifecycle methods - API reference](https://reactjs.org/docs/react-component.html) 
 
-[Lifecycle method diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+[Interactive lifecycle method diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
 
 [React Call Order](https://blog.logrocket.com/post-hooks-guide-react-call-order/)
 
