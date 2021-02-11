@@ -105,6 +105,8 @@ One simplified way to understand these different styles is that the `return` of 
 
 ## Helpful Resources
 
+[useEffect explained with lifecycle methods](https://dev.to/prototyp/react-useeffect-explained-with-lifecycle-methods-296n)
+
 [React.Component lifecycle methods - API reference](https://reactjs.org/docs/react-component.html) 
 
 [Lifecycle method diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
