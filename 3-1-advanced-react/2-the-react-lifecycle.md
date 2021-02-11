@@ -88,11 +88,15 @@ Not quite! You may be surprised to learn that it actually happens like this:
 * Then the "mounting" propogates back **up** the tree
 * Finally, the parent component at the top of the tree mounts last.
 
-I like to visualize this initialization process as a "down-up" motion, all happening in the blink of an eye in most cases. So any `componentDidMount` or `useEffect` methods towards the top of the tree will actually be called *after* all the children components have mounted.
+I like to visualize this initialization process as a "down-up" motion, all happening in the blink of an eye in most cases. So any `componentDidMount` or `useEffect` methods toward the top of the tree will actually be called *after* all the children components have mounted.
 
-This can present a very sneaky bug in many cases, where you expect data to have been passed down to a child component but it's undefined becuase the parents haven't mounted yet! Make sure your child components have safety checks built in to handle null/undefined versions of props used to render UI content, especially when there are maps and other type-specific methods involved! Otherwise you may find that your app crashes randomly and unexpectedly due to these type errors.
+This can present a very sneaky bug when you expect data to have been passed down to a child component but it's undefined becuase the parents haven't mounted yet! When a child component renders for the first time, **none of its parent components have mounted yet**. This means that we can't count on anything from their lifecycle methods being defined yet. This is why we initialize with empty strings and other placeholders in the constructor, to make sure child components don't ever receive `undefined` values for their props. When someday you inevitably come acorss a mystical-sounding error like this:
 
-Check out the "React Call Order" article for a great intro to this advanced concept with some helpful diagrams to explain this "down then back up" render and mount order. Understanding this order of operations will save you many hours of debugging the sneakiest bugs in the future!
+😿🚳 `Uncaught TypeError: Cannot call method 'map' of undefined` 😿🚳
+
+Checking for undefined props due to this specific render/mount order in React should be your first line of defense. Make sure your child components have safety checks built in to handle null/undefined versions of props used to render UI content, especially when there are maps and other type-specific methods involved. Otherwise you may find that your app crashes randomly and unexpectedly due to these type errors.
+
+Check out the "React Call Order" article below for a great intro to this advanced concept with some helpful diagrams to explain this "down then back up" render and mount order. Understanding this order of operations will save you many hours of debugging the sneakiest bugs in the future!
 
 ## Rarely used lifecycle methods 🦖🦕📻📺
 * getDerivedStateFromProps
