@@ -119,6 +119,8 @@ One simplified way to understand these different styles is that the `return` of 
 
 [useEffect explained with lifecycle methods](https://dev.to/prototyp/react-useeffect-explained-with-lifecycle-methods-296n)
 
+[Understanding the useEffect Dependency Array](https://medium.com/better-programming/understanding-the-useeffect-dependency-array-2913da504c44)
+
 [React.Component lifecycle methods - API reference](https://reactjs.org/docs/react-component.html) 
 
 [Interactive lifecycle method diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
