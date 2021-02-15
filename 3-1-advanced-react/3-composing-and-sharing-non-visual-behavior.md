@@ -88,7 +88,13 @@ All of this allows for some pretty powerful programming paradigms, many of which
 (Side note: the [λ calculus](https://personal.utdallas.edu/~gupta/courses/apl/lambda.pdf) is a mathematical system underpinning functional programming. Perhaps this is how Lambda School got its name?)
 
 
-## Helpful Resources:
+## More Resources
+### Videos:
+[Learn Custom Hooks In 10 Minutes](https://www.youtube.com/watch?v=6ThXsUwLWvc)
+
+[Codevolution Hooks tutorial (vids 31-33 are all about custom hooks)](https://www.youtube.com/watch?v=4yp6T-hF5ZY)
+
+### Articles:
 [Building Your Own Hooks](https://reactjs.org/docs/hooks-custom.html)
 
 [Computed Property Names in ES6](https://medium.com/front-end-weekly/javascript-object-creation-356e504173a8)
