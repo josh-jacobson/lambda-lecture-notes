@@ -10,6 +10,12 @@
 * Tests also act as a form of documentation and enforces best practices
 * ...and many other reasons. (*Not testing* is a bad idea, like taking out a high-interest loan of technical debt)
 
+
+## Why not just QA manually?
+For a small app it's easy to just run through some test cases in the browser before shipping a new feature. But what if your app has hundreds of thousands of lines of code? The manual approach quickly gets unmanageable at scale, and it's easy to unexpectedly (and invisibly) break a legacy feature when you go live with something new. 
+
+While it's impossible to comprehensively test your app top to bottom every time you push some new code with the manual QA approach, it's easy to do exactly that with a thoughtful automated test suite.
+
 ## Four Kinds of Tests
 There's a lot of different terminology floating around, and sometimes the categories overlap but here's a relatively easy way to understand the main categories of automated tests. (Kent C. Dodds explains ths really nicely -- check out his article and pdf's below!)
 
@@ -73,9 +79,6 @@ const newAnimal = await screen.findByText(/grizzly bear/i);
 ```
 
 This works well for most use cases, but there's also a more advanced companion library `@testing-library/user-event` in active development. The idea behind `userEvent` is to more fully simulate behavior from the user perspective, providing extra nuances of user interaction beyond the basic actions represented by DOM events.
-
-## Why not just QA manually?
-It's easy to just run through some test cases in the browser before shipping a new feature, but the manual approach quickly gets unmanageable at scale. What if your app has hundreds of thousands of lines of code? It's easy to unexpectedly (and invisibly) break a legacy feature when you go live with a new feature. While it's impossible with a manual approach to comprehensively test your app top to bottom every time you push some new code, it's easy to do exactly that with a thoughtful suite of integration tests.
 
 ## PDF's to download
 * ["What Should I Test?" by Kent C Dodds](pdf/Print_Worksheet_US.pdf)
