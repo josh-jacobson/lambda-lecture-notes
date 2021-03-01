@@ -4,6 +4,7 @@
 * describe the Finite State Machine pattern and it's relationship to building Redux applications
 * implement Redux Middleware libraries into a Redux Store using `applyMiddleware`
 * effectively use `redux-thunk` and asynchronous action creators to consume data from external API's
+* (new) introduce React Redux hooks, a modern alternative to `connect`
 
 ## A visual example
 Here's the Redux data flow visualized, with the addition of asynchronous API calls:
@@ -59,9 +60,23 @@ Here's a typical setup:
 * Use redux-thunk as a middleware, and define async action creators
 * Within those async actions, use axios to make requests to an api endpoint
 
-## Helpful Resources
+## Redux Hooks
+React Redux has been updated to include a simpler approach to connect components to the Redux store: Hooks! Just like React Router includes the `useParams` and `useHistory` custom hooks as modern upgrades over the older way of doing things, the React Redux library has joined the hooks party.
+
+Here's a quick rundown: `useSelector` provides a way to read state values from the Redux store (similar to `mapStateToProps`) and `useDispatch` provides a way to update the store (similar to `mapDispatchToProps`).
+
+As of 2021, `connect` is still widely used but hooks are now recommended as the default approach. Learning both is a great way to deepen your knowledge! Just like class components and function components, you'll be likely to encounter both at some point in your journey. Remember that all these different approaches really just amount to different syntax, so don't worry about the details too much. The functionality is the same, and the most useful thing to focus on at this stage is building a strong understanding of the underlying concepts.
+
+From the React Redux docs: 
+> We recommend using the React-Redux hooks API as the default approach in your React components. The existing connect API still works and will continue to be supported, but the hooks API is simpler and works better with TypeScript.
+
+## More Resources
+### Videos
+* [Codevolution - Redux Thunk Middleware](https://www.youtube.com/watch?v=z2XCUu2wIl0)
+### Articles
 * [Handling Asynchronous Actions in Redux](https://medium.com/better-programming/handling-asynchronous-actions-in-redux-86724ed87c6c)
 * [Redux by TL Megan Miller](https://www.notion.so/Redux-3ac5db784a1e4a1dbe9ecc7c15bbd9fd)
 * [Redux applyMiddleware docs](https://redux.js.org/api/applymiddleware)
 * [What is a thunk?](https://daveceddia.com/what-is-a-thunk/)
 * [Redux-thunk](https://github.com/reduxjs/redux-thunk)
+* [Redux Hooks](https://react-redux.js.org/api/hooks)
