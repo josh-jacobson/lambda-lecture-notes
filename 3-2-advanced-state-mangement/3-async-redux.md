@@ -21,7 +21,7 @@ Enter `redux-thunk`, A *middleware* that extends the functionality of Redux, all
 Rather than simply passing an action type and payload to the reducer, we can start multiple processes at once and set up some intelligent multitasking. Start the bean grinder, then steam some milk while the beans grind. Once the beans are ground, then we can start the espresso machine. Once the espresso is brewed and milk frothed, then we can put it all together and serve the drink. All of that work can be divided up in an efficient way, even split among multiple employees and several espresso machines to handle more than one order at once. A production-scale web app may look more like a complex factory than a coffee shop, so this organization and asynchronous behavior becomes essential.
 
 ### Part 2: an artisanal oat milk experience
-Here's how that `'MAKE_COFFEE'` step might look, as a more complex action that dispatches actions of its own:
+Here's how that `'MAKE_COFFEE'` step might look, as a more complex "asynchronous action" with the newfound power to dispatch actions of its own:
   * Dispatch `'GRIND_BEANS'`
   * Dispatch `'FROTH_MILK'`
   * When bean grinding is complete, dispatch `'BREW_ESPRESSO'`
