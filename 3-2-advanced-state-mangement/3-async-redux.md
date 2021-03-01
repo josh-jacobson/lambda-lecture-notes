@@ -60,10 +60,12 @@ Here's a typical setup:
 * Use redux-thunk as a middleware, and define async action creators
 * Within those async actions, use axios to make requests to an api endpoint
 
-## Redux Hooks
-React Redux has been updated to include a simpler approach to connect components to the Redux store: Hooks! Just like React Router includes the `useParams` and `useHistory` custom hooks as modern upgrades over the older way of doing things, the React Redux library has joined the hooks party.
+## React Redux Hooks
+React Redux has been updated to include a simpler approach to connect components to the Redux store: hooks! Just like React Router includes the `useParams` and `useHistory` custom hooks as modern upgrades over the older way of doing things, the React Redux library has joined the hooks party 🚀
 
-Here's a quick rundown: `useSelector` provides a way to read state values from the Redux store (similar to `mapStateToProps`) and `useDispatch` provides a way to update the store (similar to `mapDispatchToProps`).
+Here's a quick rundown: 
+* `useSelector` 👀 to read state values from the Redux store (similar to `mapStateToProps`) 
+* `useDispatch` 🚀 to update the store (similar to `mapDispatchToProps`).
 
 As of 2021, `connect` is still widely used but hooks are now recommended as the default approach. Learning both is a great way to deepen your knowledge! Just like class components and function components, you'll be likely to encounter both at some point in your journey. Remember that all these different approaches really just amount to different syntax, so don't worry about the details too much. The functionality is the same, and the most useful thing to focus on at this stage is building a strong understanding of the underlying concepts.
 
