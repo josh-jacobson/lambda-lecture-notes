@@ -33,9 +33,9 @@ Note the inherent multitasking involved -- this approach allows optimization and
 ### Part 3: 'asynchronous' is just a fancy word for multitasking
 Note that there's a specific order of operations, with some actions requiring others to complete before they can begin (for example: you need to grind beans before brewing espresso).  *Synchronous* behavior means that all actions take place in sequential order, each waiting for the previous action to complete before starting. *Asynchronous* actions, on the other hand, can take place simultaneously and only wait for others when absolutely necessary. This more nuanced order of operations, known as **asynchronous / non-blocking** behavior, is the key to the fast, responsive feel of modern single-page applications backed by an API.
 
-This kind of thing is common with asynchronous actions like API calls in React applications -- start the process, go do something else, then come back to handle the response when it's complete. When the code gets confusing, remember this example to understand what asynchronous actions are all about. 
+This kind of thing is common with asynchronous actions like API calls in React applications -- start the process, go do something else, then come back to handle the response when it's complete.
 
-## What is Redux Middleware?
+## Redux Middleware
 In the context of Redux, middleware is a way to extend the standard functionality with additional behavior, Middleware provides a third-party extension point after an action is disaptched, before it reaches the reducer:
 
 Dispatching an action
