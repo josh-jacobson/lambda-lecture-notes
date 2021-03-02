@@ -83,4 +83,6 @@ From the React Redux docs:
 * [Redux applyMiddleware docs](https://redux.js.org/api/applymiddleware)
 * [What is a thunk?](https://daveceddia.com/what-is-a-thunk/)
 * [Redux-thunk](https://github.com/reduxjs/redux-thunk)
-* [Redux Hooks](https://react-redux.js.org/api/hooks)
+### React Redux hooks articles
+* [React Redux docs - hooks API](https://react-redux.js.org/api/hooks)
+* [Using Redux with React Hooks](https://thoughtbot.com/blog/using-redux-with-react-hooks)
