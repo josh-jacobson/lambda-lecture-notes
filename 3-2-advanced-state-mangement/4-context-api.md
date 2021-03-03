@@ -49,15 +49,15 @@ To share state among components, there are really two distinct problems to solve
 
 Here are three common approaches that we've now learned: 
 
-### With prop drilling:
+### Prop drilling:
 1. Pass shared state values down the component tree as props
 2. Also pass setter functions (or `dispatch`) as props
 
-### With Redux:
+### Redux:
 1. Provide a store as the single source of the truth for application-level state, and use React Redux to connect componoents to read the values they need from the store with either `mapStateToProps` or `useSelector`
 2. Handle all state updates with reducers. Write action creator functions to handle the business logic for each action type, and use `mapDispatchToProps` or `useDispatch` to allow components to dispatch these actions to the reducer.
 
-### With Context:
+### Context:
 1. Provide a Context (just like a store) to child components, as the single source of the truth for state values relevant to all of those components. Child components can "consume" that context directly to access the values they need, with live updates. 
 2. Context doesn't solve this part directly. Choose your own adventure -- common approaches:
     * Pass down setter functions just like you would in a simple non-Redux implementation (prop drilling)
