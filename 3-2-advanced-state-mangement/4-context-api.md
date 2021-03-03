@@ -24,9 +24,24 @@ The Redux architecture as we know it can be broken down into these four pieces:
 
 Context API just implements #1, a shared store for a component and its children. **Unlike Redux, Context API is not an opinionated framework and does not require the use of reducers, actions or action creators.**
 
+
+## useContext with useReducer
 On its own, Context API is *not* a comprehensive application state management system like Redux. However, it's surprisingly powerful! We can also store `dispatch` or setter functions in a Context, allowing components down the tree to not only read, but also update shared state without any need for prop drilling.
 
 Combining the `useContext` and `useReducer` hooks can provide a powerful architecture that is similar to Redux in many ways, and this is becoming increasingly popular as an alternative to Redux due to easier setup and the less opinionated nature of these built-in hooks. But just remember that Context itself is nothing more than a way of sharing state directly from a top level component to any of the child components in its subtree. 
+
+This combination provides a lot of power and predictability for your state mangement, closely modeling the architecture of Redux. All the patterns we've been learning throughout this unit are the same here -- actions, reducers, and a shared state container (context or store). 
+
+The `useContext` & `useReducer` architecture is less opinionated than Redux, and you can choose to add as much abstraction as you'd like but the standard approach is just a bit simpler than Redux. Typically we'll just consume values from the context with `useContext` as shown above, and dispatch actions to update the context with `useReducer`:
+
+```javascript
+const [state, dispatch] = useReducer(reducer, initialState);
+
+// within a component:
+<button onclick={() => dispatch({type: 'UPDATE_TITLE'})>Update</button>
+```
+
+It's up to you to decide whether you'd like to define actions inline like this, or store them in a dedicated file (often a better choice). You could even recreate the action creators pattern and use the same abstractions as Redux, but using an *unopinionated* API like this means that those decisions are left up to you.
 
 Check out the docs (linked below) for a more in-depth understanding of the pros and cons of using Context. There are a few ways of solving this problem of shared state, and you'll find that there are specific tradeoffs involved with each option. Context provides an elegant solution, but baking the state sharing logic into components in this way does make it harder to reuse components.
 
@@ -90,20 +105,6 @@ function ChildComponent(){
     return <div>{contextValue}</div>
 }
 ```
-
-## useContext with useReducer
-This combination provides a lot of power and predictability for your state mangement, closely modeling the architecture of Redux. All the patterns we've been learning throughout this unit are the same here -- actions, reducers, and a shared state container (context or store). 
-
-The `useContext` & `useReducer` architecture is less opinionated than Redux, and you can choose to add as much abstraction as you'd like but the standard approach is just a bit simpler than Redux. Typically we'll just consume values from the context with `useContext` as shown above, and dispatch actions to update the context with `useReducer`:
-
-```javascript
-const [state, dispatch] = useReducer(reducer, initialState);
-
-// within a component:
-<button onclick={() => dispatch({type: 'UPDATE_TITLE'})>Update</button>
-```
-
-It's up to you to decide whether you'd like to define actions inline like this, or store them in a dedicated file (usually a better choice). You could even recreate the action creators pattern and use the same abstractions as Redux, but the idea of an *unopinionated* API like this is that those decisions are left up to you.
 
 ## Redux or Context?
 Redux is still the standard for managing application-level state in large, complex applications. Context API offers a simpler approach that works well for many smaller applications, with less setup time needed. If current trends continue, Context may grow so much in popularity that it eventually gains more robust functionality and replaces Redux in many large applications. These technologies are always evolving, so for now it's just good to know both and understand the concepts through each lens. A year or two down the road when you may consider the best technology for a new application, everything will be totally different so it's your deep understanding of the concepts and fundamentals that will really allow you to bring valuable insight to your team. 
