@@ -55,7 +55,7 @@ Here are three common approaches that we've now learned:
 
 ### With Redux:
 1. Provide a store as the single source of the truth for application-level state, and use React Redux to connect componoents to read the values they need from the store with either `mapStateToProps` or `useSelector`
-2. Handle all state updates with reducers, so the setter functions are now actually functions that dispatch actions to a reducer. Rather than passing setter functions down the component tree (i.e., prop drilling), use `mapDispatchToProps` or `useDispatch` to dispatch appropriate actions to the reducer.
+2. Handle all state updates with reducers. Write action creator functions to handle the business logic for each action type, and use `mapDispatchToProps` or `useDispatch` to allow components to dispatch these actions to the reducer.
 
 ### With Context:
 1. Provide a Context (just like a store) to child components, as the single source of the truth for state values relevant to all of those components. Child components can "consume" that context directly to access the values they need, with live updates. 
