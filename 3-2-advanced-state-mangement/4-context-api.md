@@ -45,24 +45,29 @@ It's up to you to decide whether you'd like to define actions inline like this, 
 
 Check out the docs (linked below) for a more in-depth understanding of the pros and cons of using Context. There are a few ways of solving this problem of shared state, and you'll find that there are specific tradeoffs involved with each option. Context provides an elegant solution, but baking the state sharing logic into components in this way does make it harder to reuse components.
 
-## Shared state: two distinct problems to solve (reading & writing)
-Without a state management implementation like Redux or Context, we use prop drilling for both of these purposes:
+## Shared state: three ways to do it
+To share state among components, there are really two distinct problems to solve: 
 1. Sharing state from a component to its child components (pass values as props)
 2. Allowing child components to *update* that top-level state (pass setter functions down as props)
 
-With Redux, we use `mapStateToProps` or `useSelector` to allow components to read state, and `mapDispatchToProps` or `useDispatch` for state updates.
+Here are three common approaches that we've now learned: 
+
+### With prop drilling:
+1. Pass shared state values down the component tree as props
+2. Also pass setter functions (or `dispatch`) as props
 
 ### With Redux:
-1. Provide a store as the single source of the truth for application-level state, which components can connect to directly to pull the values they need, with live updates
-2. Handle all state updates with reducers, so the setter functions are now actually functions that dispatch actions to a reducer. Rather than passing setter functions down the component tree (i.e., prop drilling), use some HOC magic to "enhance" each component so that it receives the functions it needs as props.
+1. Provide a store as the single source of the truth for application-level state, and use React Redux to connect componoents to read the values they need from the store with either `mapStateToProps` or `useSelector`
+2. Handle all state updates with reducers, so the setter functions are now actually functions that dispatch actions to a reducer. Rather than passing setter functions down the component tree (i.e., prop drilling), use `mapDispatchToProps` or `useDispatch` to dispatch appropriate actions to the reducer.
 
-React's Context API is more of a simple, modular approach and it doesn't directly address the second question of how child components should update "context level" state.
 ### With Context:
 1. Provide a Context (just like a store) to child components, as the single source of the truth for state values relevant to all of those components. Child components can "consume" that context directly to access the values they need, with live updates. 
 2. Context doesn't solve this part directly. Choose your own adventure -- common approaches:
     * Pass down setter functions just like you would in a simple non-Redux implementation (prop drilling)
     * Store the setter functions along with state values in the Context to avoid prop-drilling
     * Also add `useReducer` to the implementation and store `dispatch` in the Context (you'll still have to write out each `dispatch` directly, no Redux-style abstraction magic here unless you choose to build it yourself or integrate another library that does so).
+
+Note that React's Context API is more of a simple, modular approach and it can be used in a variety of ways. Storing shared state in a Context is pretty much assumed, but storing setter functions or `dispatch` in the Context is optional and you're free to pass those as as props if you prefer.
 
 ## When to use Context
 Context is useful for sharing data that can be considered “global” among a tree of React components, which can be either the entire application or a subset of components. On its own, the Context API simply provies the "store" part of Redux, providing a cleaner alternative to "prop drilling" to pass down data through the component tree. 
