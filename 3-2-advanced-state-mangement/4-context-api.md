@@ -10,12 +10,29 @@ You'll hear about these three main "levels" of state:
 
 "Context" in this case just encapsulates the idea that you're defining a tree of components among which to share state, and you can define the top of that tree wherever you like. Your "context" could be your entire application like it is for Redux, or you could have several different contexts that are each relevant to a "subtree" of your React component tree.
 
-## Sharing state: two distinct problems to solve
+## What is Context API? (and what isn't it?)
+
+Context API takes a more modular approach to state management, providing the storage piece and allowing any number of customized approaches to the rest of the architecture. It's possible to build something that looks like Redux, but there are many other possibilities!
+
+The Redux architecture as we know it can be broken down into these four pieces:
+1. store (a "state container" acting as the single source of truth for globally relevant state)
+2. Manage state with reducers
+3. action creators
+4. `connect` HOC pattern to allow components to interface with the store (react-redux)
+
+Context API is just a simple implementaiton of #1 (the store) without all the other stuff. **Unlike Redux, Context API does not require the use of reducers, actions or action creators.**
+
+On its own, Context API is *not* a comprehensive application state management system like Redux. Combining the `useContext` and `useReducer` hooks can provide a powerful architecture that is similar to Redux in many ways, and this is becoming increasingly popular as an alternative to Redux due to easier setup and the less opinionated nature of these built-in hooks. But just remember that Context itself is nothing more than a way of sharing state directly from a top level component to any of the child components in its subtree. 
+
+Check out the docs (linked below) for a more in-depth understanding of the pros and cons of using Context. There are a few ways of solving this problem of shared state, and you'll find that there are specific tradeoffs involved with each option. Context provides an elegant solution, but baking the state sharing logic into components in this way does make it harder to reuse components.
+
+## Shared state: two distinct problems to solve (reading & writing)
 Without a state management implementation like Redux or Context, we use prop drilling for both of these purposes:
 1. Sharing state from a component to its child components (pass values as props)
 2. Allowing child components to *update* that top-level state (pass setter functions down as props)
 
-In complex applications this can get out of hand really quickly! Redux handles both parts with a complete, opinionated implementation that makes the most of reducers, action creators, and a HOC pattern to `connect` components to the store. By design, the interface for writing React components largely resembles the original (prop drilling) version, with state values and setter functions all just passed in as props. You don't have to write `dispatch` or anything else related to reducers in your component code -- Redux handles all that behind the scenes. 
+With Redux, we use `mapStateToProps` or `useSelector` to allow components to read state, and `mapDispatchToProps` or `useDispatch` for state updates.
+
 ### With Redux:
 1. Provide a store as the single source of the truth for application-level state, which components can connect to directly to pull the values they need, with live updates
 2. Handle all state updates with reducers, so the setter functions are now actually functions that dispatch actions to a reducer. Rather than passing setter functions down the component tree (i.e., prop drilling), use some HOC magic to "enhance" each component so that it receives the functions it needs as props.
@@ -32,22 +49,6 @@ React's Context API is more of a simple, modular approach and it doesn't directl
 Context is useful for sharing data that can be considered “global” among a tree of React components, which can be either the entire application or a subset of components. On its own, the Context API simply provies the "store" part of Redux, providing a cleaner alternative to "prop drilling" to pass down data through the component tree. 
 
 It's helpful to think of Context API as the "store" part of the architecture, allowing us to share state from the component at the top level of the context tree to any subcomponents that need that data, without having to pass the data through each level of the tree. 
-
-## What is Context API? (and what isn't it?)
-
-Context API takes a more modular approach to state management, providing the storage piece and allowing any number of customized approaches to the rest of the architecture. It's possible to build something that looks like Redux, but there are many other possibilities!
-
-The Redux architecture as we know it can be broken down into these four pieces:
-1. store (a "state container" acting as the single source of truth for globally relevant state)
-2. Manage state with reducers
-3. action creators
-4. `connect` HOC pattern to allow components to interface with the store (react-redux)
-
-Context API is just a simple implementaiton of #1 (the store) without all the other stuff. **Unlike Redux, Context API does not require the use of reducers, actions or action creators.**
-
-On its own, Context API is *not* a comprehensive application state management system like Redux. Combining the `useContext` and `useReducer` hooks can provide a powerful architecture that is similar to Redux in many ways, and this is becoming increasingly popular as an alternative to Redux due to easier setup and the less opinionated nature of these built-in hooks. But just remember that Context itself is nothing more than a way of sharing state directly from a top level component to any of the child components in its subtree. 
-
-Check out the docs (linked below) for a more in-depth understanding of the pros and cons of using Context. There are a few ways of solving this problem of shared state, and you'll find that there are specific tradeoffs involved with each option. Context provides an elegant solution, but baking the state sharing logic into components in this way does make it harder to reuse components.
 
 
 ## Provider and Consumer
