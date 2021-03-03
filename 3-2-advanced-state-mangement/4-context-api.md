@@ -18,7 +18,7 @@ The Redux architecture as we know it can be broken down into these four pieces:
 1. Store (a "state container" acting as the single source of truth for shared application state)
 2. Reducers to manage state
 3. Action creator functions
-4. React Redux interface to connect components to the store:
+4. React Redux to connect components to the store: `Provider` plus:
 * `connect(mapStateToProps, mapDispatchToProps)` (older HOC syntax)
 * `useSelector`, `useDispatch` (new hooks syntax)
 
