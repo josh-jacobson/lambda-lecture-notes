@@ -22,7 +22,7 @@ The Redux architecture as we know it can be broken down into these four pieces:
 * `connect(mapStateToProps, mapDispatchToProps)` (older HOC syntax)
 * `useSelector`, `useDispatch` (new hooks syntax)
 
-Context API just implements #1, a shared store for a component and its children. **Context API just provides a shared container, that's it. Unlike Redux, Context API is not a comprehensive state management solution and does not require the use of reducers, actions or action creators.**
+Context API just implements #1, a shared store for a component and its children. **A Context is just a shared container, that's it. Unlike Redux, Context API is not a comprehensive state management solution and does not require the use of reducers, actions or action creators.**
 
 
 ## useContext with useReducer
