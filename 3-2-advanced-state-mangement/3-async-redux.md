@@ -38,7 +38,7 @@ This kind of thing is common with asynchronous actions like API calls in React a
 ## API-backed React app as a state machine
 ![API states diagram](images/api_states.png)
 
-When making calls to an API from our React app with Redux, we can use the finite state machine concept (traffic light, locking door, etc) as a mental model for how we think about state changes in the application. In the diagram above, each bubble coresponds to a specific state which we could model with state variables like `loading` and  `error`. Each arrow represents a state change, achieved by dispatching an action to the reducer. Here are some typical actions that we might dispatch as part of an API call:
+When making calls to an API from our React app with Redux, we can use the finite state machine concept (traffic light, locking door, etc) as a mental model for how we think about state changes in the application. In the diagram above, each bubble coresponds to a specific state which we could model with state variables like `loading: boolean` and  `error: string`. Each arrow represents a state change, achieved by dispatching an action to the reducer. Here are some typical actions that we might dispatch as part of an API call:
 * FETCHING_START ("refresh" and "fetch" arrows above)
 * FETCHING_SUCCESS ("success" arrow above)
 * FETCHING_FAILURE ("failure" arrow above)
