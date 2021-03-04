@@ -122,8 +122,6 @@ Here's a quick comparison:
 * Setting up Context: 1) `createContext` 2) wrap components with `<Provider>` 3) consume with `Context.Consumer` or `useContext`
 * Redux is built for large scale, currently used in many massive production apps. Context is newer and may eventually replace Redux for many use cases, but Redux has simply been around longer and is still a good, battle-tested choice for many applications (including those built with frameworks other than React)
 
-Check out the docs (linked below) for a more in-depth understanding of the pros and cons of using Context. There are a few ways of solving this problem of shared state, and you'll find that there are specific tradeoffs involved with each option. Context provides an elegant solution, but baking the state sharing logic into components in this way does make it harder to reuse components. Redux is still the most popular option for complex applications.
-
 ## Helpful Resources
 * [Context Docs](https://reactjs.org/docs/context.html)
 * [Provider Pattern](https://blog.flexiple.com/provider-pattern-with-react-context-api/)
