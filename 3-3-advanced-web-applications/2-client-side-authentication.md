@@ -32,7 +32,9 @@ Along with `localStorage.removeItem` and `localStorage.clear()` for cleanup, tha
 ## Security Concerns
 Note that we're using localStorage as a convenient storage solution for learning purposes, but an actual auth implementation requires much more advanced security protocols. It's easy to leave your app open to Cross-Site Scripting (XSS) attacks, in which an attacker can inject JavaScript code into your app.
 
-Secure cookies with the HttpOnly flag and other precautions provide one common approach, but it really comes down to the big picture of how you architect your entire application rather than just the specifics of where you store the auth token. I'm far from an expert on the subject, and can say that you're also unlikely to need to know the nitty gritty of secure auth unless you choose to specialize in security-related development in your career. It's interesting stuff though! If you're curious, feel free to check out the "Extra Reading" articles linked below. For our purposes, just know that localStorage is intended as a convenient example ratheer than a rigorous demonstration of actual real-world auth practices.
+Secure cookies with the HttpOnly flag and other precautions provide one common approach, but it really comes down to the big picture of how you architect your entire application rather than just the specifics of where you store the auth token. I'm far from an expert on the subject, and only developers who choose a security-related specialty in their career really need to know the nitty gritty. It's interesting stuff though! If you're curious, feel free to check out the "Extra Reading" articles linked below. 
+
+For our purposes, just know that this simple localStorage implementation is intended as a convenient example rather than a rigorous demonstration of real-world auth practices.
 
 ## API review: HTTP and RESTful services
 Since you'll also be working directly with an API for the Auth Friends project, here's a quick review / cheat sheet for how to interact with web services. Most modern API's conform to the "representational state transfer" (REST) architecture.
