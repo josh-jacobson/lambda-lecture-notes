@@ -79,6 +79,12 @@ perform any cleanup, e.g, removing event listeners, invalidating timers or clean
 
 Use these to setup listeners, fetching data from an API and ultimately removing listeners before component is removed ("unmounted") from the DOM.
 
+## useEffect Equivalencies
+The newer `useEffect` hook syntax combines the functionality of CDM, CDU, and CWU in one hook. Let's break it down:
+* 🐛 componentDidMount = useEffect with an empty dependency array
+* 🦋 componentDidUpdate = useEffect with a value in the dependency array
+* 💀 componentWillUnmount = useEffect with a return statement for cleanup
+
 ## In what order do components render and "mount" in a React component tree? 
 So if you have a bunch of React components, the parent component at the top of the tree renders and "mounts" first, right?
 
